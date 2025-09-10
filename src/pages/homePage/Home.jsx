@@ -1,4 +1,6 @@
 import myAva from "../../assets/myAva.jpg";
+import cvEng from "../../assets/CV_PhamLeTuanAnh_ENG.pdf";
+import cvDeu from "../../assets/CV_PhamLeTuanAnh_DEU.pdf";
 
 import InstagramButton from "../../components/social-button/InstagramButton";
 import GithubButton from "../../components/social-button/GithubButton";
@@ -6,7 +8,7 @@ import FacebookButton from "../../components/social-button/FacebookButton";
 import WhatsappButton from "../../components/social-button/WhatsappButton";
 import GmailButton from "../../components/social-button/GmailButton";
 import MyAnimation from "../../components/lotties/MyAnimation";
-import WelcomeAnimation from "../../components/lotties/WelcomeAnimation";
+import RobotHiAnimation from "../../components/lotties/RobotHiAnimation";
 
 import HomeMobile from "./HomeMobile";
 
@@ -31,11 +33,11 @@ export default function Home() {
           <HomeMobile />
         </div>
       ) : (
-        <div className="max-w-[1300px] min-h-screen mx-auto p-4 pt-20">
+        <div className="max-w-[1300px] min-h-screen mx-auto p-4 pt-12">
           <div className="grid grid-cols-[2fr_1fr] gap-4 h-full pt-2 pb-5 items-center">
             <div className="block">
-              <div className="flex items-start justify-items-start mb-5">
-                <WelcomeAnimation />
+              <div className="flex items-start justify-items-start">
+                <RobotHiAnimation />
               </div>
 
               {/* Hiệu ứng typewriter */}
@@ -80,7 +82,9 @@ export default function Home() {
                   transition-all duration-200 
                   hover:bg-emerald-600 hover:text-white hover:shadow-lg 
                   hover:-translate-y-0.5 hover:shadow-emerald-500/40"
-                    href="#"
+                    href={cvEng}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     English Resume
                   </a>
@@ -100,7 +104,9 @@ export default function Home() {
                   transition-all duration-200 
                   hover:bg-white hover:text-black hover:shadow-lg 
                   hover:-translate-y-0.5 hover:shadow-emerald-500/40"
-                    href="#"
+                    href={cvDeu}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     German Lebenslauf
                   </a>

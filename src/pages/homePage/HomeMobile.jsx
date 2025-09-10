@@ -6,12 +6,12 @@ import FacebookButton from "../../components/social-button/FacebookButton";
 import WhatsappButton from "../../components/social-button/WhatsappButton";
 import GmailButton from "../../components/social-button/GmailButton";
 import MyAnimation from "../../components/lotties/MyAnimation";
-import WelcomeAnimation from "../../components/lotties/WelcomeAnimation";
+import RobotHiAnimation from "../../components/lotties/RobotHiAnimation";
 
 import { useTypewriter } from "../../hooks/useTypewriter";
 
 export default function HomeMobile() {
-  const title = useTypewriter("My Portfolio", 200);
+  const title = useTypewriter("My Portfolio", 100);
   const description1 = useTypewriter(
     "I'm Tuan Anh, and this is where my work lives. 💡 A highly passionate individual with a strong desire to explore new knowledge in software and web development 💻🌐, and to apply it in real-world projects 🚀.",
     15
@@ -22,19 +22,20 @@ export default function HomeMobile() {
   );
 
   return (
-    <div className="w-full min-h-screen mx-auto pl-5 pr-5 pt-20 pb-10 flex flex-col items-center">
-      {/* Welcome Animation */}
-      <div className="flex items-center justify-center">
-        <WelcomeAnimation />
+    <div className="w-full min-h-screen mx-auto pl-5 pr-5 pt-6 pb-10 flex flex-col items-center">
+      <div className="grid grid-cols-12 items-center gap-2 w-full h-auto px-4 pt-4">
+        <div className="col-span-3 flex justify-center">
+          <RobotHiAnimation />
+        </div>
+        <div className="col-span-9">
+          <p className="text-[#EEF6F6] font-extrabold font-playwrite italic text-3xl text-shadow-lg text-left">
+            {title}
+          </p>
+        </div>
       </div>
 
-      {/* Title */}
-      <p className="text-[#EEF6F6] font-extrabold font-playwrite italic text-5xl py-9 m-0 text-shadow-lg typewriter text-center">
-        {title}
-      </p>
-
       {/* Avatar */}
-      <div className="flex items-center justify-center mt-9">
+      <div className="flex items-center justify-center">
         <img
           src={myAva}
           alt="Avatar"
@@ -57,7 +58,7 @@ export default function HomeMobile() {
       </div>
 
       {/* CV Buttons */}
-      <div className="flex flex-col gap-4 w-full items-center mt-12 mb-8">
+      <div className="flex flex-col gap-4 w-full items-center mt-8 mb-8">
         {/* Nút 1 */}
         <div className="relative inline-flex items-center justify-center w-full group">
           <div
@@ -100,7 +101,7 @@ export default function HomeMobile() {
       </div>
 
       {/* MyAnimation */}
-      <div className="w-full flex items-center justify-center mb-8">
+      <div className="w-full flex items-center justify-center mb-8 px-20">
         <MyAnimation />
       </div>
 
