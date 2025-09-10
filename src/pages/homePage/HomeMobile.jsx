@@ -1,4 +1,6 @@
 import myAva from "../../assets/myAva.jpg";
+import cvEng from "../../assets/CV_PhamLeTuanAnh_ENG.pdf";
+import cvDeu from "../../assets/CV_PhamLeTuanAnh_DEU.pdf";
 
 import InstagramButton from "../../components/social-button/InstagramButton";
 import GithubButton from "../../components/social-button/GithubButton";
@@ -22,7 +24,7 @@ export default function HomeMobile() {
   );
 
   return (
-    <div className="w-full min-h-screen mx-auto pl-5 pr-5 pt-6 pb-10 flex flex-col items-center">
+    <div className="w-full h-auto mx-auto pl-5 pr-5 pt-6 pb-10 flex flex-col items-center">
       <div className="grid grid-cols-12 items-center gap-2 w-full h-auto px-4 pt-4">
         <div className="col-span-3 flex justify-center">
           <RobotHiAnimation />
@@ -35,11 +37,11 @@ export default function HomeMobile() {
       </div>
 
       {/* Avatar */}
-      <div className="flex items-center justify-center">
+      <div className="flex p-4 items-center justify-center">
         <img
           src={myAva}
           alt="Avatar"
-          className="w-72 h-72 rounded-full border-4 border-green-400 hover:shadow-[0px_10px_100px_5px_rgba(16,_239,_68,_0.2)]"
+          className="w-72 h-72 p-4 rounded-full border-4 border-green-900 hover:shadow-[0px_10px_100px_5px_rgba(16,_239,_68,_0.2)]"
         />
       </div>
 
@@ -73,7 +75,7 @@ export default function HomeMobile() {
               transition-all duration-200 
               hover:bg-emerald-600 hover:text-white hover:shadow-lg 
               hover:-translate-y-0.5 hover:shadow-emerald-500/40"
-            href="#"
+            href={cvEng}
           >
             English Resume
           </a>
@@ -93,7 +95,7 @@ export default function HomeMobile() {
               transition-all duration-200 
               hover:bg-white hover:text-black hover:shadow-lg 
               hover:-translate-y-0.5 hover:shadow-emerald-500/40"
-            href="#"
+            href={cvDeu}
           >
             German Lebenslauf
           </a>

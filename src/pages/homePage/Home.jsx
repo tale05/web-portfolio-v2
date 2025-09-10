@@ -33,7 +33,7 @@ export default function Home() {
           <HomeMobile />
         </div>
       ) : (
-        <div className="max-w-[1300px] min-h-screen mx-auto p-4 pt-12">
+        <div className="max-w-[1300px] h-auto mx-auto p-4 pt-12">
           <div className="grid grid-cols-[2fr_1fr] gap-4 h-full pt-2 pb-5 items-center">
             <div className="block">
               <div className="flex items-start justify-items-start">
@@ -114,7 +114,7 @@ export default function Home() {
               </div>
 
               {/* Nút social */}
-              <div className="flex items-center justify-start gap-4 mt-10">
+              <div className="flex items-center justify-start gap-4 mt-6">
                 <GithubButton />
                 <WhatsappButton />
                 <GmailButton />

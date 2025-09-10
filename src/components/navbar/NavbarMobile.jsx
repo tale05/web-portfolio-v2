@@ -55,7 +55,7 @@ export default function NavbarMobile() {
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
           <div
-            className={`z-40 absolute left-0 top-full w-full flex flex-col gap-2 bg-white
+            className={`z-21 absolute left-0 top-full w-full flex flex-col gap-2 bg-white
             rounded-bl-lg rounded-br-lg 
             p-4 text-sm 
             transform transition-all duration-300
@@ -125,7 +125,7 @@ export default function NavbarMobile() {
         </div>
       </nav>
       {isMenuOpen && (
-        <div className="fixed inset-0 z-10 w-full h-screen bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"></div>
+        <div className="fixed inset-0 z-19 w-full h-screen bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"></div>
       )}
     </>
   );

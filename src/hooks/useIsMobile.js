@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
 
-// Hook kiểm tra màn hình mobile
 export function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(false);
+  const getIsMobile = () =>
+    typeof window !== "undefined" ? window.innerWidth < breakpoint : false;
+
+  const [isMobile, setIsMobile] = useState(getIsMobile);
 
   useEffect(() => {
-    const handleResize = () => {
-      const mobile = window.innerWidth < breakpoint;
-      setIsMobile((prev) => (prev !== mobile ? mobile : prev));
-    };
-
-    handleResize(); // kiểm tra khi load lần đầu
+    const handleResize = () => setIsMobile(getIsMobile());
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [breakpoint]);

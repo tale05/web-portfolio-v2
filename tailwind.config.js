@@ -19,6 +19,13 @@ export default {
         DEFAULT: "2px 2px 4px rgba(0,0,0,0.5)",
         lg: "4px 4px 10px rgba(0,0,0,0.6)",
       },
+      zIndex: (() => {
+        const obj = {};
+        for (let i = 0; i <= 100; i++) {
+          obj[i] = i;
+        }
+        return obj;
+      })(),
     },
   },
   plugins: [],

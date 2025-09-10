@@ -75,7 +75,7 @@ export default function Navbar() {
                 <FaBars />
               </button>
               <div
-                className="z-30 absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                className="z-21 absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
              flex flex-col gap-2 bg-white text-black shadow-lg rounded-bl-lg rounded-br-lg rounded-tl-lg p-4 text-sm transition-all duration-200"
               >
                 {/* Contact Information */}
@@ -142,7 +142,7 @@ export default function Navbar() {
         </nav>
       )}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-10 w-full h-screen bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"></div>
+        <div className="fixed inset-0 z-19 w-full h-screen bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"></div>
       )}
     </>
   );
