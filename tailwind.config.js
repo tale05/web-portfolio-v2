@@ -23,7 +23,7 @@ export default {
       },
       zIndex: (() => {
         const obj = {};
-        for (let i = 0; i <= 100; i++) {
+        for (let i = 0; i <= 20; i++) {
           obj[i] = i;
         }
         return obj;

@@ -8,7 +8,6 @@ import FacebookButton from "../../components/social-button/FacebookButton";
 import WhatsappButton from "../../components/social-button/WhatsappButton";
 import GmailButton from "../../components/social-button/GmailButton";
 import MyAnimation from "../../components/lotties/MyAnimation";
-import RobotHiAnimation from "../../components/lotties/RobotHiAnimation";
 
 import HomeMobile from "./HomeMobile";
 
@@ -16,6 +15,7 @@ import { useTypewriter } from "../../hooks/useTypewriter";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
 export default function Home() {
+  const playlistId = "4KnqE3eR03vCvhZ2ByfxzQ";
   const isMobile = useIsMobile();
   const title = useTypewriter("My Portfolio", 200);
   const description1 = useTypewriter(
@@ -33,41 +33,46 @@ export default function Home() {
           <HomeMobile />
         </div>
       ) : (
-        <div className="max-w-[1300px] h-auto mx-auto p-4 pt-12">
+        <div className="max-w-[1300px] h-auto mx-auto px-4 pt-16 pb-28">
           <div className="grid grid-cols-[2fr_1fr] gap-4 h-full pt-2 pb-5 items-center">
             <div className="block">
-              <div className="flex items-start justify-items-start">
+              {/* <div className="flex items-start justify-items-start">
                 <RobotHiAnimation />
-              </div>
+              </div> */}
 
               {/* Hiệu ứng typewriter */}
-              <p className="text-[#EEF6F6] font-extrabold font-playwrite italic text-[110px] pb-10 m-0 text-shadow-lg typewriter">
+              <p
+                className="text-transparent bg-clip-text bg-color-for-tilte
+                font-extrabold font-playwrite italic text-[110px] 
+                pb-10 m-0 text-shadow-lg"
+              >
                 {title}
               </p>
-              <div className="mt-7 grid grid-cols-3 gap-6 items-center">
-                {/* Cột trái: 2 đoạn text */}
-                <div className="col-span-2">
-                  <div className="w-full backdrop-blur-xl bg-white/30 border border-white/20 p-4 rounded-2xl shadow-lg">
-                    <p className="text-green-700 text-left text-[18px] font-bold">
-                      {description1}
-                    </p>
-                  </div>
-                  <div className=" w-full backdrop-blur-xl bg-white/30 border border-white/20 p-4 rounded-2xl shadow-lg mt-5">
-                    <p className="text-green-700 text-right text-[18px] font-bold">
-                      {description2}
-                    </p>
-                  </div>
+              <div className="grid grid-cols-12 gap-6 items-center">
+                <div className="col-span-9 w-full backdrop-blur-xl bg-white/30 border border-white/20 p-4 rounded-2xl shadow-lg">
+                  <p className="text-green-700 text-left text-[18px] font-bold">
+                    {description1}
+                  </p>
                 </div>
-                {/* Cột phải: MyAnimation */}
-                <div className="flex justify-center">
-                  <div className="w-full">
+                <div className="col-span-3 flex justify-center">
+                  <div className="w-full p-4">
                     <MyAnimation />
                   </div>
                 </div>
               </div>
-
+              <iframe
+                title="Spotify Embed: Recommendation Playlist"
+                src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`}
+                width="100%"
+                height="170"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                style={{ borderRadius: "12px" }}
+                className="text-color-for-tilte py-2"
+              ></iframe>
               {/* Nút xem CV */}
-              <div className="flex items-center justify-start gap-4 mt-10">
+              <div className="flex items-center justify-start gap-4 py-4">
                 {/* Nút 1 */}
                 <div className="relative inline-flex items-center justify-center gap-4 group">
                   <div
@@ -114,7 +119,7 @@ export default function Home() {
               </div>
 
               {/* Nút social */}
-              <div className="flex items-center justify-start gap-4 mt-6">
+              <div className="flex items-center justify-start gap-4 py-5">
                 <GithubButton />
                 <WhatsappButton />
                 <GmailButton />

@@ -18,10 +18,7 @@ import NavbarMobile from "./NavbarMobile";
 export default function Navbar() {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const displayText = useTypewriter(
-    "Le Tuan Anh Pham - 'Thanks for visiting my portfolio!'",
-    30
-  );
+  const displayText = useTypewriter("LE TUAN ANH PHAM", 30);
   const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
@@ -35,7 +32,7 @@ export default function Navbar() {
         <NavbarMobile />
       ) : (
         <nav
-          className={`w-full fixed top-0 left-0 z-20 bg-[#80bcbd] text-black transition-all duration-700 transform 
+          className={`w-full relative top-0 left-0 z-20 bg-[#80bcbd] text-black transition-all duration-700 transform 
             ${
               showNav
                 ? "opacity-100 translate-y-0"
@@ -52,9 +49,7 @@ export default function Navbar() {
             <div>
               <p
                 className="
-                  text-lg font-playwrite font-semibold italic
-                  bg-gradient-to-tr from-red-400 via-yellow-200 to-gray-100
-                  bg-clip-text text-transparent px-3 py-2
+                  text-2xl font-sans font-semibold text-white px-3 py-2
                 "
               >
                 {displayText}
@@ -76,7 +71,7 @@ export default function Navbar() {
                 />
               </button>
               <div
-                className="z-21 absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                className="z-20 absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
              flex flex-col gap-1 bg-white text-black shadow-lg rounded-lg p-4 text-sm transition-all duration-200"
               >
                 {/* Contact Information */}
@@ -143,6 +138,7 @@ export default function Navbar() {
         </nav>
       )}
       {isMenuOpen && (
+        // Làm mờ nền khi hover và menu xuất hiện
         <div className="fixed inset-0 z-19 w-full h-screen bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"></div>
       )}
     </>

@@ -2,13 +2,14 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import { Code } from "lucide-react";
 import CatPlayWithBall from "../../components/lotties/CatPlayWithBallAnimation";
 import ProjectCard from "./ProjectCard";
+import ProjectMobile from "./ProjectMobile";
 
 export default function Projects() {
   const isMobile = useIsMobile();
   return (
     <>
       {isMobile ? (
-        <div></div>
+        <ProjectMobile />
       ) : (
         <div className="max-w-[1300px] h-auto mx-auto px-4 pb-20 mt-24 relative">
           <h1
@@ -23,7 +24,13 @@ export default function Projects() {
           <div className="absolute -top-60 right-10 z-10">
             <CatPlayWithBall />
           </div>
-          <ProjectCard />
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-4 justify-items-center">
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+          </div>
         </div>
       )}
     </>

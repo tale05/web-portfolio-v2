@@ -18,10 +18,25 @@ export default function NavbarMobile() {
   const [showNav, setShowNav] = useState(false);
   const displayText = useTypewriter("Le Tuan Anh Pham", 30);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => setShowNav(true), 200); // delay 0.2s
     return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -32,17 +47,18 @@ export default function NavbarMobile() {
               showNav
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 -translate-y-10"
-            } `}
+            }
+            ${isScrolled ? "bg-white" : "bg-[#80bcbd]"} `}
       >
         <div className="min-w-full mx-auto flex justify-between items-center px-4 py-2 z-30 relative">
           {/* Text chạy typewriter */}
           <div>
             <p
-              className="
-                  text-lg font-playwrite font-semibold italic
-                  bg-gradient-to-tr from-red-400 via-yellow-200 to-gray-100
-                  bg-clip-text text-transparent px-3 py-2
-                "
+              className="text-lg font-playwrite font-semibold italic 
+              bg-gradient-to-tr from-emerald-600 via-emerald-600 to-green-700 bg-clip-text text-transparent 
+              px-3 py-2 
+              drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]
+  "
             >
               {displayText}
             </p>
