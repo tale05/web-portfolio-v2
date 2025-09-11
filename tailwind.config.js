@@ -13,6 +13,8 @@ export default {
           radial-gradient(circle at bottom right, rgba(22,163,74,0.2), transparent 70%),
           radial-gradient(circle at center, rgba(132,204,22,0.15), transparent 80%)
         `,
+        "color-for-tilte":
+          "linear-gradient(to right, #10b981, #16a34a, #047857)",
       },
       textShadow: {
         sm: "1px 1px 2px rgba(0,0,0,0.5)",

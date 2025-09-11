@@ -24,7 +24,7 @@ export default function HomeMobile() {
   );
 
   return (
-    <div className="w-full h-auto mx-auto pl-5 pr-5 pt-6 pb-10 flex flex-col items-center">
+    <div className="w-full h-auto mx-auto p-5 flex flex-col items-center">
       <div className="grid grid-cols-12 items-center gap-2 w-full h-auto px-4 pt-4">
         <div className="col-span-3 flex justify-center">
           <RobotHiAnimation />
@@ -41,7 +41,8 @@ export default function HomeMobile() {
         <img
           src={myAva}
           alt="Avatar"
-          className="w-72 h-72 p-4 rounded-full border-4 border-green-900 hover:shadow-[0px_10px_100px_5px_rgba(16,_239,_68,_0.2)]"
+          className="w-72 h-72 rounded-full border-4 border-x-green-50
+          shadow-[0px_10px_100px_5px_rgba(16,_239,_68,_0.2)]"
         />
       </div>
 
@@ -60,7 +61,7 @@ export default function HomeMobile() {
       </div>
 
       {/* CV Buttons */}
-      <div className="flex flex-col gap-4 w-full items-center mt-8 mb-8">
+      <div className="flex flex-col gap-4 w-full items-center my-5">
         {/* Nút 1 */}
         <div className="relative inline-flex items-center justify-center w-full group">
           <div
@@ -101,19 +102,17 @@ export default function HomeMobile() {
           </a>
         </div>
       </div>
-
-      {/* MyAnimation */}
-      <div className="w-full flex items-center justify-center mb-8 px-20">
-        <MyAnimation />
-      </div>
-
       {/* Social Buttons */}
-      <div className="flex items-center justify-center gap-4 flex-wrap">
+      <div className="flex items-center justify-center gap-4 flex-wrap my-2">
         <GithubButton />
         <WhatsappButton />
         <GmailButton />
         <FacebookButton />
         <InstagramButton />
+      </div>
+      {/* MyAnimation */}
+      <div className="w-full flex items-center justify-center my-5 px-12">
+        <MyAnimation />
       </div>
     </div>
   );

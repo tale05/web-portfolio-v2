@@ -1,6 +1,6 @@
 export const logoIconSkill = [
   {
-    src: "https://www.webnovos.com/assets/img/vector-image/asp/asp_header2.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png",
     alt: "ASP.NET Core",
   },
   {
@@ -61,7 +61,7 @@ export const logoIconSkill = [
     alt: "Docker Desktop",
   },
   {
-    src: "https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg",
+    src: "https://www.svgrepo.com/show/342276/swagger.svg",
     alt: "Swagger",
   },
   {
@@ -72,9 +72,9 @@ export const logoIconSkill = [
 
 export const listSkillLevel = [
   {
-    src: "https://www.webnovos.com/assets/img/vector-image/asp/asp_header2.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png",
     alt: "ASP.NET Core",
-    name: "ASP.NET Core",
+    name: ".NET Core MVC",
     level: "Advanced",
   },
   {
@@ -125,6 +125,9 @@ export const listSkillLevel = [
     name: "Tailwind CSS",
     level: "Intermediate",
   },
+];
+
+export const listDb = [
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
     alt: "SQL Server",
@@ -137,6 +140,27 @@ export const listSkillLevel = [
     name: "MongoDB",
     level: "Basic",
   },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png",
+    alt: "ASP.NET Core",
+    name: ".NET Core API",
+    level: "Advanced",
+  },
+  {
+    src: "https://www.svgrepo.com/show/342276/swagger.svg",
+    alt: "Swagger",
+    name: "Swagger",
+    level: "Intermediate",
+  },
+  {
+    src: "https://cdn.worldvectorlogo.com/logos/jwt-3.svg",
+    alt: "JWT",
+    name: "JWT",
+    level: "Intermediate",
+  },
+];
+
+export const listTools = [
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
     alt: "GitHub",
@@ -168,15 +192,27 @@ export const listSkillLevel = [
     level: "Advanced",
   },
   {
-    src: "https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg",
-    alt: "Swagger",
-    name: "Swagger",
-    level: "Intermediate",
-  },
-  {
-    src: "https://upload.wikimedia.org/wikipedia/commons/d/de/WinSCP_Logo.png",
+    src: "https://winscp-static-746341.c.cdn77.org/assets/images/logos/logo.png",
     alt: "WinSCP",
     name: "WinSCP",
     level: "Intermediate",
+  },
+  {
+    src: "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product/svg/word_32x1.svg",
+    alt: "Word",
+    name: "Word",
+    level: "Advanced",
+  },
+  {
+    src: "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product/svg/powerpoint_32x1.svg",
+    alt: "Powerpoint",
+    name: "PowerPoint",
+    level: "Basic",
+  },
+  {
+    src: "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product/svg/excel_32x1.svg",
+    alt: "Excel",
+    name: "Excel",
+    level: "Basic",
   },
 ];

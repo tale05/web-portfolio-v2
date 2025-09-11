@@ -48,12 +48,12 @@ export default function Home() {
                 {/* Cột trái: 2 đoạn text */}
                 <div className="col-span-2">
                   <div className="w-full backdrop-blur-xl bg-white/30 border border-white/20 p-4 rounded-2xl shadow-lg">
-                    <p className="text-green-700 text-justify text-[18px] font-bold">
+                    <p className="text-green-700 text-left text-[18px] font-bold">
                       {description1}
                     </p>
                   </div>
                   <div className=" w-full backdrop-blur-xl bg-white/30 border border-white/20 p-4 rounded-2xl shadow-lg mt-5">
-                    <p className="text-green-700 text-justify text-[18px] font-bold">
+                    <p className="text-green-700 text-right text-[18px] font-bold">
                       {description2}
                     </p>
                   </div>

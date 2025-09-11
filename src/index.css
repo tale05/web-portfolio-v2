@@ -23,3 +23,10 @@
   border-right: 10px solid #ffffff; /* màu xanh lá */
   animation: typing 3s steps(30, end);
 }
+
+/* đổi màu selection */
+@layer base {
+  ::selection {
+    @apply bg-[#56a15a] text-white;
+  }
+}

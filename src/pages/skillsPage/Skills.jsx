@@ -1,5 +1,5 @@
 import GitHubCalendar from "react-github-calendar";
-
+import { Code, Rocket, Database, Wrench } from "lucide-react";
 import GithubOctocatAnimation from "../../components/lotties/GithubOctocatAnimation";
 import Cat from "../../components/lotties/CatAnimation";
 
@@ -7,7 +7,12 @@ import SkillsMobile from "./SkillsMobile";
 import SkillCard from "./SkillCard";
 
 import { useIsMobile } from "../../hooks/useIsMobile";
-import { logoIconSkill, listSkillLevel } from "../../data/logoicon";
+import {
+  logoIconSkill,
+  listSkillLevel,
+  listDb,
+  listTools,
+} from "../../data/logoicon";
 
 export default function Skills() {
   const isMobile = useIsMobile();
@@ -20,7 +25,12 @@ export default function Skills() {
         </div>
       ) : (
         <div className="max-w-[1300px] h-auto mx-auto px-4 pb-10 mt-24 relative">
-          <h1 className="relative z-12 text-3xl text-white font-bold text-center p-4 bg-emerald-600 rounded-2xl shadow-lg">
+          <h1
+            className="relative z-12 flex items-center justify-center gap-3 p-4 w-full
+          text-2xl text-white font-bold text-center 
+          bg-color-for-tilte rounded-xl shadow-lg"
+          >
+            <Code className="w-8 h-8 text-white" />
             Technical Skills
           </h1>
           {/* Cat nằm sau title */}
@@ -79,6 +89,12 @@ export default function Skills() {
               </div>
             </div>
           </div>
+          <h3 className="flex items-center gap-3 text-2xl font-bold mb-6">
+            <Rocket className="w-7 h-7 text-emerald-600" />
+            <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
+              Programming Languages & Frameworks
+            </span>
+          </h3>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-4 justify-items-center">
             {listSkillLevel.map((skill) => (
               <SkillCard
@@ -87,6 +103,40 @@ export default function Skills() {
                 imgAlt={skill.alt}
                 skillName={skill.name}
                 skillLevel={skill.level}
+              />
+            ))}
+          </div>
+          <h3 className="flex items-center gap-3 text-2xl font-bold my-6">
+            <Database className="w-7 h-7 text-emerald-600" />
+            <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
+              Database and Backend
+            </span>
+          </h3>
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-4 justify-items-center">
+            {listDb.map((db) => (
+              <SkillCard
+                key={db.alt}
+                imgSrc={db.src}
+                imgAlt={db.alt}
+                skillName={db.name}
+                skillLevel={db.level}
+              />
+            ))}
+          </div>
+          <h3 className="flex items-center gap-3 text-2xl font-bold my-6">
+            <Wrench className="w-7 h-7 text-emerald-600" />
+            <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
+              Tools
+            </span>
+          </h3>
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-4 justify-items-center">
+            {listTools.map((tool) => (
+              <SkillCard
+                key={tool.alt}
+                imgSrc={tool.src}
+                imgAlt={tool.alt}
+                skillName={tool.name}
+                skillLevel={tool.level}
               />
             ))}
           </div>

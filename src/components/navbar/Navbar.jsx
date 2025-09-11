@@ -47,7 +47,7 @@ export default function Navbar() {
                 : "bg-[#80bcbd]"
             }`}
         >
-          <div className="max-w-[1300px] mx-auto flex justify-between items-center p-4">
+          <div className="max-w-[1300px] mx-auto flex justify-between items-center p-2">
             {/* Text chạy typewriter */}
             <div>
               <p
@@ -68,15 +68,16 @@ export default function Navbar() {
               onMouseLeave={() => setIsMenuOpen(false)}
             >
               <button
-                className={`text-2xl p-2 hover:bg-white rounded-tl-lg rounded-tr-lg transition-colors ${
-                  isMenuOpen ? "bg-white" : ""
-                }`}
+                className={`text-2xl p-2 hover:bg-white rounded-tl-md rounded-tr-md transition-colors
+                          ${isMenuOpen ? "invisible" : "visible"}`}
               >
-                <FaBars />
+                <FaBars
+                  className={`${isMenuOpen ? "text-black" : "text-white"}`}
+                />
               </button>
               <div
                 className="z-21 absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-             flex flex-col gap-2 bg-white text-black shadow-lg rounded-bl-lg rounded-br-lg rounded-tl-lg p-4 text-sm transition-all duration-200"
+             flex flex-col gap-1 bg-white text-black shadow-lg rounded-lg p-4 text-sm transition-all duration-200"
               >
                 {/* Contact Information */}
                 <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
@@ -109,29 +110,29 @@ export default function Navbar() {
                 </div>
 
                 {/* Menu List */}
-                <ul className="flex flex-col gap-2 border-t pt-3 w-[350px]">
+                <ul className="flex flex-col border-t pt-3 w-[350px]">
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200">
+                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
                       <FaLaptopCode className="text-green-400" /> Skills
                     </button>
                   </li>
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200">
+                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
                       <FaProjectDiagram className="text-green-400" /> Projects
                     </button>
                   </li>
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200">
+                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
                       <FaGraduationCap className="text-green-400" /> Education
                     </button>
                   </li>
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200">
+                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
                       <FaGlobe className="text-green-400" /> Languages
                     </button>
                   </li>
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200">
+                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
                       <FaCertificate className="text-green-400" /> Certificates
                     </button>
                   </li>
