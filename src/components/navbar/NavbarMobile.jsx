@@ -13,7 +13,6 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { useTypewriter } from "../../hooks/useTypewriter";
-import GoogleTranslate from "../GoogleTranslate";
 
 export default function NavbarMobile() {
   const [showNav, setShowNav] = useState(false);
@@ -90,15 +89,8 @@ export default function NavbarMobile() {
                 : "opacity-0 -translate-y-2 invisible"
             }`}
           >
-            <div className="top-0 relative z-10 -ml-[230px]">
-              <GoogleTranslate />
-            </div>
-            <div />
             {/* Contact Information */}
-            <div
-              className="relative z-10 -mt-[125px] bg-white
-              space-y-4 pt-4 pb-4 pl-3 pr-3"
-            >
+            <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
               <p className="font-bold text-gray-700 border-b pb-1">Contact</p>
               <a
                 href="mailto:tuananhphamle051202@gmail.com"
@@ -188,7 +180,7 @@ export default function NavbarMobile() {
       </nav>
       {isMenuOpen && (
         <div
-          onClick={() => setIsMenuOpen(false)}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="fixed inset-0 z-19 w-full h-screen bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"
         ></div>
       )}

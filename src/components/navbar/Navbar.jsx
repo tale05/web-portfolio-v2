@@ -14,7 +14,6 @@ import {
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import NavbarMobile from "./NavbarMobile";
-import GoogleTranslate from "../GoogleTranslate";
 
 export default function Navbar() {
   const isMobile = useIsMobile();
@@ -85,13 +84,7 @@ export default function Navbar() {
                 className=" absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                 flex flex-col gap-1 bg-white text-black shadow-lg rounded-lg p-4 text-sm transition-all duration-200"
               >
-                <div className="top-0 relative z-10">
-                  <GoogleTranslate />
-                </div>
-                <div
-                  className="relative z-11 -mt-[110px] bg-white
-                space-y-4 pt-4 pb-4 pl-3 pr-3 "
-                >
+                <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
                   <p className="font-bold text-gray-700 border-b pb-1">
                     Contact
                   </p>
