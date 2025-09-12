@@ -10,7 +10,8 @@ export default function App() {
   return (
     <>
       <div
-        className="min-h-screen w-full block items-center justify-center pb-24"
+        className="
+        min-h-screen w-full block items-center justify-center pb-24"
         style={{
           backgroundColor: "#99B898",
           backgroundImage: `
