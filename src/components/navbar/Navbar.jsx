@@ -18,7 +18,10 @@ import NavbarMobile from "./NavbarMobile";
 export default function Navbar() {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const displayText = useTypewriter("LE TUAN ANH PHAM", 30);
+  const displayText = useTypewriter(
+    "Le Tuan Anh Pham ~ Thanks for visiting my profile!",
+    30
+  );
   const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
@@ -32,25 +35,24 @@ export default function Navbar() {
         <NavbarMobile />
       ) : (
         <nav
-          className={`w-full relative top-0 left-0 z-20 bg-[#80bcbd] text-black transition-all duration-700 transform 
+          className={`w-full relative top-0 left-0 z-20 bg-transparent text-black transition-all duration-700 transform 
             ${
               showNav
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 -translate-y-10"
             } 
-            ${
-              isMenuOpen
-                ? "bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"
-                : "bg-[#80bcbd]"
-            }`}
+            ${isMenuOpen ? "bg-transparent" : "bg-transparent"}`}
         >
           <div className="max-w-[1300px] mx-auto flex justify-between items-center p-2">
             {/* Text chạy typewriter */}
             <div>
               <p
-                className="
-                  text-2xl font-sans font-semibold text-white px-3 py-2
-                "
+                className={`text-2xl text-white 
+                font-notosans font-semibold italic
+                px-3 py-2 
+                bg-[#56a15a] 
+                rounded-lg cursor-pointer 
+                ${isMenuOpen ? "invisible" : "visible"}`}
               >
                 {displayText}
               </p>
@@ -58,7 +60,7 @@ export default function Navbar() {
 
             {/* Hamburger + thông tin ẩn */}
             <div
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer z-20"
               onMouseEnter={() => setIsMenuOpen(true)}
               onMouseLeave={() => setIsMenuOpen(false)}
             >
@@ -70,11 +72,12 @@ export default function Navbar() {
                   className={`${isMenuOpen ? "text-black" : "text-white"}`}
                 />
               </button>
+
+              {/* Bảng menu được show khi hover */}
               <div
-                className="z-20 absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-             flex flex-col gap-1 bg-white text-black shadow-lg rounded-lg p-4 text-sm transition-all duration-200"
+                className=" absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                flex flex-col gap-1 bg-white text-black shadow-lg rounded-lg p-4 text-sm transition-all duration-200"
               >
-                {/* Contact Information */}
                 <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
                   <p className="font-bold text-gray-700 border-b pb-1">
                     Contact

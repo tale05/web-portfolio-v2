@@ -7,19 +7,19 @@ export default function App() {
   return (
     <>
       <div
-        className="min-h-screen w-full block items-center justify-center pt-4"
+        className="min-h-screen w-full block items-center justify-center"
         style={{
-          backgroundColor: "#80bcbd",
-          backgroundImage:
-            "radial-gradient(at 89% 6%, #80bcbd 0%, transparent 60%), radial-gradient(at 38% 56%, #aad9bb 0%, transparent 50%), radial-gradient(at 2% 54%, #d5f0c1 0%, transparent 40%), radial-gradient(at 13% 70%, #f9f7c9 0%, transparent 30%)",
+          backgroundColor: "#99B898",
+          backgroundImage: `
+            radial-gradient(at 70% 97%, #C1EB96 0px, transparent 50%), 
+            radial-gradient(at 32.92025862068966% 20.625%, #b5e792 0px, transparent 50%), 
+            radial-gradient(at 0% 100%, #DDE4C0 0px, transparent 50%)
+          `,
         }}
       >
         <Navbar />
-        {/* Trang chủ */}
         <Home />
-        {/* Trang danh sách skills */}
         <Skills />
-        {/* Trang danh sách dự án */}
         <Projects />
       </div>
     </>

@@ -1,16 +1,14 @@
 import myAva from "../../assets/myAva.jpg";
 import cvEng from "../../assets/CV_PhamLeTuanAnh_ENG.pdf";
 import cvDeu from "../../assets/CV_PhamLeTuanAnh_DEU.pdf";
-
 import InstagramButton from "../../components/social-button/InstagramButton";
 import GithubButton from "../../components/social-button/GithubButton";
 import FacebookButton from "../../components/social-button/FacebookButton";
 import WhatsappButton from "../../components/social-button/WhatsappButton";
 import GmailButton from "../../components/social-button/GmailButton";
-import MyAnimation from "../../components/lotties/MyAnimation";
-
+import CatSpinAnimation from "../../components/lotties/CatSpinAnimation";
+import FireWork from "../../components/lotties/FireworkAnimation";
 import HomeMobile from "./HomeMobile";
-
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
@@ -18,14 +16,27 @@ export default function Home() {
   const playlistId = "4KnqE3eR03vCvhZ2ByfxzQ";
   const isMobile = useIsMobile();
   const title = useTypewriter("My Portfolio", 200);
+  // const title = useTypewriterAuto(["My Portfolio"], 100);
   const description1 = useTypewriter(
-    "I'm Tuan Anh, and this is where my work lives. 💡 A highly passionate individual with a strong desire to explore new knowledge in software and web development 💻🌐, and to apply it in real-world projects 🚀.",
+    "💡 I'm Tuan Anh, a passionate developer who loves exploring new knowledge and applying it to real-world projects 🚀.",
     15
   );
+
   const description2 = useTypewriter(
-    "🎯 Always eager to create modern and user-friendly interfaces for websites and applications 📱.",
+    "🎯 I enjoy crafting modern, user-friendly interfaces 🌐📱 to deliver smooth and engaging experiences.",
     15
   );
+
+  const description3 = useTypewriter(
+    "🛠 I constantly experiment with new technologies and tools to improve my coding skills and efficiency ⚡️.",
+    15
+  );
+
+  const description4 = useTypewriter(
+    "🌟 My goal is to create impactful software that solves problems and brings value to users worldwide 🌍.",
+    15
+  );
+
   return (
     <>
       {isMobile ? (
@@ -33,7 +44,10 @@ export default function Home() {
           <HomeMobile />
         </div>
       ) : (
-        <div className="max-w-[1300px] h-auto mx-auto px-4 pt-16 pb-28">
+        <div
+          className="max-w-[1300px] h-auto mx-auto 
+          px-4"
+        >
           <div className="grid grid-cols-[2fr_1fr] gap-4 h-full pt-2 pb-5 items-center">
             <div className="block">
               {/* <div className="flex items-start justify-items-start">
@@ -42,35 +56,75 @@ export default function Home() {
 
               {/* Hiệu ứng typewriter */}
               <p
-                className="text-transparent bg-clip-text bg-color-for-tilte
+                className="text-transparent bg-clip-text bg-text-tilte
                 font-extrabold font-playwrite italic text-[110px] 
-                pb-10 m-0 text-shadow-lg"
+                pb-10 m-0 text-shadow-lg h-full"
               >
                 {title}
               </p>
-              <div className="grid grid-cols-12 gap-6 items-center">
-                <div className="col-span-9 w-full backdrop-blur-xl bg-white/30 border border-white/20 p-4 rounded-2xl shadow-lg">
-                  <p className="text-green-700 text-left text-[18px] font-bold">
+
+              <div className="relative grid grid-cols-2 grid-rows-2 gap-4">
+                {/* Animation overlay */}
+                <div
+                  className="absolute z-2 pointer-events-none 
+                  left-[369px] top-[65px]"
+                >
+                  <CatSpinAnimation />
+                </div>
+
+                {/* Description 1 */}
+                <div
+                  className="z-1 p-4 w-full 
+                  backdrop-blur-xl bg-white/30 border border-white/20 
+                  rounded-2xl shadow-lg
+                  hover:bg-white
+                  transition duration-75"
+                >
+                  <p className="text-green-700 text-left text-[16px] font-bold hover:text-black">
                     {description1}
                   </p>
                 </div>
-                <div className="col-span-3 flex justify-center">
-                  <div className="w-full p-4">
-                    <MyAnimation />
-                  </div>
+
+                {/* Description 2 */}
+                <div
+                  className="z-1 p-4 w-full 
+                  backdrop-blur-xl bg-white/30 border border-white/20 
+                  rounded-2xl shadow-lg
+                  hover:bg-white
+                  transition duration-75"
+                >
+                  <p className="text-green-700 text-left text-[16px] font-bold hover:text-black">
+                    {description2}
+                  </p>
+                </div>
+
+                {/* Description 3 */}
+                <div
+                  className="z-1 p-4 w-full 
+                  backdrop-blur-xl bg-white/30 border border-white/20 
+                  rounded-2xl shadow-lg
+                  hover:bg-white
+                  transition duration-75"
+                >
+                  <p className="text-green-700 text-left text-[16px] font-bold hover:text-black">
+                    {description3}
+                  </p>
+                </div>
+
+                {/* Description 4 */}
+                <div
+                  className="z-1 p-4 w-full 
+                  backdrop-blur-xl bg-white/30 border border-white/20 
+                  rounded-2xl shadow-lg
+                  hover:bg-white
+                  transition duration-75"
+                >
+                  <p className="text-green-700 text-left text-[16px] font-bold hover:text-black">
+                    {description4}
+                  </p>
                 </div>
               </div>
-              <iframe
-                title="Spotify Embed: Recommendation Playlist"
-                src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`}
-                width="100%"
-                height="170"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                style={{ borderRadius: "12px" }}
-                className="text-color-for-tilte py-2"
-              ></iframe>
+
               {/* Nút xem CV */}
               <div className="flex items-center justify-start gap-4 py-4">
                 {/* Nút 1 */}
@@ -82,16 +136,19 @@ export default function Home() {
                   ></div>
                   <a
                     role="button"
-                    className="group relative inline-flex items-center justify-center text-base rounded-xl 
-                  bg-white px-8 py-3 font-semibold text-emerald-600 
-                  transition-all duration-200 
+                    className="group relative inline-flex items-center justify-center 
+                    text-base font-semibold text-emerald-600 
+                    rounded-xl bg-white 
+                    px-8 py-3
+                    w-64
+                    transition-all duration-200 
                   hover:bg-emerald-600 hover:text-white hover:shadow-lg 
-                  hover:-translate-y-0.5 hover:shadow-emerald-500/40"
+                    hover:-translate-y-0.5 hover:shadow-emerald-500/40"
                     href={cvEng}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    English Resume
+                    Resume (ENG)
                   </a>
                 </div>
 
@@ -104,22 +161,57 @@ export default function Home() {
                   ></div>
                   <a
                     role="button"
-                    className="group relative inline-flex items-center justify-center text-base rounded-xl 
-                  px-8 py-3 bg-emerald-700 font-semibold text-white 
-                  transition-all duration-200 
+                    className="group relative inline-flex items-center justify-center 
+                    text-base rounded-xl bg-emerald-700 font-semibold text-white
+                    px-8 py-3
+                    w-64
+                    transition-all duration-200 
                   hover:bg-white hover:text-black hover:shadow-lg 
-                  hover:-translate-y-0.5 hover:shadow-emerald-500/40"
+                    hover:-translate-y-0.5 hover:shadow-emerald-500/40"
                     href={cvDeu}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    German Lebenslauf
+                    German (DEU)
                   </a>
                 </div>
               </div>
+              <iframe
+                title="Spotify Embed: Recommendation Playlist"
+                src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`}
+                width="450"
+                height="170"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                style={{ borderRadius: "12px" }}
+                className="text-color-for-tilte py-2"
+              ></iframe>
+            </div>
 
-              {/* Nút social */}
-              <div className="flex items-center justify-start gap-4 py-5">
+            {/* Avatar với FireWork */}
+            <div
+              className="relative flex flex-col 
+              px-4 py-32
+              self-start justify-start items-center 
+              w-full h-full"
+            >
+              {/* FireWork ở trên ảnh */}
+              <div className="z-1 absolute top-0 left-1/2 -translate-x-1/2">
+                <FireWork />
+              </div>
+
+              {/* Ảnh avatar */}
+              <img
+                src={myAva}
+                alt="Avatar"
+                className="z-2
+                w-full h-full object-cover 
+                rounded-2xl border-4 border-[#56a15a] 
+                hover:shadow-[0px_20px_207px_10px_rgba(16,_239,_68,_0.2)]"
+              />
+
+              {/* Nút social (dưới ảnh) */}
+              <div className="flex items-center justify-center gap-4 py-3">
                 <GithubButton />
                 <WhatsappButton />
                 <GmailButton />
@@ -127,16 +219,12 @@ export default function Home() {
                 <InstagramButton />
               </div>
             </div>
-
-            {/* Avatar */}
-            <div className="flex items-center justify-center p-4">
-              <img
-                src={myAva}
-                alt="Avatar"
-                className="w-full h-full rounded-full border-4 border-green-400 hover:shadow-[0px_20px_207px_10px_rgba(16,_239,_68,_0.2)]"
-              />
-            </div>
           </div>
+          <div
+            className="w-[800px] mx-auto
+            border-b-[10px] border-[#56a15a]
+            shadow-[0_8px_20px_rgba(86,161,90,0.5)]"
+          ></div>
         </div>
       )}
     </>

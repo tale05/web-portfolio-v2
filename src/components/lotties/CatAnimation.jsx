@@ -6,7 +6,7 @@ export default function CatAnimation() {
     <Lottie
       animationData={cat}
       loop={true}
-      className="w-20 h-20 md:w-44 md:h-44"
+      className="w-20 h-20 md:w-32 md:h-32"
     />
   );
 }

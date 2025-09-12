@@ -24,7 +24,7 @@ export default function Skills() {
           <SkillsMobile />
         </div>
       ) : (
-        <div className="max-w-[1300px] h-auto mx-auto px-4 pb-10 mt-24 relative">
+        <div className="max-w-[1300px] h-auto mx-auto px-4 py-4 relative">
           <h1
             className="relative z-12 flex items-center justify-center gap-3 p-4 w-full
           text-2xl text-white font-bold text-center 
@@ -34,7 +34,7 @@ export default function Skills() {
             Technical Skills
           </h1>
           {/* Cat nằm sau title */}
-          <div className="absolute -top-32 right-10 z-10">
+          <div className="absolute -top-20 right-10 z-10">
             <Cat />
           </div>
 

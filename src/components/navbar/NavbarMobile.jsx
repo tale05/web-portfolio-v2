@@ -42,13 +42,13 @@ export default function NavbarMobile() {
   return (
     <>
       <nav
-        className={`w-full fixed top-0 left-0 z-20 bg-[#80bcbd] text-black transition-all duration-700 transform 
+        className={`w-full fixed top-0 left-0 z-20 bg-transparent text-black transition-all duration-700 transform 
             ${
               showNav
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 -translate-y-10"
             }
-            ${isScrolled ? "bg-white" : "bg-[#80bcbd]"} `}
+            ${isScrolled ? "bg-white" : "bg-transparent"} `}
       >
         <div className="min-w-full mx-auto flex justify-between items-center px-4 py-2 z-30 relative">
           {/* Text chạy typewriter */}
