@@ -477,7 +477,9 @@ a.goToAndStop(Le-a.firstFrame-1,!0)}pe.type==="loop"&&(de===null||de!==pe.frames
         bg-color-for-tilte rounded-xl shadow-lg`,children:[jsxRuntimeExports.jsx(Code,{className:"w-8 h-8 text-white"}),"Projects I Have Completed",jsxRuntimeExports.jsx("div",{className:"absolute -top-[103px] right-2 z-2",children:jsxRuntimeExports.jsx(CatPlayWithBallAnimation,{})})]}),jsxRuntimeExports.jsx("div",{className:`w-full h-[700px]\r
         overflow-y-scroll scrollbar-hide\r
         grid grid-cols-1 gap-4 my-4 \r
-        justify-items-center`,children:listProject.map(e=>jsxRuntimeExports.jsx(ProjectCard,{titleProject:e.titleProject,name:e.name,status:e.status,link:e.link,viewProject:e.viewProject,fullDesc:e.fullDesc},e.titleProject))})]})}function Projects(){const e=useIsMobile();return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment,{children:e?jsxRuntimeExports.jsx(ProjectMobile,{}):jsxRuntimeExports.jsxs("div",{className:"max-w-[1300px] h-auto mx-auto py-4 relative",children:[jsxRuntimeExports.jsxs("h1",{className:`relative z-12 flex items-center justify-center gap-3 p-4 w-full\r
+        justify-items-center\r
+        rounded-2xl\r
+        p-3`,children:listProject.map(e=>jsxRuntimeExports.jsx(ProjectCard,{titleProject:e.titleProject,name:e.name,status:e.status,link:e.link,viewProject:e.viewProject,fullDesc:e.fullDesc},e.titleProject))})]})}function Projects(){const e=useIsMobile();return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment,{children:e?jsxRuntimeExports.jsx(ProjectMobile,{}):jsxRuntimeExports.jsxs("div",{className:"max-w-[1300px] h-auto mx-auto py-4 relative",children:[jsxRuntimeExports.jsxs("h1",{className:`relative z-12 flex items-center justify-center gap-3 p-4 w-full\r
             text-2xl text-white font-bold text-center \r
             bg-color-for-tilte rounded-xl shadow-lg`,children:[jsxRuntimeExports.jsx(Code,{className:"w-8 h-8 text-white"}),"Projects I Have Completed"]}),jsxRuntimeExports.jsx("div",{className:"absolute -top-56 right-10 z-10",children:jsxRuntimeExports.jsx(CatPlayWithBallAnimation,{})}),jsxRuntimeExports.jsx("div",{className:`w-full \r
             grid grid-cols-3 gap-6 my-4 \r
