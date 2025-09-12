@@ -3,6 +3,7 @@ import { Code } from "lucide-react";
 import CatPlayWithBall from "../../components/lotties/CatPlayWithBallAnimation";
 import ProjectCard from "./ProjectCard";
 import ProjectMobile from "./ProjectMobile";
+import { listProject } from "../../data/listproject";
 
 export default function Projects() {
   const isMobile = useIsMobile();
@@ -11,7 +12,7 @@ export default function Projects() {
       {isMobile ? (
         <ProjectMobile />
       ) : (
-        <div className="max-w-[1300px] h-auto mx-auto px-4 pb-20 mt-24 relative">
+        <div className="max-w-[1300px] h-auto mx-auto py-4 relative">
           <h1
             className="relative z-12 flex items-center justify-center gap-3 p-4 w-full
             text-2xl text-white font-bold text-center 
@@ -21,15 +22,25 @@ export default function Projects() {
             Projects I Have Completed
           </h1>
           {/* Cat nằm sau title */}
-          <div className="absolute -top-60 right-10 z-10">
+          <div className="absolute -top-56 right-10 z-10">
             <CatPlayWithBall />
           </div>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-4 justify-items-center">
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
+          <div
+            className="w-full 
+            grid grid-cols-3 gap-6 my-4 
+            justify-items-center"
+          >
+            {listProject.map((item) => (
+              <ProjectCard
+                key={item.titleProject}
+                titleProject={item.titleProject}
+                name={item.name}
+                status={item.status}
+                link={item.link}
+                viewProject={item.viewProject}
+                fullDesc={item.fullDesc}
+              />
+            ))}
           </div>
         </div>
       )}

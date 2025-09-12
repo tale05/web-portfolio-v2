@@ -66,8 +66,10 @@ export default function Home() {
               <div className="relative grid grid-cols-2 grid-rows-2 gap-4">
                 {/* Animation overlay */}
                 <div
-                  className="absolute z-2 pointer-events-none 
-                  left-[369px] top-[65px]"
+                  className="absolute top-1/2 left-1/2
+                  transform -translate-x-1/2 -translate-y-1/2
+                  z-2 
+                  pointer-events-none"
                 >
                   <CatSpinAnimation />
                 </div>

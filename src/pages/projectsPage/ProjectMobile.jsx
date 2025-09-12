@@ -1,5 +1,7 @@
 import { Code } from "lucide-react";
 import CatPlayWithBall from "../../components/lotties/CatPlayWithBallAnimation";
+import { listProject } from "../../data/listproject";
+import ProjectCard from "./ProjectCard";
 
 export default function ProjectMobile() {
   return (
@@ -16,6 +18,25 @@ export default function ProjectMobile() {
           <CatPlayWithBall />
         </div>
       </h1>
+
+      <div
+        className="w-full h-[700px]
+        overflow-y-scroll scrollbar-hide
+        grid grid-cols-1 gap-4 my-4 
+        justify-items-center"
+      >
+        {listProject.map((item) => (
+          <ProjectCard
+            key={item.titleProject}
+            titleProject={item.titleProject}
+            name={item.name}
+            status={item.status}
+            link={item.link}
+            viewProject={item.viewProject}
+            fullDesc={item.fullDesc}
+          />
+        ))}
+      </div>
     </div>
   );
 }
