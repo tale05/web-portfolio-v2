@@ -22,7 +22,7 @@ export default function Projects() {
             Projects I Have Completed
           </h1>
           {/* Cat nằm sau title */}
-          <div className="absolute -top-56 right-10 z-10">
+          <div className="absolute -top-[138px] right-10 z-10">
             <CatPlayWithBall />
           </div>
           <div

@@ -23,6 +23,12 @@ export default function Navbar() {
     30
   );
   const [showNav, setShowNav] = useState(false);
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const timeout = setTimeout(() => setShowNav(true), 200); // delay 0.2s
@@ -110,27 +116,42 @@ export default function Navbar() {
                 {/* Menu List */}
                 <ul className="flex flex-col border-t pt-3 w-[350px]">
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
+                    <button
+                      onClick={() => scrollToSection("skills")}
+                      className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
+                    >
                       <FaLaptopCode className="text-green-400" /> Skills
                     </button>
                   </li>
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
+                    <button
+                      onClick={() => scrollToSection("projects")}
+                      className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
+                    >
                       <FaProjectDiagram className="text-green-400" /> Projects
                     </button>
                   </li>
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
+                    <button
+                      onClick={() => scrollToSection("education")}
+                      className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
+                    >
                       <FaGraduationCap className="text-green-400" /> Education
                     </button>
                   </li>
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
+                    <button
+                      onClick={() => scrollToSection("language")}
+                      className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
+                    >
                       <FaGlobe className="text-green-400" /> Languages
                     </button>
                   </li>
                   <li>
-                    <button className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100">
+                    <button
+                      onClick={() => scrollToSection("certificate")}
+                      className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
+                    >
                       <FaCertificate className="text-green-400" /> Certificates
                     </button>
                   </li>

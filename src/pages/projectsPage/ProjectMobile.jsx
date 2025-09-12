@@ -23,7 +23,9 @@ export default function ProjectMobile() {
         className="w-full h-[700px]
         overflow-y-scroll scrollbar-hide
         grid grid-cols-1 gap-4 my-4 
-        justify-items-center"
+        justify-items-center
+        rounded-2xl
+        p-3"
       >
         {listProject.map((item) => (
           <ProjectCard

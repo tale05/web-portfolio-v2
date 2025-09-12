@@ -2,7 +2,6 @@ import GitHubCalendar from "react-github-calendar";
 import { Code, Rocket, Database, Wrench } from "lucide-react";
 import GithubOctocatAnimation from "../../components/lotties/GithubOctocatAnimation";
 import Cat from "../../components/lotties/CatAnimation";
-
 import SkillsMobile from "./SkillsMobile";
 import SkillCard from "./SkillCard";
 
@@ -140,6 +139,7 @@ export default function Skills() {
               />
             ))}
           </div>
+          <div />
         </div>
       )}
     </>
