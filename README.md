@@ -2,36 +2,34 @@
 
 Website: [https://tale05.github.io/web-portfolio-v2](https://tale05.github.io/web-portfolio-v2)
 
-Đây là dự án **Portfolio cá nhân** được xây dựng bằng **React + Vite**, mục đích để giới thiệu về bản thân, kỹ năng và các dự án web đã thực hiện.  
-Website được thiết kế **responsive**, hỗ trợ **SEO cơ bản**, và có thể triển khai trên GitHub Pages hoặc hosting riêng.
+This is a **personal portfolio** project built with **React + Vite**, aimed at showcasing myself, my skills, and the web projects I have developed.
+The website is designed to be **responsive**, and can be deployed on GitHub Pages or private hosting.
 
-## 🚀 Công nghệ sử dụng
+## 🚀 Technologies Used
 
-- ⚛️ **React 18** – xây dựng UI
-- ⚡ **Vite** – công cụ bundler & dev server nhanh
-- 🎨 **Tailwind CSS** – thiết kế giao diện responsive
-- 🛠 **ESLint** – kiểm tra code style
-- 🌍 **Google Translate Widget** – hỗ trợ đa ngôn ngữ
-- 📦 **GitHub Pages / Hosting** – triển khai sản phẩm
+- ⚛️ **React 18** – build UI
+- ⚡ **Vite** – a fast bundler and development server
+- 🎨 **Tailwind CSS** – responsive UI design
+- 📦 **GitHub Pages / Hosting** – deploy the application
 
-## 📂 Cấu trúc thư mục
+## 📂 Folder Structure
 
-├── dist/ # Build output</br>
-├── public/ # Static assets (ảnh, favicon, ...)</br>
-├── src/ # Code React chính</br>
-│ ├── assets/ # Ảnh, logo, file tĩnh</br>
-│ ├── components/ # Component tái sử dụng (Navbar, Loader, ...)</br>
-│ ├── pages/ # Các trang (Home, Projects, Contact, ...)</br>
-│ └── App.jsx # App chính</br>
+├── dist/</br>
+├── public/</br>
+├── src/</br>
+│ ├── assets/</br>
+│ ├── components/</br>
+│ ├── pages/</br>
+│ └── App.jsx</br>
 ├── .gitignore</br>
-├── index.html # File HTML gốc</br>
+├── index.html</br>
 ├── package.json</br>
-├── tailwind.config.js # Cấu hình Tailwind</br>
-└── vite.config.js # Cấu hình Vite</br>
+├── tailwind.config.js</br>
+└── vite.config.js</br>
 
-## ⚙️ Cài đặt và chạy dự án
+## ⚙️ Installation and Running the Project
 
-Clone project và cài đặt dependencies:
+Clone the project and install dependencies:
 
 ```bash
 git clone https://github.com/tale05/web-portfolio.git
@@ -39,19 +37,19 @@ cd web-portfolio
 npm install
 ```
 
-Chạy ở môi trường development:
+Run in development environment:
 
 ```bash
 npm run dev
 ```
 
-Build cho production:
+Build production:
 
 ```bash
 npm run build
 ```
 
-Xem thử bản build:
+Preview the build:
 
 ```bash
 npm run preview
