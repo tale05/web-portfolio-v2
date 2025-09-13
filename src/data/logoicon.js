@@ -1,3 +1,5 @@
+import swagger from "../assets/swagger.png";
+
 export const logoIconSkill = [
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png",
@@ -49,24 +51,32 @@ export const logoIconSkill = [
     alt: "Git",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
-    alt: "GitHub Desktop",
-  },
-  {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
     alt: "Postman",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    alt: "Docker Desktop",
+    src: swagger,
+    alt: "Swagger",
   },
   {
-    src: "https://www.svgrepo.com/show/342276/swagger.svg",
-    alt: "Swagger",
+    src: "https://cdn.worldvectorlogo.com/logos/jwt-3.svg",
+    alt: "JWT",
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/d/de/WinSCP_Logo.png",
     alt: "WinSCP",
+  },
+  {
+    src: "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product/svg/word_32x1.svg",
+    alt: "Word",
+  },
+  {
+    src: "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product/svg/powerpoint_32x1.svg",
+    alt: "Powerpoint",
+  },
+  {
+    src: "https://res.cdn.office.net/files/fabric-cdn-prod_20240610.001/assets/brand-icons/product/svg/excel_32x1.svg",
+    alt: "Excel",
   },
 ];
 
@@ -147,7 +157,7 @@ export const listDb = [
     level: "Advanced",
   },
   {
-    src: "https://www.svgrepo.com/show/342276/swagger.svg",
+    src: swagger,
     alt: "Swagger",
     name: "Swagger",
     level: "Intermediate",
@@ -183,13 +193,13 @@ export const listTools = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
     alt: "Postman",
     name: "Postman",
-    level: "Intermediate",
+    level: "Basic",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    src: "https://www.docker.com/app/uploads/2024/01/icon-docker-square.svg",
     alt: "Docker Desktop",
     name: "Docker Desktop",
-    level: "Advanced",
+    level: "Basic",
   },
   {
     src: "https://winscp-static-746341.c.cdn77.org/assets/images/logos/logo.png",

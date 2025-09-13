@@ -18,14 +18,12 @@ export default function ProjectMobile() {
           <CatPlayWithBall />
         </div>
       </h1>
-
+      {/* overflow-y-scroll scrollbar-hide */}
       <div
-        className="w-full h-[700px]
-        overflow-y-scroll scrollbar-hide
+        className="w-full h-auto
         grid grid-cols-1 gap-4 my-4 
         justify-items-center
-        rounded-2xl
-        p-3"
+        rounded-2xl"
       >
         {listProject.map((item) => (
           <ProjectCard
@@ -35,6 +33,7 @@ export default function ProjectMobile() {
             status={item.status}
             link={item.link}
             viewProject={item.viewProject}
+            date={item.date}
             fullDesc={item.fullDesc}
           />
         ))}

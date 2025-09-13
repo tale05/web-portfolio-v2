@@ -89,7 +89,7 @@ export default function SkillsMobile() {
           alt="GitHub Stats"
           className="w-full h-auto max-w-md"
         />
-        <div className="flex flex-wrap justify-center gap-4 my-5 mx-5">
+        <div className="flex flex-wrap justify-center gap-4 my-5 mx-0">
           {logoIconSkill.map((logo) => (
             <img
               key={logo.alt}

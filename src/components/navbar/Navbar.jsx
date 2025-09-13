@@ -3,14 +3,17 @@ import {
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
-  FaUser,
   FaLaptopCode,
   FaProjectDiagram,
   FaGraduationCap,
   FaGlobe,
   FaCertificate,
   FaBars,
+  FaUser,
+  FaBirthdayCake,
+  FaVenusMars,
 } from "react-icons/fa";
+
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import NavbarMobile from "./NavbarMobile";
@@ -26,7 +29,10 @@ export default function Navbar() {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -60;
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -86,20 +92,35 @@ export default function Navbar() {
               >
                 <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
                   <p className="font-bold text-gray-700 border-b pb-1">
+                    My Information
+                  </p>
+                  <a className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer">
+                    <FaUser className="text-green-600" />
+                    <span>Full Name: Le Tuan Anh Pham</span>
+                  </a>
+                  <a className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer">
+                    <FaBirthdayCake className="text-green-600" />
+                    <span>Date of Birth: 5 December 2002</span>
+                  </a>
+                  <a className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer">
+                    <FaVenusMars className="text-green-600" />
+                    <span>Gender: Male</span>
+                  </a>
+                  <p className="font-bold text-gray-700 border-b pb-1">
                     Contact
                   </p>
                   <a
                     href="mailto:tuananhphamle051202@gmail.com"
                     className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer"
                   >
-                    <FaEnvelope className="text-green-400" />
+                    <FaEnvelope className="text-green-600" />
                     <span>Email: tuananhphamle051202@gmail.com</span>
                   </a>
                   <a
                     href="tel:+84901135877"
                     className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer"
                   >
-                    <FaPhoneAlt className="text-green-400" />
+                    <FaPhoneAlt className="text-green-600" />
                     <span>Phone: +84 901 135 877</span>
                   </a>
                   <a
@@ -108,7 +129,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer"
                   >
-                    <FaMapMarkerAlt className="text-green-400" />
+                    <FaMapMarkerAlt className="text-green-600" />
                     <span>Location: Ho Chi Minh City, Vietnam</span>
                   </a>
                 </div>
@@ -120,7 +141,7 @@ export default function Navbar() {
                       onClick={() => scrollToSection("skills")}
                       className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
                     >
-                      <FaLaptopCode className="text-green-400" /> Skills
+                      <FaLaptopCode className="text-green-600" /> Skills
                     </button>
                   </li>
                   <li>
@@ -128,7 +149,7 @@ export default function Navbar() {
                       onClick={() => scrollToSection("projects")}
                       className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
                     >
-                      <FaProjectDiagram className="text-green-400" /> Projects
+                      <FaProjectDiagram className="text-green-600" /> Projects
                     </button>
                   </li>
                   <li>
@@ -136,7 +157,7 @@ export default function Navbar() {
                       onClick={() => scrollToSection("education")}
                       className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
                     >
-                      <FaGraduationCap className="text-green-400" /> Education
+                      <FaGraduationCap className="text-green-600" /> Education
                     </button>
                   </li>
                   <li>
@@ -144,7 +165,7 @@ export default function Navbar() {
                       onClick={() => scrollToSection("language")}
                       className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
                     >
-                      <FaGlobe className="text-green-400" /> Languages
+                      <FaGlobe className="text-green-600" /> Languages
                     </button>
                   </li>
                   <li>
@@ -152,7 +173,7 @@ export default function Navbar() {
                       onClick={() => scrollToSection("certificate")}
                       className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100"
                     >
-                      <FaCertificate className="text-green-400" /> Certificates
+                      <FaCertificate className="text-green-600" /> Certificates
                     </button>
                   </li>
                 </ul>

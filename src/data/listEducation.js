@@ -1,5 +1,5 @@
 import doc1 from "../assets/doc1.pdf";
-import doc2 from "../assets/doc1.pdf";
+import doc2 from "../assets/doc2.pdf";
 
 export const listEducation = [
   {
@@ -13,7 +13,7 @@ export const listEducation = [
   {
     name: "Marie Curie High School",
     yearGraduated: "Year: 2017 - 2020",
-    typeGraduated: "Graduated",
+    typeGraduated: "Graduated - High School Diploma",
     linkMyDegree: doc2,
     more: "https://vi.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Trung_h%E1%BB%8Dc_ph%E1%BB%95_th%C3%B4ng_Marie_Curie",
   },

@@ -38,6 +38,7 @@ export default function Projects() {
                 status={item.status}
                 link={item.link}
                 viewProject={item.viewProject}
+                date={item.date}
                 fullDesc={item.fullDesc}
               />
             ))}

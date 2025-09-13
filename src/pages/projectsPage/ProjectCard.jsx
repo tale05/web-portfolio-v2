@@ -1,4 +1,4 @@
-import { GanttChart, CheckCircle, ExternalLink } from "lucide-react";
+import { GanttChart, CheckCircle, ExternalLink, Timer } from "lucide-react";
 
 export default function ProjectCard({
   titleProject,
@@ -7,6 +7,7 @@ export default function ProjectCard({
   link,
   viewProject,
   fullDesc,
+  date,
 }) {
   return (
     <div
@@ -27,10 +28,21 @@ export default function ProjectCard({
         </div>
       </div>
 
-      {/* Status */}
-      <div className="flex flex-row items-center space-x-2">
-        <CheckCircle className="h-5 w-5 text-green-800" />
-        <h2 className="text-base text-green-800">{status}</h2>
+      <div className="grid grid-cols-12">
+        <div className="col-span-3">
+          <div className="flex flex-row items-center space-x-2 justify-start">
+            {/* Status */}
+            <CheckCircle className="h-5 w-5 text-green-800" />
+            <h2 className="text-base text-green-800">{status}</h2>
+          </div>
+        </div>
+        <div className="col-span-9">
+          <div className="flex flex-row items-center space-x-2 justify-end">
+            {/* Date */}
+            <Timer className="h-5 w-5 text-green-800" />
+            <h2 className="text-base text-green-800">{date}</h2>
+          </div>
+        </div>
       </div>
 
       {/* Link or Name */}

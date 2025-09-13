@@ -115,18 +115,12 @@ export default function HomeMobile() {
       <div className="flex flex-row gap-4 w-full items-center my-5">
         {/* Nút 1 */}
         <div className="relative inline-flex items-center justify-center w-full group">
-          <div
-            className="absolute inset-0 duration-1000 opacity-60 transition-all 
-              bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
-              rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
-          ></div>
           <a
             role="button"
             className="group relative inline-flex items-center justify-center text-base rounded-xl 
               bg-white px-2 py-3 font-semibold text-emerald-600 w-full text-center
               transition-all duration-200 
-              hover:bg-emerald-600 hover:text-white hover:shadow-lg 
-              hover:-translate-y-0.5 hover:shadow-emerald-500/40"
+              hover:bg-emerald-600 hover:text-white hover:-translate-y-0.5"
             href={cvEng}
           >
             Resume (ENG)
@@ -135,11 +129,6 @@ export default function HomeMobile() {
 
         {/* Nút 2 */}
         <div className="relative inline-flex items-center justify-center w-full group">
-          <div
-            className="absolute inset-0 duration-1000 opacity-60 transition-all 
-              bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
-              rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
-          ></div>
           <a
             role="button"
             className="group relative inline-flex items-center justify-center text-base rounded-xl 
@@ -157,10 +146,7 @@ export default function HomeMobile() {
         <div className="col-span-4 flex items-center justify-end">
           <MyAnimation />
         </div>
-        <div
-          className="col-span-8 p-4 rounded-2xl border border-white/20 
-        shadow-lg shadow-green-700/70"
-        >
+        <div className="col-span-8 p-4 rounded-2xl border border-white/20 shadow-lg">
           <div className="flex flex-wrap justify-center gap-4">
             <GithubButton />
             <WhatsappButton />

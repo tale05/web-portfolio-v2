@@ -1,11 +1,11 @@
-import { Medal, ExternalLink } from "lucide-react";
+import { Award, ExternalLink } from "lucide-react";
 
 export default function CertificateCard({ name, desc, view }) {
   return (
     <div
       className="
         flex items-center 
-        w-full h-[75px] sm:h-28
+        w-full h-[85px] sm:h-28
         rounded-2xl px-3 py-6
         bg-white/10 backdrop-blur-lg
         border border-white/20
@@ -20,7 +20,7 @@ export default function CertificateCard({ name, desc, view }) {
                       w-6 h-6 sm:w-16 sm:h-16 
                       p-0 sm:p-2"
       >
-        <Medal />
+        <Award />
       </div>
 
       {/* Thông tin bên phải */}

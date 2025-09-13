@@ -14,7 +14,7 @@ export default function EducationMobile() {
         <GraduationCap className="w-8 h-8 text-white" />
         Education
         {/* Cat nằm bên phải, hơi trồi lên trên */}
-        <div className="absolute -top-[95px] left-1 z-2">
+        <div className="absolute -top-[80px] right-0 z-2">
           <GraduationHatAnimation />
         </div>
       </h1>

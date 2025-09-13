@@ -22,9 +22,9 @@ export default function Education() {
             Education
           </h1>
           {/* Cat nằm sau title */}
-          <div className="absolute -top-24 right-10 z-2">
+          {/* <div className="absolute -top-[70px] right-10 z-2">
             <GraduationHatAnimation />
-          </div>
+          </div> */}
           <div
             className="w-full 
             grid grid-cols-2 gap-6 my-4 

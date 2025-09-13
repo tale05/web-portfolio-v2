@@ -6,7 +6,7 @@ export default function GraduationHatAnimation() {
     <Lottie
       animationData={graduationHat}
       loop={true}
-      className="w-40 h-40 md:w-48 md:h-48"
+      className="w-32 h-32 md:w-40 md:h-40"
     />
   );
 }
