@@ -1,12 +1,52 @@
-# React + Vite
+# 🌐 Web Portfolio - Tuan Anh
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Đây là dự án **Portfolio cá nhân** được xây dựng bằng **React + Vite**, mục đích để giới thiệu về bản thân, kỹ năng và các dự án web đã thực hiện.  
+Website được thiết kế **responsive**, hỗ trợ **SEO cơ bản**, và có thể triển khai trên GitHub Pages hoặc hosting riêng.
 
-Currently, two official plugins are available:
+## 🚀 Công nghệ sử dụng
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **React 18** – xây dựng UI
+- ⚡ **Vite** – công cụ bundler & dev server nhanh
+- 🎨 **Tailwind CSS** – thiết kế giao diện responsive
+- 🛠 **ESLint** – kiểm tra code style
+- 🌍 **Google Translate Widget** – hỗ trợ đa ngôn ngữ
+- 📦 **GitHub Pages / Hosting** – triển khai sản phẩm
 
-## Expanding the ESLint configuration
+## 📂 Cấu trúc thư mục
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+├── dist/ # Build output
+├── public/ # Static assets (ảnh, favicon, ...)
+├── src/ # Code React chính
+│ ├── assets/ # Ảnh, logo, file tĩnh
+│ ├── components/ # Component tái sử dụng (Navbar, Loader, ...)
+│ ├── pages/ # Các trang (Home, Projects, Contact, ...)
+│ └── App.jsx # App chính
+├── .gitignore
+├── index.html # File HTML gốc
+├── package.json
+├── tailwind.config.js # Cấu hình Tailwind
+└── vite.config.js # Cấu hình Vite
+
+## ⚙️ Cài đặt và chạy dự án
+
+Clone project và cài đặt dependencies:
+
+```bash
+git clone https://github.com/tale05/web-portfolio.git
+cd web-portfolio
+npm install
+```
+
+Chạy ở môi trường development:
+
+```npm run dev```
+
+
+Build cho production:
+
+```npm run build```
+
+
+Xem thử bản build:
+
+```npm run preview```
