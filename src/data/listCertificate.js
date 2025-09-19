@@ -1,4 +1,4 @@
-import certificate1 from "../assets/Certificate_A1_Goethe.jpg";
+import certificate1 from "../assets/ZertifikateA1_digital.pdf";
 import certificate2 from "../assets/Certificate_TOEIC.jpg";
 import certificate3 from "../assets/Certificate_HAT.pdf";
 
