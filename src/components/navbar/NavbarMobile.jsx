@@ -59,7 +59,8 @@ export default function NavbarMobile() {
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 -translate-y-10"
             }
-            ${isScrolled ? "bg-white" : "bg-transparent"} `}
+            ${isScrolled ? "bg-white" : "bg-transparent"} 
+            ${isMenuOpen ? "bg-white" : "bg-transparent"} `}
       >
         <div className="min-w-full mx-auto flex justify-between items-center px-4 py-2 z-30 relative">
           {/* Text chạy typewriter */}
@@ -87,7 +88,7 @@ export default function NavbarMobile() {
             transform transition-all duration-300
             ${
               isMenuOpen
-                ? "opacity-100 translate-y-0 visible"
+                ? "opacity-100 translate-y-0 visible -mt-1"
                 : "opacity-0 -translate-y-2 invisible"
             }`}
           >

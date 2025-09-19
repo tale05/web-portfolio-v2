@@ -44,7 +44,12 @@ export default function SkillsMobile() {
           <Cat />
         </div>
       </div>
-      <div className="my-4 p-4 backdrop-blur-xl bg-white/30 rounded-2xl flex flex-col items-center gap-4">
+      <div
+        className="my-4 p-4 rounded-2xl flex flex-col items-center gap-4
+                      bg-white/10 backdrop-blur-lg
+                      border border-white/20
+                      shadow-lg"
+      >
         <div className="grid grid-cols-12 items-center w-full">
           <div className="col-span-3 flex justify-center">
             <GithubOctocatAnimation />

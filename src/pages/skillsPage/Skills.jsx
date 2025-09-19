@@ -37,7 +37,12 @@ export default function Skills() {
             <Cat />
           </div>
 
-          <div className="my-8 block p-4 backdrop-blur-xl bg-white/30 rounded-2xl">
+          <div
+            className="my-8 block p-4 rounded-2xl
+                    bg-white/10 backdrop-blur-lg
+                      border border-white/20
+                      shadow-lg"
+          >
             <div className="flex items-center justify-center">
               <div>
                 <GithubOctocatAnimation />

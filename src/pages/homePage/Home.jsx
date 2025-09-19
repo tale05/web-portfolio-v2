@@ -133,8 +133,7 @@ export default function Home() {
                 <div className="relative inline-flex items-center justify-center gap-4 group">
                   <div
                     className="absolute inset-0 duration-1000 opacity-60 transition-all 
-                  bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
-                  rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
+                    rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
                   ></div>
                   <a
                     role="button"
@@ -158,8 +157,7 @@ export default function Home() {
                 <div className="relative inline-flex items-center justify-center gap-4 group">
                   <div
                     className="absolute inset-0 duration-1000 opacity-60 transition-all 
-                  bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 
-                  rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
+                    rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
                   ></div>
                   <a
                     role="button"

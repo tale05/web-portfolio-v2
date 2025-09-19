@@ -13,10 +13,10 @@ export default function App() {
         className="
         min-h-screen w-full block items-center justify-center pb-24"
         style={{
-          backgroundColor: "#99B898",
+          backgroundColor: "#b4e7ed",
           backgroundImage: `
-            radial-gradient(at 70% 97%, #C1EB96 0px, transparent 50%), 
-            radial-gradient(at 32.92025862068966% 20.625%, #b5e792 0px, transparent 50%), 
+            radial-gradient(at 70% 97%, #ade9f0 0px, transparent 50%), 
+            radial-gradient(at 32.92025862068966% 20.625%, #b9f0b6 0px, transparent 50%), 
             radial-gradient(at 0% 100%, #DDE4C0 0px, transparent 50%)
           `,
         }}
