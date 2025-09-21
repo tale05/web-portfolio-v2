@@ -73,7 +73,10 @@ export default function HomeMobile() {
           backdrop-blur-xl bg-white/30 border border-white/20 
           rounded-2xl shadow-lg hover:bg-white transition duration-75"
         >
-          <p className="text-green-700 text-center text-[16px] font-bold hover:text-black">
+          <p
+            className="text-green-700 text-center text-[16px] font-bold hover:text-black
+          dark:hover:text-black dark:text-green-50"
+          >
             {description1}
           </p>
         </div>
@@ -84,7 +87,10 @@ export default function HomeMobile() {
           backdrop-blur-xl bg-white/30 border border-white/20 
           rounded-2xl shadow-lg hover:bg-white transition duration-75"
         >
-          <p className="text-green-700 text-center text-[16px] font-bold hover:text-black">
+          <p
+            className="text-green-700 text-center text-[16px] font-bold hover:text-black
+          dark:hover:text-black dark:text-green-50"
+          >
             {description2}
           </p>
         </div>
@@ -95,7 +101,10 @@ export default function HomeMobile() {
           backdrop-blur-xl bg-white/30 border border-white/20 
           rounded-2xl shadow-lg hover:bg-white transition duration-75"
         >
-          <p className="text-green-700 text-center text-[16px] font-bold hover:text-black">
+          <p
+            className="text-green-700 text-center text-[16px] font-bold hover:text-black
+          dark:hover:text-black dark:text-green-50"
+          >
             {description3}
           </p>
         </div>
@@ -106,7 +115,10 @@ export default function HomeMobile() {
           backdrop-blur-xl bg-white/30 border border-white/20 
           rounded-2xl shadow-lg hover:bg-white transition duration-75"
         >
-          <p className="text-green-700 text-center text-[16px] font-bold hover:text-black">
+          <p
+            className="text-green-700 text-center text-[16px] font-bold hover:text-black
+          dark:hover:text-black dark:text-green-50"
+          >
             {description4}
           </p>
         </div>

@@ -11,15 +11,16 @@ export default function App() {
     <>
       <div
         className="
-        min-h-screen w-full block items-center justify-center pb-24"
-        style={{
-          backgroundColor: "#b4e7ed",
-          backgroundImage: `
-            radial-gradient(at 70% 97%, #ade9f0 0px, transparent 50%), 
-            radial-gradient(at 32.92025862068966% 20.625%, #b9f0b6 0px, transparent 50%), 
-            radial-gradient(at 0% 100%, #DDE4C0 0px, transparent 50%)
-          `,
-        }}
+          min-h-screen w-full block items-center justify-center pb-24
+          
+          /* Light mode */
+          bg-[#b4e7ed]
+          bg-[radial-gradient(at_70%_97%,_#ade9f0_0px,_transparent_50%),_radial-gradient(at_32.92%_20.625%,_#b9f0b6_0px,_transparent_50%),_radial-gradient(at_0%_100%,_#dde4c0_0px,_transparent_50%)]
+
+          /* Dark mode */
+          dark:bg-[#0f172a]
+          dark:bg-[radial-gradient(at_70%_97%,_#1e293b_0px,_transparent_50%),_radial-gradient(at_32.92%_20.625%,_#334155_0px,_transparent_50%),_radial-gradient(at_0%_100%,_#020617_0px,_transparent_50%)]
+        "
       >
         <Navbar />
         <div id="home">

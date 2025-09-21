@@ -27,12 +27,12 @@ export default function CertificateCard({ name, desc, view }) {
       <div className="ml-2 sm:ml-4 flex flex-col justify-center">
         <span
           className="text-sm sm:text-lg 
-          font-semibold text-gray-800
+          font-semibold text-gray-800 dark:text-gray-100
           pl-2 sm:pl-0"
         >
           {name}
         </span>
-        <span className="text-xs sm:text-sm text-gray-600 pl-2 sm:pl-0">
+        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 pl-2 sm:pl-0">
           {desc}
         </span>
         {view && (
@@ -40,7 +40,7 @@ export default function CertificateCard({ name, desc, view }) {
             href={view}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 sm:ml-0 flex items-center text-sm text-blue-900 hover:underline font-medium"
+            className="ml-2 sm:ml-0 flex items-center text-sm text-blue-900 dark:text-blue-600 hover:underline font-medium"
           >
             My Certificate <ExternalLink className="ml-1 h-4 w-4" />
           </a>

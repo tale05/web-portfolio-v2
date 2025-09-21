@@ -25,12 +25,12 @@ export default function LanguageCard({ icon, imgAlt, name, desc }) {
       <div className="ml-2 sm:ml-4 flex flex-col justify-center">
         <span
           className="text-sm sm:text-lg 
-          font-semibold text-gray-800
+          font-semibold text-gray-800 dark:text-gray-100
           pl-2 sm:pl-0"
         >
           {name}
         </span>
-        <span className="text-xs sm:text-sm text-gray-600 pl-2 sm:pl-0">
+        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 pl-2 sm:pl-0">
           {desc}
         </span>
       </div>

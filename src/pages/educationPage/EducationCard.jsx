@@ -19,19 +19,21 @@ export default function EducationCard({
       {/* Header: Name */}
       <div className="flex flex-row items-center space-x-3">
         <GanttChart className="h-6 w-6 text-blue-600" />
-        <h1 className="text-xl font-bold text-blue-700">{name}</h1>
+        <h1 className="text-xl font-bold text-blue-700 dark:text-blue-100">
+          {name}
+        </h1>
       </div>
 
       {/* Year Graduated */}
       <div className="flex flex-row items-center space-x-2">
-        <CheckCircle className="h-5 w-5 text-green-600" />
-        <h2 className="text-base font-medium text-green-700">
+        <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400" />
+        <h2 className="text-base font-medium text-green-700 dark:text-green-400">
           {yearGraduated}
         </h2>
       </div>
 
       {/* Type of Degree */}
-      <div className="text-blue-800 text-sm">
+      <div className="text-blue-800 dark:text-blue-400 text-sm">
         <p>{typeGraduated}</p>
       </div>
 
@@ -42,7 +44,7 @@ export default function EducationCard({
             href={linkMyDegree}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-sm text-blue-900 hover:underline font-medium"
+            className="flex items-center text-sm text-blue-900 dark:text-blue-300 hover:underline font-medium"
           >
             My Degree <ExternalLink className="ml-1 h-4 w-4" />
           </a>

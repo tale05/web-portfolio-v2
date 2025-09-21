@@ -23,8 +23,10 @@ export default function ProjectCard({
       {/* Header: Title */}
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center space-x-3">
-          <GanttChart className="h-6 w-6 text-black" />
-          <h1 className="text-xl font-semibold text-black">{titleProject}</h1>
+          <GanttChart className="h-6 w-6 text-black dark:text-green-500" />
+          <h1 className="text-xl font-semibold text-black dark:text-white">
+            {titleProject}
+          </h1>
         </div>
       </div>
 
@@ -32,15 +34,19 @@ export default function ProjectCard({
         <div className="col-span-3">
           <div className="flex flex-row items-center space-x-2 justify-start">
             {/* Status */}
-            <CheckCircle className="h-5 w-5 text-green-800" />
-            <h2 className="text-base text-green-800">{status}</h2>
+            <CheckCircle className="h-5 w-5 text-green-800 dark:text-green-400" />
+            <h2 className="text-base text-green-800 dark:text-green-400">
+              {status}
+            </h2>
           </div>
         </div>
         <div className="col-span-9">
           <div className="flex flex-row items-center space-x-2 justify-end">
             {/* Date */}
-            <Timer className="h-5 w-5 text-green-800" />
-            <h2 className="text-base text-green-800">{date}</h2>
+            <Timer className="h-5 w-5 text-green-800 dark:text-green-400" />
+            <h2 className="text-base text-green-800 dark:text-green-400">
+              {date}
+            </h2>
           </div>
         </div>
       </div>
@@ -60,7 +66,7 @@ export default function ProjectCard({
       )}
 
       {/* Full Description */}
-      <div className="text-black text-sm">
+      <div className="text-black dark:text-gray-400 text-sm">
         <p>{fullDesc}</p>
       </div>
 
@@ -72,7 +78,7 @@ export default function ProjectCard({
           rel="noopener noreferrer"
           className="absolute bottom-4 right-4
                flex items-center 
-               text-sm text-blue-900 hover:underline"
+               text-sm text-blue-900 dark:text-blue-500 hover:underline"
         >
           View Project <ExternalLink className="ml-1 h-4 w-4" />
         </a>

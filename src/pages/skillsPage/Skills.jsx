@@ -1,5 +1,6 @@
 import GitHubCalendar from "react-github-calendar";
 import { Code, Rocket, Database, Wrench } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import GithubOctocatAnimation from "../../components/lotties/GithubOctocatAnimation";
 import Cat from "../../components/lotties/CatAnimation";
 import SkillsMobile from "./SkillsMobile";
@@ -91,6 +92,19 @@ export default function Skills() {
                   />
                 ))}
               </div>
+            </div>
+            <div className="w-full flex justify-end p-3">
+              <a
+                href="https://github.com/tale05"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2 bg-gray-900 text-white font-medium rounded-xl shadow-md 
+                hover:bg-gray-800 hover:shadow-lg transition duration-300 ease-in-out 
+                  flex items-center gap-2"
+              >
+                <FaGithub className="w-5 h-5" />
+                View My Github
+              </a>
             </div>
           </div>
           <h3 className="flex items-center gap-3 text-2xl font-bold mb-6">

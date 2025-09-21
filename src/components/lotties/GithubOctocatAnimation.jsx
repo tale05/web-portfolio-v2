@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import githubOctocat from "../../assets/lotties/github-octocat.json";
+import githubOctocat from "../../assets/lotties/git.json";
 
 export default function GithubOctocatAnimation() {
   return (

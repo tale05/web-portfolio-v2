@@ -15,6 +15,7 @@ import {
   FaVenusMars,
 } from "react-icons/fa";
 import { useTypewriter } from "../../hooks/useTypewriter";
+import ThemeToggle from "../ThemeToggle";
 
 export default function NavbarMobile() {
   const [showNav, setShowNav] = useState(false);
@@ -79,7 +80,7 @@ export default function NavbarMobile() {
             className="text-2xl p-2 rounded-tl-lg rounded-tr-lg transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <FaTimes /> : <FaBars />}
+            {isMenuOpen ? <FaTimes /> : <FaBars className="dark:text-white" />}
           </button>
           <div
             className={`z-21 absolute left-0 top-full w-full flex flex-col gap-2 bg-white
@@ -193,6 +194,9 @@ export default function NavbarMobile() {
                 </button>
               </li>
             </ul>
+            <div className="w-full flex justify-end items-center">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </nav>
