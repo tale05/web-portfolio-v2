@@ -1,19 +1,19 @@
 import { useEffect, useRef } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Code, Rocket, Database, Wrench } from "lucide-react";
-
 import GithubOctocatAnimation from "../../components/lotties/GithubOctocatAnimation";
 import Cat from "../../components/lotties/CatAnimation";
 import SkillCard from "./SkillCard";
-
 import {
   logoIconSkill,
   listSkillLevel,
   listDb,
   listTools,
 } from "../../data/logoicon";
+import { useTranslation } from "react-i18next";
 
 export default function SkillsMobile() {
+  const { t } = useTranslation();
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function SkillsMobile() {
           bg-color-for-tilte rounded-xl shadow-lg"
         >
           <Code className="w-8 h-8 text-white" />
-          Technical Skills
+          {t("titleSkills")}
         </h1>
         <div className="absolute -top-16 right-0 z-10">
           <Cat />
@@ -108,7 +108,7 @@ export default function SkillsMobile() {
       <h3 className="flex items-center gap-3 text-2xl font-bold my-6">
         <Rocket className="w-7 h-7 text-emerald-600" />
         <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
-          Programming Languages & Frameworks
+          {t("title1Skills")}
         </span>
       </h3>
       <div className="grid grid-cols-2 gap-4">
@@ -125,7 +125,7 @@ export default function SkillsMobile() {
       <h3 className="flex items-center gap-3 text-2xl font-bold my-6">
         <Database className="w-7 h-7 text-emerald-600" />
         <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
-          Database and Backend
+          {t("title2Skills")}
         </span>
       </h3>
       <div className="grid grid-cols-2 gap-4">
@@ -142,7 +142,7 @@ export default function SkillsMobile() {
       <h3 className="flex items-center gap-3 text-2xl font-bold my-6">
         <Wrench className="w-7 h-7 text-emerald-600" />
         <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
-          Tools
+          {t("title3Skills")}
         </span>
       </h3>
       <div className="grid grid-cols-2 gap-4">

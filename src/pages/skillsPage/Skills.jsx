@@ -5,7 +5,6 @@ import GithubOctocatAnimation from "../../components/lotties/GithubOctocatAnimat
 import Cat from "../../components/lotties/CatAnimation";
 import SkillsMobile from "./SkillsMobile";
 import SkillCard from "./SkillCard";
-
 import { useIsMobile } from "../../hooks/useIsMobile";
 import {
   logoIconSkill,
@@ -13,8 +12,10 @@ import {
   listDb,
   listTools,
 } from "../../data/logoicon";
+import { useTranslation } from "react-i18next";
 
 export default function Skills() {
+  const { t } = useTranslation();
   const isMobile = useIsMobile();
 
   return (
@@ -31,7 +32,7 @@ export default function Skills() {
           bg-color-for-tilte rounded-xl shadow-lg"
           >
             <Code className="w-8 h-8 text-white" />
-            Technical Skills
+            {t("titleSkills")}
           </h1>
           {/* Cat nằm sau title */}
           <div className="absolute -top-20 right-10 z-10">
@@ -110,7 +111,7 @@ export default function Skills() {
           <h3 className="flex items-center gap-3 text-2xl font-bold mb-6">
             <Rocket className="w-7 h-7 text-emerald-600" />
             <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
-              Programming Languages & Frameworks
+              {t("title1Skills")}
             </span>
           </h3>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-4 justify-items-center">
@@ -127,7 +128,7 @@ export default function Skills() {
           <h3 className="flex items-center gap-3 text-2xl font-bold my-6">
             <Database className="w-7 h-7 text-emerald-600" />
             <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
-              Database and Backend
+              {t("title2Skills")}
             </span>
           </h3>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-4 justify-items-center">
@@ -144,7 +145,7 @@ export default function Skills() {
           <h3 className="flex items-center gap-3 text-2xl font-bold my-6">
             <Wrench className="w-7 h-7 text-emerald-600" />
             <span className="bg-gradient-to-r from-emerald-500 to-green-700 bg-clip-text text-transparent">
-              Tools
+              {t("title3Skills")}
             </span>
           </h3>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 my-4 justify-items-center">

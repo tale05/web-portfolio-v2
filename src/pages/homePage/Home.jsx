@@ -11,31 +11,18 @@ import FireWork from "../../components/lotties/FireworkAnimation";
 import HomeMobile from "./HomeMobile";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { useIsMobile } from "../../hooks/useIsMobile";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   const playlistId = "4KnqE3eR03vCvhZ2ByfxzQ";
   const isMobile = useIsMobile();
-  const title = useTypewriter("My Portfolio", 200);
-  // const title = useTypewriterAuto(["My Portfolio"], 100);
-  const description1 = useTypewriter(
-    "💡 I'm Tuan Anh, a passionate developer who loves exploring new knowledge and applying it to real-world projects 🚀.",
-    15
-  );
-
-  const description2 = useTypewriter(
-    "🎯 I enjoy crafting modern, user-friendly interfaces 🌐📱 to deliver smooth and engaging experiences.",
-    15
-  );
-
-  const description3 = useTypewriter(
-    "🛠 I constantly experiment with new technologies and tools to improve my coding skills and efficiency ⚡️.",
-    15
-  );
-
-  const description4 = useTypewriter(
-    "🌟 My goal is to create impactful software that solves problems and brings value to users worldwide 🌍.",
-    15
-  );
+  const title = useTypewriter(t("titleHome"), 200);
+  const description1 = useTypewriter(t("des1"), 15);
+  const description2 = useTypewriter(t("des2"), 15);
+  const description3 = useTypewriter(t("des3"), 15);
+  const description4 = useTypewriter(t("des4"), 15);
 
   return (
     <>
@@ -181,7 +168,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    German (DEU)
+                    Lebenslauf (DEU)
                   </a>
                 </div>
               </div>

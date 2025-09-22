@@ -16,8 +16,11 @@ import {
 } from "react-icons/fa";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import ThemeToggle from "../ThemeToggle";
+import LanguageSelector from "../LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 export default function NavbarMobile() {
+  const { t } = useTranslation();
   const [showNav, setShowNav] = useState(false);
   const displayText = useTypewriter("Le Tuan Anh Pham", 30);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,14 +57,16 @@ export default function NavbarMobile() {
   return (
     <>
       <nav
-        className={`w-full fixed top-0 left-0 z-20 bg-transparent text-black transition-all duration-700 transform 
-            ${
-              showNav
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 -translate-y-10"
-            }
-            ${isScrolled ? "bg-white" : "bg-transparent"} 
-            ${isMenuOpen ? "bg-white" : "bg-transparent"} `}
+        className={`w-full fixed top-0 left-0 z-20 text-black transition-all duration-200 transform
+        ${showNav ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}
+        ${
+          isMenuOpen
+            ? "bg-white dark:bg-gray-900"
+            : isScrolled
+            ? "bg-white dark:bg-gray-900"
+            : "bg-transparent dark:bg-transparent"
+        }
+      `}
       >
         <div className="min-w-full mx-auto flex justify-between items-center px-4 py-2 z-30 relative">
           {/* Text chạy typewriter */}
@@ -80,13 +85,18 @@ export default function NavbarMobile() {
             className="text-2xl p-2 rounded-tl-lg rounded-tr-lg transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <FaTimes /> : <FaBars className="dark:text-white" />}
+            {isMenuOpen ? (
+              <FaTimes className="text-black dark:text-white" />
+            ) : (
+              <FaBars className="text-black dark:text-white" />
+            )}
           </button>
           <div
             className={`z-21 absolute left-0 top-full w-full flex flex-col gap-2 bg-white
             rounded-bl-lg rounded-br-lg 
             p-4 text-sm 
             transform transition-all duration-300
+            dark:bg-gray-900
             ${
               isMenuOpen
                 ? "opacity-100 translate-y-0 visible -mt-1"
@@ -95,44 +105,58 @@ export default function NavbarMobile() {
           >
             {/* Contact Information */}
             <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
-              <p className="font-bold text-gray-700 border-b pb-1">
-                My Information
+              <p className="font-bold text-gray-700 dark:text-white border-b pb-1">
+                {t("titleInformationMenuNavbar")}
               </p>
-              <a className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer">
+              <a
+                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
+              dark:text-white dark:hover:text-green-400"
+              >
                 <FaUser className="text-green-600" />
-                <span>Full Name: Le Tuan Anh Pham</span>
+                <span>{t("nameMenuNavbar")}</span>
               </a>
-              <a className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer">
+              <a
+                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
+              dark:text-white dark:hover:text-green-400"
+              >
                 <FaBirthdayCake className="text-green-600" />
-                <span>Date of Birth: 5 December 2002</span>
+                <span>{t("dateOfBirthMenuNavbar")}</span>
               </a>
-              <a className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer">
+              <a
+                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
+              dark:text-white dark:hover:text-green-400"
+              >
                 <FaVenusMars className="text-green-600" />
-                <span>Gender: Male</span>
+                <span>{t("genderMenuNavbar")}</span>
               </a>
-              <p className="font-bold text-gray-700 border-b pb-1">Contact</p>
+              <p className="font-bold text-gray-700 dark:text-white border-b pb-1">
+                {t("titleContactMenuNavbar")}
+              </p>
               <a
                 href="mailto:tuananhphamle051202@gmail.com"
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer"
+                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
+              dark:text-white dark:hover:text-green-400"
               >
                 <FaEnvelope className="text-green-600" />
                 <span>Email: tuananhphamle051202@gmail.com</span>
               </a>
               <a
                 href="tel:+84901135877"
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer"
+                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
+                dark:text-white dark:hover:text-green-400"
               >
                 <FaPhoneAlt className="text-green-600" />
-                <span>Phone: +84 901 135 877</span>
+                <span>{t("phoneNumberMenuNavbar")}</span>
               </a>
               <a
                 href="https://www.google.com/maps/place/Ho+Chi+Minh+City,+Vietnam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer"
+                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
+                dark:text-white dark:hover:text-green-400"
               >
                 <FaMapMarkerAlt className="text-green-600" />
-                <span>Location: Ho Chi Minh City, Vietnam</span>
+                <span>{t("locationMenuNavbar")}</span>
               </a>
             </div>
 
@@ -144,9 +168,11 @@ export default function NavbarMobile() {
                     scrollToSection("skills");
                     setIsMenuOpen(false);
                   }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200"
+                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
+                  dark:text-white dark:hover:text-black"
                 >
-                  <FaLaptopCode className="text-green-600" /> Skills
+                  <FaLaptopCode className="text-green-600" />{" "}
+                  {t("item1MenuNavbar")}
                 </button>
               </li>
               <li>
@@ -155,9 +181,11 @@ export default function NavbarMobile() {
                     scrollToSection("projects");
                     setIsMenuOpen(false);
                   }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200"
+                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
+                  dark:text-white dark:hover:text-black"
                 >
-                  <FaProjectDiagram className="text-green-600" /> Projects
+                  <FaProjectDiagram className="text-green-600" />{" "}
+                  {t("item2MenuNavbar")}
                 </button>
               </li>
               <li>
@@ -166,9 +194,11 @@ export default function NavbarMobile() {
                     scrollToSection("education");
                     setIsMenuOpen(false);
                   }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200"
+                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
+                  dark:text-white dark:hover:text-black"
                 >
-                  <FaGraduationCap className="text-green-600" /> Education
+                  <FaGraduationCap className="text-green-600" />{" "}
+                  {t("item3MenuNavbar")}
                 </button>
               </li>
               <li>
@@ -177,9 +207,10 @@ export default function NavbarMobile() {
                     scrollToSection("language");
                     setIsMenuOpen(false);
                   }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200"
+                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
+                  dark:text-white dark:hover:text-black"
                 >
-                  <FaGlobe className="text-green-600" /> Languages
+                  <FaGlobe className="text-green-600" /> {t("item4MenuNavbar")}
                 </button>
               </li>
               <li>
@@ -188,13 +219,16 @@ export default function NavbarMobile() {
                     scrollToSection("certificate");
                     setIsMenuOpen(false);
                   }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200"
+                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
+                  dark:text-white dark:hover:text-black"
                 >
-                  <FaCertificate className="text-green-600" /> Certificates
+                  <FaCertificate className="text-green-600" />{" "}
+                  {t("item5MenuNavbar")}
                 </button>
               </li>
             </ul>
-            <div className="w-full flex justify-end items-center">
+            <div className="w-full flex justify-end items-center gap-2">
+              <LanguageSelector />
               <ThemeToggle />
             </div>
           </div>

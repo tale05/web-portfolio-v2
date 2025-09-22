@@ -4,9 +4,11 @@ import CatPlayWithBall from "../../components/lotties/CatPlayWithBallAnimation";
 import ProjectCard from "./ProjectCard";
 import ProjectMobile from "./ProjectMobile";
 import { listProject } from "../../data/listproject";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
   return (
     <>
       {isMobile ? (
@@ -19,7 +21,7 @@ export default function Projects() {
             bg-color-for-tilte rounded-xl shadow-lg"
           >
             <Code className="w-8 h-8 text-white" />
-            Projects I Have Completed
+            {t("titleProjects")}
           </h1>
           {/* Cat nằm sau title */}
           <div className="absolute -top-[138px] right-10 z-10">

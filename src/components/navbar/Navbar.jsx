@@ -18,15 +18,18 @@ import { useTypewriter } from "../../hooks/useTypewriter";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import NavbarMobile from "./NavbarMobile";
 import ThemeToggle from "../ThemeToggle";
+import LanguageSelector from "../LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
+  const { t } = useTranslation();
+  const displayText = useTypewriter(t("titleForNavbar"), 30);
+
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const displayText = useTypewriter(
-    "Le Tuan Anh Pham ~ Thanks for visiting my profile!",
-    30
-  );
   const [showNav, setShowNav] = useState(false);
+
+  // Hàm cuộn mượt đến phần tương ứng khi nhấn vào mục trong menu
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -57,7 +60,7 @@ export default function Navbar() {
             ${isMenuOpen ? "bg-transparent" : "bg-transparent"}`}
         >
           <div className="max-w-[1300px] mx-auto grid grid-cols-12 gap-4 p-2">
-            <div className="col-span-9">
+            <div className="col-span-8">
               <p
                 className={`text-2xl text-white 
                 font-notosans font-semibold italic
@@ -69,7 +72,7 @@ export default function Navbar() {
                 {displayText}
               </p>
             </div>
-            <div className="col-span-3 flex justify-end items-center">
+            <div className="col-span-4 flex justify-end items-center">
               <div
                 className="relative group cursor-pointer z-20"
                 onMouseEnter={() => setIsMenuOpen(true)}
@@ -90,31 +93,31 @@ export default function Navbar() {
                 >
                   <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
                     <p className="font-bold text-gray-700 dark:text-white border-b pb-1">
-                      My Information
+                      {t("titleInformationMenuNavbar")}
                     </p>
                     <a
                       className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
                     text-black dark:text-white dark:hover:text-green-400"
                     >
                       <FaUser className="text-green-600" />
-                      <span>Full Name: Le Tuan Anh Pham</span>
+                      <span>{t("nameMenuNavbar")}</span>
                     </a>
                     <a
                       className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
                     text-black dark:text-white dark:hover:text-green-400"
                     >
                       <FaBirthdayCake className="text-green-600" />
-                      <span>Date of Birth: 5 December 2002</span>
+                      <span>{t("dateOfBirthMenuNavbar")}</span>
                     </a>
                     <a
                       className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
                     text-black dark:text-white dark:hover:text-green-400"
                     >
                       <FaVenusMars className="text-green-600" />
-                      <span>Gender: Male</span>
+                      <span>{t("genderMenuNavbar")}</span>
                     </a>
                     <p className="font-bold text-gray-700 dark:text-white border-b pb-1">
-                      Contact
+                      {t("titleContactMenuNavbar")}
                     </p>
                     <a
                       href="mailto:tuananhphamle051202@gmail.com"
@@ -130,7 +133,7 @@ export default function Navbar() {
                       text-black dark:text-white dark:hover:text-green-400"
                     >
                       <FaPhoneAlt className="text-green-600" />
-                      <span>Phone: +84 901 135 877</span>
+                      <span>{t("phoneNumberMenuNavbar")}</span>
                     </a>
                     <a
                       href="https://www.google.com/maps/place/Ho+Chi+Minh+City,+Vietnam"
@@ -140,7 +143,7 @@ export default function Navbar() {
                       text-black dark:text-white dark:hover:text-green-400"
                     >
                       <FaMapMarkerAlt className="text-green-600" />
-                      <span>Location: Ho Chi Minh City, Vietnam</span>
+                      <span>{t("locationMenuNavbar")}</span>
                     </a>
                   </div>
 
@@ -152,7 +155,8 @@ export default function Navbar() {
                         className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-75
                         text-black dark:text-white dark:hover:text-black"
                       >
-                        <FaLaptopCode className="text-green-600" /> Skills
+                        <FaLaptopCode className="text-green-600" />{" "}
+                        {t("item1MenuNavbar")}
                       </button>
                     </li>
                     <li>
@@ -161,7 +165,8 @@ export default function Navbar() {
                         className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100
                         text-black dark:text-white dark:hover:text-black"
                       >
-                        <FaProjectDiagram className="text-green-600" /> Projects
+                        <FaProjectDiagram className="text-green-600" />{" "}
+                        {t("item2MenuNavbar")}
                       </button>
                     </li>
                     <li>
@@ -170,7 +175,8 @@ export default function Navbar() {
                         className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100
                         text-black dark:text-white dark:hover:text-black"
                       >
-                        <FaGraduationCap className="text-green-600" /> Education
+                        <FaGraduationCap className="text-green-600" />{" "}
+                        {t("item3MenuNavbar")}
                       </button>
                     </li>
                     <li>
@@ -179,7 +185,8 @@ export default function Navbar() {
                         className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100
                         text-black dark:text-white dark:hover:text-black"
                       >
-                        <FaGlobe className="text-green-600" /> Languages
+                        <FaGlobe className="text-green-600" />{" "}
+                        {t("item4MenuNavbar")}
                       </button>
                     </li>
                     <li>
@@ -189,14 +196,15 @@ export default function Navbar() {
                         text-black dark:text-white dark:hover:text-black"
                       >
                         <FaCertificate className="text-green-600" />{" "}
-                        Certificates
+                        {t("item5MenuNavbar")}
                       </button>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="w-auto h-auto px-4">
+              <div className="w-auto h-auto px-4 flex flex-row items-center justify-end gap-2">
                 <ThemeToggle />
+                <LanguageSelector />
               </div>
             </div>
           </div>
