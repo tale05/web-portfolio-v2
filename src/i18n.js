@@ -21,7 +21,7 @@ i18n
           dateOfBirthMenuNavbar: "Date of Birth: 5 December 2002",
           genderMenuNavbar: "Gender: Male",
           titleContactMenuNavbar: "Contact",
-          phoneNumberMenuNavbar: "Phone: +84 901 135 877",
+          phoneNumberMenuNavbar: "Phone: +49 176 447 68052",
           locationMenuNavbar: "Location: Ho Chi Minh City, Vietnam",
           item1MenuNavbar: "Skills",
           item2MenuNavbar: "Projects",
@@ -31,10 +31,10 @@ i18n
 
           // Home
           titleHome: "My Profile",
-          des1: "💡 I'm Tuan Anh, a passionate developer who loves exploring new knowledge and applying it to real-world projects 🚀.",
-          des2: "🎯 I enjoy crafting modern, user-friendly interfaces 🌐📱 to deliver smooth and engaging experiences.",
-          des3: "I constantly experiment with new technologies and tools to improve my coding skills and efficiency ⚡️",
-          des4: "I'm always eager to learn and share knowledge with the developer community to grow together 🤝.",
+          des1: "💡 I'm Tuan Anh, a passionate developer who loves exploring new knowledge and applying it to real-world projects.",
+          des2: "🎯 I enjoy crafting modern, user-friendly interfaces to deliver smooth and engaging experiences.",
+          des3: "⚡️ I constantly experiment with new technologies and tools to improve my coding skills and efficiency.",
+          des4: "🤝 I'm always eager to learn and share knowledge with the developer community to grow together.",
 
           // Skills
           titleSkills: "Technical Skills",
@@ -56,7 +56,7 @@ i18n
           dateOfBirthMenuNavbar: "Ngày sinh: 5 tháng 12 năm 2002",
           genderMenuNavbar: "Giới tính: Nam",
           titleContactMenuNavbar: "Liên hệ",
-          phoneNumberMenuNavbar: "Điện thoại: +84 901 135 877",
+          phoneNumberMenuNavbar: "Điện thoại: +49 176 447 68052",
           locationMenuNavbar: "Địa điểm: Thành phố Hồ Chí Minh, Việt Nam",
           item1MenuNavbar: "Kỹ năng",
           item2MenuNavbar: "Dự án",
@@ -66,10 +66,10 @@ i18n
 
           // Home
           titleHome: "Hồ sơ của tôi",
-          des1: "💡 Tôi là Tuấn Anh, một nhà phát triển đam mê khám phá kiến thức mới và áp dụng nó vào các dự án thực tế 🚀.",
-          des2: "🎯 Tôi thích tạo ra các giao diện hiện đại, thân thiện với người dùng 🌐📱 để mang lại trải nghiệm mượt mà và hấp dẫn.",
-          des3: "Tôi không ngừng thử nghiệm với các công nghệ và công cụ mới để nâng cao kỹ năng lập trình và hiệu quả công việc của mình ⚡️.",
-          des4: "Tôi luôn sẵn sàng học hỏi và chia sẻ kiến thức với cộng đồng phát triển để cùng nhau tiến bộ hơn nữa 🤝.",
+          des1: "💡 Tôi là Tuấn Anh, một nhà phát triển đam mê khám phá kiến thức mới và áp dụng nó vào các dự án thực tế.",
+          des2: "🎯 Tôi thích tạo ra các giao diện hiện đại, thân thiện với người dùng để mang lại trải nghiệm mượt mà và hấp dẫn.",
+          des3: "⚡️ Tôi không ngừng thử nghiệm với các công nghệ và công cụ mới để nâng cao kỹ năng lập trình và hiệu quả công việc của mình.",
+          des4: "🤝 Tôi luôn sẵn sàng học hỏi và chia sẻ kiến thức với cộng đồng phát triển để cùng nhau tiến bộ hơn nữa.",
 
           // Skills
           titleSkills: "Kỹ năng kỹ thuật",
@@ -91,7 +91,7 @@ i18n
           dateOfBirthMenuNavbar: "Geburtsdatum: 5. Dezember 2002",
           genderMenuNavbar: "Geschlecht: Männlich",
           titleContactMenuNavbar: "Kontakt",
-          phoneNumberMenuNavbar: "Telefon: +84 901 135 877",
+          phoneNumberMenuNavbar: "Telefon: +49 176 447 68052",
           locationMenuNavbar: "Standort: Ho-Chi-Minh-Stadt, Vietnam",
           item1MenuNavbar: "Fähigkeiten",
           item2MenuNavbar: "Projekte",
@@ -101,10 +101,10 @@ i18n
 
           // Home
           titleHome: "Mein Profil",
-          des1: "💡 Ich bin Tuan Anh, ein leidenschaftlicher Entwickler, der es liebt, neues Wissen zu erkunden und es in realen Projekten anzuwenden 🚀.",
-          des2: "🎯 Ich genieße es, moderne, benutzerfreundliche Schnittstellen 🌐📱 zu gestalten, um reibungslose und ansprechende Erlebnisse zu bieten.",
-          des3: "Ich experimentiere ständig mit neuen Technologien und Tools, um meine Programmierfähigkeiten und Effizienz zu verbessern ⚡️.",
-          des4: "Ich bin immer bestrebt, zu lernen und Wissen mit der Entwicklergemeinschaft zu teilen, um gemeinsam zu wachsen 🤝.",
+          des1: "💡 Ich bin Tuan Anh, ein leidenschaftlicher Entwickler, der es liebt, neues Wissen zu erkunden und es in realen Projekten anzuwenden.",
+          des2: "🎯 Ich genieße es, moderne, benutzerfreundliche Schnittstellen zu gestalten, um reibungslose und ansprechende Erlebnisse zu bieten.",
+          des3: "⚡️ Ich experimentiere ständig mit neuen Technologien und Tools, um meine Programmierfähigkeiten und Effizienz zu verbessern.",
+          des4: "🤝 Ich bin immer bestrebt, zu lernen und Wissen mit der Entwicklergemeinschaft zu teilen, um gemeinsam zu wachsen.",
 
           // Skills
           titleSkills: "Technische Fähigkeiten",

@@ -6,6 +6,11 @@ import { listCertificate } from "../../data/listCertificate";
 export default function CertificateMobile() {
   return (
     <div className="p-4">
+      <div
+        className="w-[300px] mx-auto my-6
+            border-b-[10px] border-[#56a15a]
+            shadow-[0_8px_20px_rgba(86,161,90,0.5)]"
+      ></div>
       <div className="relative flex justify-center">
         <h1
           className="relative z-12 flex items-center justify-center gap-3 p-2 w-full
@@ -15,9 +20,9 @@ export default function CertificateMobile() {
           <Award className="w-8 h-8 text-white" />
           Certificates
         </h1>
-        <div className="absolute -top-16 right-0 z-10">
+        {/* <div className="absolute -top-16 right-0 z-10">
           <Cat />
-        </div>
+        </div> */}
       </div>
 
       <div className="grid grid-cols-1 gap-4 py-3">

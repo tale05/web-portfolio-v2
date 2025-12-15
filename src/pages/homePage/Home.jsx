@@ -1,4 +1,4 @@
-import myAva from "../../assets/myAva.jpg";
+import myAva from "../../assets/CV_Avatar.png";
 import cvEng from "../../assets/CV_PhamLeTuanAnh_ENG.pdf";
 import cvDeu from "../../assets/CV_PhamLeTuanAnh_DEU.pdf";
 import InstagramButton from "../../components/social-button/InstagramButton";
@@ -31,7 +31,7 @@ export default function Home() {
           <HomeMobile />
         </div>
       ) : (
-        <div className="max-w-[1300px] h-auto mx-auto px-4">
+        <div className="max-w-[1300px] h-auto mx-auto px-4 py-20">
           <div className="grid grid-cols-[2fr_1fr] gap-4 h-full pt-2 pb-5 items-center">
             <div className="block">
               {/* <div className="flex items-start justify-items-start">
@@ -41,7 +41,7 @@ export default function Home() {
               {/* Hiệu ứng typewriter */}
               <p
                 className="text-transparent bg-clip-text bg-text-tilte
-                font-extrabold font-playwrite italic text-[110px] 
+                font-extrabold font-sans text-[150px] 
                 pb-10 m-0 text-shadow-lg h-full"
               >
                 {title}
@@ -55,7 +55,7 @@ export default function Home() {
                   z-2 
                   pointer-events-none"
                 >
-                  <CatSpinAnimation />
+                  {/* <CatSpinAnimation /> */}
                 </div>
 
                 {/* Description 1 */}
@@ -172,7 +172,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              <iframe
+              {/* <iframe
                 title="Spotify Embed: Recommendation Playlist"
                 src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`}
                 width="450"
@@ -181,7 +181,7 @@ export default function Home() {
                 loading="lazy"
                 style={{ borderRadius: "12px" }}
                 className="text-color-for-tilte py-2"
-              ></iframe>
+              ></iframe> */}
             </div>
 
             {/* Avatar với FireWork */}
@@ -193,7 +193,7 @@ export default function Home() {
             >
               {/* FireWork ở trên ảnh */}
               <div className="z-1 absolute top-0 left-1/2 -translate-x-1/2">
-                <FireWork />
+                {/* <FireWork /> */}
               </div>
 
               {/* Ảnh avatar */}
@@ -201,9 +201,8 @@ export default function Home() {
                 src={myAva}
                 alt="Avatar"
                 className="z-2
-                w-full h-full object-cover 
-                rounded-2xl border-4 border-[#56a15a] 
-                hover:shadow-[0px_20px_207px_10px_rgba(16,_239,_68,_0.2)]"
+                w-full h-[475px] object-cover 
+                rounded-2xl"
               />
 
               {/* Nút social (dưới ảnh) */}
@@ -216,11 +215,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div
-            className="w-[800px] mx-auto
-            border-b-[10px] border-[#56a15a]
-            shadow-[0_8px_20px_rgba(86,161,90,0.5)]"
-          ></div>
         </div>
       )}
     </>

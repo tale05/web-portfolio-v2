@@ -6,6 +6,11 @@ import ProjectCard from "./ProjectCard";
 export default function ProjectMobile() {
   return (
     <div className="w-full h-auto mx-auto p-5 flex flex-col items-center relative">
+      <div
+        className="w-[300px] mx-auto my-6
+            border-b-[10px] border-[#56a15a]
+            shadow-[0_8px_20px_rgba(86,161,90,0.5)]"
+      ></div>
       <h1
         className="relative z-1 flex items-center justify-center gap-3 p-2 w-full 
         text-xl text-white font-bold text-center 
@@ -14,9 +19,9 @@ export default function ProjectMobile() {
         <Code className="w-8 h-8 text-white" />
         Projects I Have Completed
         {/* Cat nằm bên phải, hơi trồi lên trên */}
-        <div className="absolute -top-[103px] right-2 z-2">
+        {/* <div className="absolute -top-[103px] right-2 z-2">
           <CatPlayWithBall />
-        </div>
+        </div> */}
       </h1>
       {/* overflow-y-scroll scrollbar-hide */}
       <div

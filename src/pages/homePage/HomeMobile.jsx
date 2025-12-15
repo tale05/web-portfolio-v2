@@ -1,4 +1,4 @@
-import myAva from "../../assets/myAva.jpg";
+import myAva from "../../assets/CV_Avatar_mobile.png";
 import cvEng from "../../assets/CV_PhamLeTuanAnh_ENG.pdf";
 import cvDeu from "../../assets/CV_PhamLeTuanAnh_DEU.pdf";
 import InstagramButton from "../../components/social-button/InstagramButton";
@@ -29,31 +29,34 @@ export default function HomeMobile() {
     mx-auto px-5 pt-10
     flex flex-col items-center"
     >
-      <div className="grid grid-cols-12 items-center gap-2 w-full h-auto px-4 pt-4 border-b-2 border-gray-300">
+      {/* <div className="grid grid-cols-12 items-center gap-2 w-full h-auto px-4 pt-4">
         <div className="col-span-3 flex justify-center">
           <RobotHiAnimation />
         </div>
-        <div className="col-span-9">
-          <p className="text-[#EEF6F6] font-extrabold font-playwrite italic text-3xl text-shadow-lg text-left">
+        <div className="col-span-12 justify-center items-center flex">
+          <p
+            className="text-[#EEF6F6] font-extrabold font-sans text-[60px] 
+                        text-shadow-lg text-left
+                        text-transparent bg-clip-text bg-text-tilte"
+          >
             {title}
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Avatar */}
-      <div className="flex items-center justify-center py-5 w-full">
+      <div className="flex items-start justify-start pb-5 pt-10 w-full">
         <img
           src={myAva}
           alt="Avatar"
-          className="w-full h-60 object-cover
-          rounded-3xl border-4 border-x-green-50
-          shadow-[0px_10px_100px_5px_rgba(16,_239,_68,_0.2)]"
+          className="w-full h-[250px] object-cover backdrop-blur-lg
+          rounded-2xl"
         />
       </div>
 
       <div className="relative grid grid-cols-2 grid-rows-2 gap-4">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-2 pointer-events-none">
-          <CatSpinAnimation />
+          {/* <CatSpinAnimation /> */}
         </div>
 
         {/* Description 1 */}
@@ -144,10 +147,10 @@ export default function HomeMobile() {
         </div>
       </div>
       <div className="grid grid-cols-12 gap-2 items-center pb-7">
-        <div className="col-span-4 flex items-center justify-end">
+        {/* <div className="col-span-4 flex items-center justify-end">
           <MyAnimation />
-        </div>
-        <div className="col-span-8 p-4 rounded-2xl border border-white/20 shadow-lg">
+        </div> */}
+        <div className="col-span-12 p-4 rounded-2xl border border-white/20 shadow-lg">
           <div className="flex flex-wrap justify-center gap-4">
             <GithubButton />
             <WhatsappButton />
@@ -157,7 +160,7 @@ export default function HomeMobile() {
           </div>
         </div>
       </div>
-      <iframe
+      {/* <iframe
         title="Spotify Embed: Recommendation Playlist"
         src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`}
         width="100%"
@@ -167,7 +170,7 @@ export default function HomeMobile() {
         loading="lazy"
         style={{ borderRadius: "12px", margin: "0 auto", padding: "0 auto" }}
         className="text-color-for-tilte"
-      ></iframe>
+      ></iframe> */}
     </div>
   );
 }

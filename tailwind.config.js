@@ -18,7 +18,7 @@ export default {
         `,
         "color-for-tilte":
           "linear-gradient(to right, #10b981, #16a34a, #047857)",
-        "text-tilte": "linear-gradient(to right, #faab02, #f5a30c, #fa8870)",
+        "text-tilte": "linear-gradient(to right, #38ba1c, #5fbd4a, #38ba1c)",
       },
       textShadow: {
         sm: "1px 1px 2px rgba(0,0,0,0.5)",

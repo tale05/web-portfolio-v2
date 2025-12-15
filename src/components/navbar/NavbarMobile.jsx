@@ -141,7 +141,7 @@ export default function NavbarMobile() {
                 <span>Email: tuananhphamle051202@gmail.com</span>
               </a>
               <a
-                href="tel:+84901135877"
+                href="tel:+4917644768052"
                 className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
                 dark:text-white dark:hover:text-green-400"
               >
@@ -149,14 +149,15 @@ export default function NavbarMobile() {
                 <span>{t("phoneNumberMenuNavbar")}</span>
               </a>
               <a
-                href="https://www.google.com/maps/place/Ho+Chi+Minh+City,+Vietnam"
+                href="https://maps.app.goo.gl/c4Bq5e7bfvmssj3t7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                dark:text-white dark:hover:text-green-400"
+                      text-black dark:text-white dark:hover:text-green-400"
               >
                 <FaMapMarkerAlt className="text-green-600" />
-                <span>{t("locationMenuNavbar")}</span>
+                {/* <span>{t("locationMenuNavbar")}</span> */}
+                <span>Sandhofen, Mannheim, Deutschland</span>
               </a>
             </div>
 
