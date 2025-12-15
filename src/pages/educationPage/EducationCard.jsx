@@ -5,6 +5,7 @@ export default function EducationCard({
   yearGraduated,
   typeGraduated,
   linkMyDegree,
+  linkMyDegree_inDEU,
   more,
 }) {
   return (
@@ -39,16 +40,39 @@ export default function EducationCard({
 
       {/* Footer Links */}
       <div className="flex flex-row justify-end space-x-4 mt-2">
-        {linkMyDegree && (
-          <a
-            href={linkMyDegree}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-sm text-blue-900 dark:text-blue-300 hover:underline font-medium"
-          >
-            My Degree <ExternalLink className="ml-1 h-4 w-4" />
-          </a>
-        )}
+        {/* My Degree */}
+        <a
+          href={linkMyDegree && linkMyDegree.trim() !== "" ? linkMyDegree : "#"}
+          target={linkMyDegree ? "_blank" : "_self"}
+          rel="noopener noreferrer"
+          className={`flex items-center text-sm font-medium ${
+            linkMyDegree
+              ? "text-blue-900 dark:text-blue-300 hover:underline"
+              : "text-gray-500 cursor-not-allowed"
+          }`}
+        >
+          My Degree <ExternalLink className="ml-1 h-4 w-4" />
+        </a>
+
+        {/* Translated to German */}
+        <a
+          href={
+            linkMyDegree_inDEU && linkMyDegree_inDEU.trim() !== ""
+              ? linkMyDegree_inDEU
+              : "#"
+          }
+          target={linkMyDegree_inDEU ? "_blank" : "_self"}
+          rel="noopener noreferrer"
+          className={`flex items-center text-sm font-medium ${
+            linkMyDegree_inDEU
+              ? "text-blue-900 dark:text-blue-300 hover:underline"
+              : "text-gray-500 cursor-not-allowed"
+          }`}
+        >
+          Translated to German <ExternalLink className="ml-1 h-4 w-4" />
+        </a>
+      </div>
+      <div className="w-full h-auto flex items-end justify-end">
         {more && (
           <a
             href={more}

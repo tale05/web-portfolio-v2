@@ -34,6 +34,7 @@ export default function Language() {
                 name={certificate.name}
                 desc={certificate.desc}
                 view={certificate.view}
+                link={certificate.link}
               />
             ))}
           </div>

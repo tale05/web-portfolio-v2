@@ -37,6 +37,7 @@ export default function Education() {
                 yearGraduated={item.yearGraduated}
                 typeGraduated={item.typeGraduated}
                 linkMyDegree={item.linkMyDegree}
+                linkMyDegree_inDEU={item.linkMyDegree_inDEU}
                 more={item.more}
               />
             ))}
