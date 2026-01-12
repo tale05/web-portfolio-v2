@@ -81,13 +81,13 @@ export default function Skills() {
               </div>
             </div>
             <div className="flex items-center justify-center my-4 gap-4">
-              <div>
+              {/* <div>
                 <img
                   src="https://github-readme-stats.vercel.app/api?username=tale05&show_icons=true&theme=transparent"
                   alt="GitHub Stats"
                   className="w-[800px] h-auto"
                 />
-              </div>
+              </div> */}
               <div className="flex items-center justify-center gap-8 flex-wrap mt-4">
                 {logoIconSkill.map((logo) => (
                   <img

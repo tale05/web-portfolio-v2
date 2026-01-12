@@ -13,7 +13,7 @@ export const listLanguage = [
     icon: FlagGermany,
     alt: "",
     name: "German",
-    desc: "Basic (A1)",
+    desc: "B1",
   },
   {
     icon: FlagEng,

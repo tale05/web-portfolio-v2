@@ -32,7 +32,7 @@ export default function SkillsMobile() {
   return (
     <div className="p-4">
       <div
-        className="w-full mx-auto my-6
+        className="w-[300px] mx-auto my-6
             border-b-[10px] border-[#56a15a]
             shadow-[0_8px_20px_rgba(86,161,90,0.5)]"
       ></div>
@@ -94,11 +94,11 @@ export default function SkillsMobile() {
             </div>
           </div>
         </div>
-        <img
+        {/* <img
           src="https://github-readme-stats.vercel.app/api?username=tale05&show_icons=true&theme=transparent"
           alt="GitHub Stats"
           className="w-full h-auto max-w-md"
-        />
+        /> */}
         <div className="flex flex-wrap justify-center gap-4 my-5 mx-0">
           {logoIconSkill.map((logo) => (
             <img

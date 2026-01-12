@@ -1,4 +1,4 @@
-import myAva from "../../assets/CV_Avatar_mobile.png";
+import myAva from "../../assets/CV_Avatar_mobile.jpg";
 import cvEng from "../../assets/CV_PhamLeTuanAnh_ENG.pdf";
 import cvDeu from "../../assets/CV_PhamLeTuanAnh_DEU.pdf";
 import InstagramButton from "../../components/social-button/InstagramButton";
@@ -66,7 +66,7 @@ export default function HomeMobile() {
           rounded-2xl shadow-lg hover:bg-white transition duration-75"
         >
           <p
-            className="text-green-700 text-center text-[16px] font-bold hover:text-black
+            className="text-gray-700 text-center text-[16px] font-bold hover:text-black
           dark:hover:text-black dark:text-green-50"
           >
             {description1}
@@ -80,7 +80,7 @@ export default function HomeMobile() {
           rounded-2xl shadow-lg hover:bg-white transition duration-75"
         >
           <p
-            className="text-green-700 text-center text-[16px] font-bold hover:text-black
+            className="text-gray-700 text-center text-[16px] font-bold hover:text-black
           dark:hover:text-black dark:text-green-50"
           >
             {description2}
@@ -94,7 +94,7 @@ export default function HomeMobile() {
           rounded-2xl shadow-lg hover:bg-white transition duration-75"
         >
           <p
-            className="text-green-700 text-center text-[16px] font-bold hover:text-black
+            className="text-gray-700 text-center text-[16px] font-bold hover:text-black
           dark:hover:text-black dark:text-green-50"
           >
             {description3}
@@ -108,7 +108,7 @@ export default function HomeMobile() {
           rounded-2xl shadow-lg hover:bg-white transition duration-75"
         >
           <p
-            className="text-green-700 text-center text-[16px] font-bold hover:text-black
+            className="text-gray-700 text-center text-[16px] font-bold hover:text-black
           dark:hover:text-black dark:text-green-50"
           >
             {description4}

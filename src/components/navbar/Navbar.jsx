@@ -62,7 +62,7 @@ export default function Navbar() {
           <div className="max-w-[1300px] mx-auto grid grid-cols-12 gap-4 p-2">
             <div className="col-span-8">
               <p
-                className={`text-2xl text-white 
+                className={`text-2xl text-black 
                 font-notosans font-semibold italic
                 px-3 py-2
                 rounded-lg

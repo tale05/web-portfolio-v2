@@ -31,7 +31,7 @@ export default function Home() {
           <HomeMobile />
         </div>
       ) : (
-        <div className="max-w-[1300px] h-auto mx-auto px-4 py-20">
+        <div className="max-w-[1300px] h-auto mx-auto px-4 py-5">
           <div className="grid grid-cols-[2fr_1fr] gap-4 h-full pt-2 pb-5 items-center">
             <div className="block">
               {/* <div className="flex items-start justify-items-start">
@@ -41,7 +41,7 @@ export default function Home() {
               {/* Hiệu ứng typewriter */}
               <p
                 className="text-transparent bg-clip-text bg-text-tilte
-                font-extrabold font-sans text-[150px] 
+                font-black font-playwrite text-[90px] 
                 pb-10 m-0 text-shadow-lg h-full"
               >
                 {title}
@@ -67,7 +67,7 @@ export default function Home() {
                   transition duration-75"
                 >
                   <p
-                    className="text-green-700 text-left text-[16px] font-bold hover:text-black 
+                    className="text-black text-left text-[16px] font-bold hover:text-black 
                     dark:hover:text-black dark:text-white"
                   >
                     {description1}
@@ -83,7 +83,7 @@ export default function Home() {
                   transition duration-75"
                 >
                   <p
-                    className="text-green-700 text-left text-[16px] font-bold hover:text-black
+                    className="text-black text-left text-[16px] font-bold hover:text-black
                   dark:hover:text-black dark:text-white"
                   >
                     {description2}
@@ -99,7 +99,7 @@ export default function Home() {
                   transition duration-75"
                 >
                   <p
-                    className="text-green-700 text-left text-[16px] font-bold hover:text-black
+                    className="text-black text-left text-[16px] font-bold hover:text-black
                   dark:hover:text-black dark:text-white"
                   >
                     {description3}
@@ -115,7 +115,7 @@ export default function Home() {
                   transition duration-75"
                 >
                   <p
-                    className="text-green-700 text-left text-[16px] font-bold hover:text-black
+                    className="text-black text-left text-[16px] font-bold hover:text-black
                   dark:hover:text-black dark:text-white"
                   >
                     {description4}
