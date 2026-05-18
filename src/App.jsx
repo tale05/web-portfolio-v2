@@ -11,29 +11,15 @@ export default function App() {
     <>
       <div
         className="
-  min-h-screen w-full block items-center justify-center pb-24
+        min-h-screen w-full block items-center justify-center pb-24
 
-  /* Light mode */
-  bg-white
-  bg-[radial-gradient(at_70%_97%,_#dbeafe_0px,_transparent_50%),_radial-gradient(at_32.92%_20.625%,_#e0f2fe_0px,_transparent_50%),_radial-gradient(at_0%_100%,_#f3f4f6_0px,_transparent_50%)]
-
-  /* Dark mode */
-  dark:bg-[#020617]
-  dark:bg-[radial-gradient(at_70%_97%,_#1e40af_0px,_transparent_50%),_radial-gradient(at_32.92%_20.625%,_#0f172a_0px,_transparent_50%),_radial-gradient(at_0%_100%,_#020617_0px,_transparent_50%)]
-"
-
-        // className="
-        //       ios-no-fixed
-        //       min-h-screen pb-20
-
-        //       /* Light mode */
-        //       bg-[url('/images/background3.jpg')]
-        //       bg-cover bg-center bg-no-repeat bg-fixed
-
-        //       /* Dark mode */
-        //       dark:bg-[url('/images/background2.jpg')]
-        //       dark:bg-cover dark:bg-center dark:bg-no-repeat dark:bg-fixed
-        //     "
+        /* Light mode */
+        bg-white
+      bg-[radial-gradient(at_82%_8%,_rgba(34,211,238,0.18)_0px,_transparent_42%),_radial-gradient(at_12%_42%,_rgba(14,165,233,0.12)_0px,_transparent_38%),_radial-gradient(at_50%_100%,_rgba(248,250,252,0.95)_0px,_transparent_45%),_linear-gradient(145deg,_#f8fafc_0%,_#eff6ff_48%,_#f8fafc_100%)]
+        /* Dark mode */
+        dark:bg-[#020617]
+        dark:bg-[radial-gradient(at_74%_90%,_rgba(37,99,235,0.40)_0px,_transparent_44%),_radial-gradient(at_24%_18%,_rgba(14,165,233,0.22)_0px,_transparent_46%),_radial-gradient(at_0%_100%,_rgba(15,23,42,0.75)_0px,_transparent_54%),_linear-gradient(145deg,_#020617_0%,_#0f172a_52%,_#111827_100%)]        
+      "
       >
         <Navbar />
         <div id="home">

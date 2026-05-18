@@ -29,21 +29,84 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
-  // Hàm cuộn mượt đến phần tương ứng khi nhấn vào mục trong menu
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
+
     if (section) {
-      const yOffset = -60;
+      const yOffset = -80;
       const y =
         section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
       window.scrollTo({ top: y, behavior: "smooth" });
+      setIsMenuOpen(false);
     }
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShowNav(true), 200); // delay 0.2s
+    const timeout = setTimeout(() => setShowNav(true), 200);
     return () => clearTimeout(timeout);
   }, []);
+
+  const infoItems = [
+    {
+      icon: FaUser,
+      label: t("nameMenuNavbar"),
+    },
+    {
+      icon: FaBirthdayCake,
+      label: t("dateOfBirthMenuNavbar"),
+    },
+    {
+      icon: FaVenusMars,
+      label: t("genderMenuNavbar"),
+    },
+  ];
+
+  const contactItems = [
+    {
+      icon: FaEnvelope,
+      label: "Email: tuananhphamle051202@gmail.com",
+      href: "mailto:tuananhphamle051202@gmail.com",
+    },
+    {
+      icon: FaPhoneAlt,
+      label: t("phoneNumberMenuNavbar"),
+      href: "tel:+84901135877",
+    },
+    {
+      icon: FaMapMarkerAlt,
+      label: "Sandhofen, Mannheim, Deutschland",
+      href: "https://maps.app.goo.gl/c4Bq5e7bfvmssj3t7",
+    },
+  ];
+
+  const menuItems = [
+    {
+      icon: FaLaptopCode,
+      label: t("item1MenuNavbar"),
+      section: "skills",
+    },
+    {
+      icon: FaProjectDiagram,
+      label: t("item2MenuNavbar"),
+      section: "projects",
+    },
+    {
+      icon: FaGraduationCap,
+      label: t("item3MenuNavbar"),
+      section: "education",
+    },
+    {
+      icon: FaGlobe,
+      label: t("item4MenuNavbar"),
+      section: "language",
+    },
+    {
+      icon: FaCertificate,
+      label: t("item5MenuNavbar"),
+      section: "certificate",
+    },
+  ];
 
   return (
     <>
@@ -51,159 +114,202 @@ export default function Navbar() {
         <NavbarMobile />
       ) : (
         <nav
-          className={`w-full relative top-0 left-0 z-20 bg-transparent text-black transition-all duration-700 transform 
+          className={`
+            fixed left-0 top-0 z-30 w-full px-4 pt-4
+            transition-all duration-700 ease-out
             ${
-              showNav
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 -translate-y-10"
-            } 
-            ${isMenuOpen ? "bg-transparent" : "bg-transparent"}`}
+              showNav ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"
+            }
+          `}
         >
-          <div className="max-w-[1300px] mx-auto grid grid-cols-12 gap-4 p-2">
-            <div className="col-span-8">
+          <div
+            className="
+              mx-auto grid max-w-[1300px] grid-cols-12 items-center gap-4
+              rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-3
+              shadow-[0_10px_35px_rgba(15,23,42,0.08)]
+              backdrop-blur-xl
+              dark:border-white/10 dark:bg-white/[0.065]
+              dark:shadow-[0_14px_45px_rgba(0,0,0,0.28)]
+            "
+          >
+            <div className="col-span-8 min-w-0">
               <p
-                className={`text-2xl text-black 
-                font-notosans font-semibold italic
-                px-3 py-2
-                rounded-lg
-                w-auto
-                ${isMenuOpen ? "invisible" : "visible"}`}
+                className={`
+                  truncate px-2 text-xl font-semibold italic text-slate-900
+                  transition-opacity duration-300 dark:text-white
+                  ${isMenuOpen ? "opacity-40" : "opacity-100"}
+                `}
               >
                 {displayText}
               </p>
             </div>
-            <div className="col-span-4 flex justify-end items-center">
+
+            <div className="col-span-4 flex items-center justify-end gap-3">
               <div
-                className="relative group cursor-pointer z-20"
+                className="relative z-40"
                 onMouseEnter={() => setIsMenuOpen(true)}
                 onMouseLeave={() => setIsMenuOpen(false)}
               >
                 <button
-                  className={`text-2xl p-2 hover:bg-white rounded-tl-md rounded-tr-md transition-colors
-                          ${isMenuOpen ? "invisible" : "visible"}`}
+                  type="button"
+                  aria-label="Open navigation menu"
+                  className="
+                    inline-flex h-11 w-11 items-center justify-center rounded-xl
+                    border border-slate-200/70 bg-white/75 text-slate-800
+                    shadow-[0_8px_22px_rgba(15,23,42,0.08)]
+                    backdrop-blur-xl transition-all duration-300
+                    hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-white
+                    dark:border-white/10 dark:bg-white/[0.08]
+                    dark:text-white dark:hover:border-cyan-300/30
+                    dark:hover:bg-white/[0.12]
+                  "
                 >
-                  <FaBars
-                    className={`${isMenuOpen ? "text-black" : "text-white"}`}
-                  />
+                  <FaBars className="h-5 w-5" />
                 </button>
-                <div
-                  className=" absolute right-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                flex flex-col gap-1 bg-white text-black shadow-lg rounded-lg p-4 text-sm transition-all duration-200
-                dark:bg-gray-900"
-                >
-                  <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
-                    <p className="font-bold text-gray-700 dark:text-white border-b pb-1">
-                      {t("titleInformationMenuNavbar")}
-                    </p>
-                    <a
-                      className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                    text-black dark:text-white dark:hover:text-green-400"
-                    >
-                      <FaUser className="text-green-600" />
-                      <span>{t("nameMenuNavbar")}</span>
-                    </a>
-                    <a
-                      className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                    text-black dark:text-white dark:hover:text-green-400"
-                    >
-                      <FaBirthdayCake className="text-green-600" />
-                      <span>{t("dateOfBirthMenuNavbar")}</span>
-                    </a>
-                    <a
-                      className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                    text-black dark:text-white dark:hover:text-green-400"
-                    >
-                      <FaVenusMars className="text-green-600" />
-                      <span>{t("genderMenuNavbar")}</span>
-                    </a>
-                    <p className="font-bold text-gray-700 dark:text-white border-b pb-1">
-                      {t("titleContactMenuNavbar")}
-                    </p>
-                    <a
-                      href="mailto:tuananhphamle051202@gmail.com"
-                      className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                      text-black dark:text-white dark:hover:text-green-400"
-                    >
-                      <FaEnvelope className="text-green-600" />
-                      <span>Email: tuananhphamle051202@gmail.com</span>
-                    </a>
-                    <a
-                      href="tel:+84901135877"
-                      className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                      text-black dark:text-white dark:hover:text-green-400"
-                    >
-                      <FaPhoneAlt className="text-green-600" />
-                      <span>{t("phoneNumberMenuNavbar")}</span>
-                    </a>
-                    <a
-                      href="https://maps.app.goo.gl/c4Bq5e7bfvmssj3t7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                      text-black dark:text-white dark:hover:text-green-400"
-                    >
-                      <FaMapMarkerAlt className="text-green-600" />
-                      {/* <span>{t("locationMenuNavbar")}</span> */}
-                      <span>Sandhofen, Mannheim, Deutschland</span>
-                    </a>
-                  </div>
 
-                  {/* Menu List */}
-                  <ul className="flex flex-col border-t pt-3 w-[350px]">
-                    <li>
-                      <button
-                        onClick={() => scrollToSection("skills")}
-                        className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-75
-                        text-black dark:text-white dark:hover:text-black"
+                <div
+                  className={`
+                    absolute right-0 top-full mt-3 w-[390px] overflow-hidden
+                    rounded-2xl border border-slate-200/70 bg-white/85 p-4
+                    text-sm text-slate-800
+                    shadow-[0_24px_80px_rgba(15,23,42,0.18)]
+                    backdrop-blur-2xl transition-all duration-300
+                    dark:border-white/10 dark:bg-slate-950/85 dark:text-white
+                    ${
+                      isMenuOpen
+                        ? "visible translate-y-0 opacity-100"
+                        : "invisible -translate-y-2 opacity-0"
+                    }
+                  `}
+                >
+                  <div
+                    className="
+                      pointer-events-none absolute inset-0
+                      bg-[linear-gradient(135deg,rgba(255,255,255,0.55),transparent_42%,rgba(14,165,233,0.08))]
+                      dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%,rgba(14,165,233,0.10))]
+                    "
+                  />
+
+                  <div
+                    className="
+                      pointer-events-none absolute -right-12 -top-14 h-40 w-40
+                      rounded-full bg-cyan-400/10 blur-3xl
+                      dark:bg-cyan-300/10
+                    "
+                  />
+
+                  <div className="relative z-10 space-y-5">
+                    <div>
+                      <p
+                        className="
+                          mb-3 border-b border-slate-200/70 pb-2
+                          text-xs font-bold uppercase tracking-[0.12em]
+                          text-slate-500 dark:border-white/10 dark:text-slate-400
+                        "
                       >
-                        <FaLaptopCode className="text-green-600" />{" "}
-                        {t("item1MenuNavbar")}
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => scrollToSection("projects")}
-                        className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100
-                        text-black dark:text-white dark:hover:text-black"
+                        {t("titleInformationMenuNavbar")}
+                      </p>
+
+                      <div className="space-y-2">
+                        {infoItems.map((item) => {
+                          const Icon = item.icon;
+
+                          return (
+                            <div
+                              key={item.label}
+                              className="
+                                flex items-center gap-3 rounded-xl px-3 py-2
+                                text-slate-700 transition-colors duration-300
+                                hover:bg-cyan-500/10 hover:text-cyan-700
+                                dark:text-slate-300 dark:hover:text-cyan-200
+                              "
+                            >
+                              <Icon className="h-4 w-4 text-cyan-600 dark:text-cyan-300" />
+                              <span className="truncate">{item.label}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <div>
+                      <p
+                        className="
+                          mb-3 border-b border-slate-200/70 pb-2
+                          text-xs font-bold uppercase tracking-[0.12em]
+                          text-slate-500 dark:border-white/10 dark:text-slate-400
+                        "
                       >
-                        <FaProjectDiagram className="text-green-600" />{" "}
-                        {t("item2MenuNavbar")}
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => scrollToSection("education")}
-                        className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100
-                        text-black dark:text-white dark:hover:text-black"
-                      >
-                        <FaGraduationCap className="text-green-600" />{" "}
-                        {t("item3MenuNavbar")}
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => scrollToSection("language")}
-                        className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100
-                        text-black dark:text-white dark:hover:text-black"
-                      >
-                        <FaGlobe className="text-green-600" />{" "}
-                        {t("item4MenuNavbar")}
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        onClick={() => scrollToSection("certificate")}
-                        className="flex items-center gap-2 w-full text-left p-3 rounded-md hover:bg-green-100 transition-colors duration-100
-                        text-black dark:text-white dark:hover:text-black"
-                      >
-                        <FaCertificate className="text-green-600" />{" "}
-                        {t("item5MenuNavbar")}
-                      </button>
-                    </li>
-                  </ul>
+                        {t("titleContactMenuNavbar")}
+                      </p>
+
+                      <div className="space-y-2">
+                        {contactItems.map((item) => {
+                          const Icon = item.icon;
+
+                          return (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              target={
+                                item.href.startsWith("http")
+                                  ? "_blank"
+                                  : undefined
+                              }
+                              rel={
+                                item.href.startsWith("http")
+                                  ? "noopener noreferrer"
+                                  : undefined
+                              }
+                              className="
+                                flex items-center gap-3 rounded-xl px-3 py-2
+                                text-slate-700 transition-colors duration-300
+                                hover:bg-cyan-500/10 hover:text-cyan-700
+                                dark:text-slate-300 dark:hover:text-cyan-200
+                              "
+                            >
+                              <Icon className="h-4 w-4 flex-shrink-0 text-cyan-600 dark:text-cyan-300" />
+                              <span className="truncate">{item.label}</span>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <ul className="border-t border-slate-200/70 pt-3 dark:border-white/10">
+                      {menuItems.map((item) => {
+                        const Icon = item.icon;
+
+                        return (
+                          <li key={item.section}>
+                            <button
+                              type="button"
+                              onClick={() => scrollToSection(item.section)}
+                              className="
+                                flex w-full items-center gap-3 rounded-xl px-3 py-3
+                                text-left font-medium text-slate-800
+                                transition-all duration-300
+                                hover:bg-cyan-500/10 hover:text-cyan-700
+                                dark:text-slate-200 dark:hover:text-cyan-200
+                              "
+                            >
+                              <Icon className="h-4 w-4 text-cyan-600 dark:text-cyan-300" />
+                              {item.label}
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 </div>
               </div>
-              <div className="w-auto h-auto px-4 flex flex-row items-center justify-end gap-2">
+
+              <div
+                className="
+                  flex items-center gap-2
+                  bg-transparent px-2 py-1.5
+                "
+              >
                 <ThemeToggle />
                 <LanguageSelector />
               </div>
@@ -211,9 +317,15 @@ export default function Navbar() {
           </div>
         </nav>
       )}
-      {isMenuOpen && (
-        // Làm mờ nền khi hover và menu xuất hiện
-        <div className="fixed inset-0 z-19 w-full h-screen bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"></div>
+
+      {isMenuOpen && !isMobile && (
+        <div
+          className="
+            fixed inset-0 z-20 h-screen w-full
+            bg-white/25 backdrop-blur-md
+            dark:bg-slate-950/35
+          "
+        />
       )}
     </>
   );

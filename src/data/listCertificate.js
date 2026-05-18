@@ -1,6 +1,7 @@
 import certificate1 from "../assets/ZertifikateA1_digital.pdf";
 import certificate2 from "../assets/Certificate_TOEIC.jpg";
 import certificate3 from "../assets/Certificate_HAT.pdf";
+import certificate4 from "../assets/Zertifikat_B1.pdf";
 
 export const listCertificate = [
   {
@@ -8,6 +9,12 @@ export const listCertificate = [
     desc: "Goethe-Institut",
     link: "https://www.goethe.de/de/index.html",
     view: certificate1,
+  },
+  {
+    name: "TELC ZERTIFIKAT B1",
+    desc: "telc",
+    link: "https://results.telc.net/vb?credential=telc-4fA0HbT",
+    view: certificate4,
   },
   {
     name: "TOEIC 605",

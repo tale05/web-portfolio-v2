@@ -25,24 +25,27 @@ export default function Skills() {
           <SkillsMobile />
         </div>
       ) : (
-        <div className="max-w-[1300px] h-auto mx-auto px-4 py-2 relative">
-          <div
-            className="w-[800px] mx-auto my-6
-            border-b-[10px] border-[#56a15a]
-            shadow-[0_8px_20px_rgba(86,161,90,0.5)]"
-          ></div>
-          <h1
-            className="relative z-12 flex items-center justify-center gap-3 p-4 w-full
-          text-2xl text-white font-bold text-center 
-          bg-color-for-tilte rounded-xl shadow-lg"
-          >
-            <Code className="w-8 h-8 text-white" />
-            {t("titleSkills")}
-          </h1>
-          {/* Cat nằm sau title */}
-          {/* <div className="absolute -top-20 right-10 z-10">
-            <Cat />
-          </div> */}
+        <div className="max-w-[1300px] h-auto mx-auto px-4 relative">
+          <div className="mx-auto my-6 flex w-full max-w-[800px] items-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-400/50" />
+
+            <h1
+              className="
+                inline-flex items-center gap-3 rounded-full
+                border border-cyan-500/20 bg-cyan-500/10
+                px-5 py-3 text-lg font-bold text-cyan-700
+                shadow-[0_10px_30px_rgba(8,145,178,0.12)]
+                backdrop-blur-xl
+                dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-200
+                sm:text-xl
+              "
+            >
+              <Code className="h-5 w-5" />
+              {t("titleSkills")}
+            </h1>
+
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-400/50" />
+          </div>
 
           <div
             className="my-8 block p-4 rounded-2xl
@@ -81,13 +84,6 @@ export default function Skills() {
               </div>
             </div>
             <div className="flex items-center justify-center my-4 gap-4">
-              {/* <div>
-                <img
-                  src="https://github-readme-stats.vercel.app/api?username=tale05&show_icons=true&theme=transparent"
-                  alt="GitHub Stats"
-                  className="w-[800px] h-auto"
-                />
-              </div> */}
               <div className="flex items-center justify-center gap-8 flex-wrap mt-4">
                 {logoIconSkill.map((logo) => (
                   <img

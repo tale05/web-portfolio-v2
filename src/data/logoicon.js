@@ -2,7 +2,7 @@ import swagger from "../assets/swagger.png";
 
 export const logoIconSkill = [
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png",
+    src: "https://learn.microsoft.com/vi-vn/media/logos/logo_net.svg",
     alt: "ASP.NET Core",
   },
   {
@@ -31,7 +31,7 @@ export const logoIconSkill = [
   },
   { src: "https://vite.dev/logo.svg", alt: "Vite" },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     alt: "Tailwind CSS",
   },
   {
@@ -82,7 +82,7 @@ export const logoIconSkill = [
 
 export const listSkillLevel = [
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png",
+    src: "https://learn.microsoft.com/vi-vn/media/logos/logo_net.svg",
     alt: "ASP.NET Core",
     name: ".NET Core MVC",
     level: "Advanced",
@@ -130,7 +130,7 @@ export const listSkillLevel = [
     level: "Basic",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     alt: "TailwindCSS",
     name: "Tailwind CSS",
     level: "Intermediate",
@@ -151,7 +151,7 @@ export const listDb = [
     level: "Basic",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png",
+    src: "https://learn.microsoft.com/vi-vn/media/logos/logo_net.svg",
     alt: "ASP.NET Core",
     name: ".NET Core API",
     level: "Advanced",
@@ -184,7 +184,7 @@ export const listTools = [
     level: "Advanced",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png",
+    src: "https://miro.medium.com/1*p6exlg2Jrl3pimjPy7R-sA.png",
     alt: "GitHub Desktop",
     name: "GitHub Desktop",
     level: "Advanced",

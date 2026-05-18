@@ -13,19 +13,26 @@ export default function Education() {
         <EducationMobile />
       ) : (
         <div className="max-w-[1300px] h-auto mx-auto py-4 relative">
-          <div
-            className="w-[800px] mx-auto my-6
-            border-b-[10px] border-[#56a15a]
-            shadow-[0_8px_20px_rgba(86,161,90,0.5)]"
-          ></div>
-          <h1
-            className="relative z-1 flex items-center justify-center gap-3 p-4 w-full
-            text-2xl text-white font-bold text-center 
-            bg-color-for-tilte rounded-xl shadow-lg"
-          >
-            <GraduationCap className="w-8 h-8 text-white" />
-            Education
-          </h1>
+          <div className="mx-auto my-6 flex w-full max-w-[800px] items-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-400/50" />
+
+            <h1
+              className="
+                inline-flex items-center gap-3 rounded-full
+                border border-cyan-500/20 bg-cyan-500/10
+                px-5 py-3 text-lg font-bold text-cyan-700
+                shadow-[0_10px_30px_rgba(8,145,178,0.12)]
+                backdrop-blur-xl
+                dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-200
+                sm:text-xl
+              "
+            >
+              <GraduationCap className="w-8 h-8 text-cyan-700" />
+              Education
+            </h1>
+
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-400/50" />
+          </div>
           {/* Cat nằm sau title */}
           {/* <div className="absolute -top-[70px] right-10 z-2">
             <GraduationHatAnimation />

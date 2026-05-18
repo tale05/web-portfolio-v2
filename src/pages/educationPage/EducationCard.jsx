@@ -8,79 +8,149 @@ export default function EducationCard({
   linkMyDegree_inDEU,
   more,
 }) {
+  const hasDegree = linkMyDegree && linkMyDegree.trim() !== "";
+  const hasDegreeDEU = linkMyDegree_inDEU && linkMyDegree_inDEU.trim() !== "";
+
   return (
     <div
-      className="relative flex flex-col space-y-4 w-full h-auto rounded-2xl 
-                 px-6 pb-6 pt-5 bg-white/10 backdrop-blur-lg 
-                 border border-white/20 shadow-lg 
-                 transition-transform duration-300 ease-linear
-                 hover:scale-105 hover:shadow-2xl hover:bg-white/20
-                 cursor-pointer"
+      className="
+        group relative flex h-full w-full cursor-pointer flex-col overflow-hidden
+        rounded-2xl border border-slate-200/70
+        bg-white/75 p-5
+        shadow-[0_10px_35px_rgba(15,23,42,0.08)]
+        backdrop-blur-xl
+        transition-all duration-300 ease-out
+        hover:-translate-y-1 hover:border-cyan-400/40
+        hover:bg-white hover:shadow-[0_18px_55px_rgba(15,23,42,0.14)]
+        dark:border-white/10 dark:bg-white/[0.065]
+        dark:shadow-[0_14px_45px_rgba(0,0,0,0.28)]
+        dark:hover:border-cyan-300/30 dark:hover:bg-white/[0.095]
+        dark:hover:shadow-[0_22px_70px_rgba(8,145,178,0.18)]
+      "
     >
-      {/* Header: Name */}
-      <div className="flex flex-row items-center space-x-3">
-        <GanttChart className="h-6 w-6 text-blue-600" />
-        <h1 className="text-xl font-bold text-blue-700 dark:text-blue-100">
-          {name}
-        </h1>
-      </div>
+      <div
+        className="
+          pointer-events-none absolute inset-0
+          bg-[linear-gradient(135deg,rgba(255,255,255,0.55),transparent_42%,rgba(14,165,233,0.08))]
+          opacity-70 transition-opacity duration-300
+          group-hover:opacity-100
+          dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.12),transparent_42%,rgba(14,165,233,0.12))]
+        "
+      />
 
-      {/* Year Graduated */}
-      <div className="flex flex-row items-center space-x-2">
-        <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400" />
-        <h2 className="text-base font-medium text-green-700 dark:text-green-400">
-          {yearGraduated}
-        </h2>
-      </div>
+      <div
+        className="
+          pointer-events-none absolute -right-10 -top-12 h-36 w-36 rounded-full
+          bg-cyan-400/10 blur-2xl transition-all duration-300
+          group-hover:bg-cyan-400/20
+          dark:bg-cyan-300/10 dark:group-hover:bg-cyan-300/16
+        "
+      />
 
-      {/* Type of Degree */}
-      <div className="text-blue-800 dark:text-blue-400 text-sm">
-        <p>{typeGraduated}</p>
-      </div>
-
-      {/* Footer Links */}
-      <div className="flex flex-row justify-end space-x-4 mt-2">
-        {/* My Degree */}
-        <a
-          href={linkMyDegree && linkMyDegree.trim() !== "" ? linkMyDegree : "#"}
-          target={linkMyDegree ? "_blank" : "_self"}
-          rel="noopener noreferrer"
-          className={`flex items-center text-sm font-medium ${
-            linkMyDegree
-              ? "text-blue-900 dark:text-blue-300 hover:underline"
-              : "text-gray-500 cursor-not-allowed"
-          }`}
+      <div className="relative z-10 flex items-start gap-3">
+        <div
+          className="
+            flex h-11 w-11 flex-shrink-0 items-center justify-center
+            rounded-xl border border-slate-200/80
+            bg-slate-50/80
+            shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_22px_rgba(15,23,42,0.08)]
+            dark:border-white/10 dark:bg-white/[0.08]
+          "
         >
-          My Degree <ExternalLink className="ml-1 h-4 w-4" />
+          <GanttChart className="h-5 w-5 text-cyan-600 dark:text-cyan-300" />
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <h1
+            className="
+              text-lg font-semibold leading-snug text-slate-900
+              dark:text-white sm:text-xl
+            "
+          >
+            {name}
+          </h1>
+
+          <div
+            className="
+              mt-3 inline-flex items-center gap-1.5 rounded-full
+              border border-emerald-500/20 bg-emerald-500/10
+              px-3 py-1 text-xs font-semibold text-emerald-700
+              dark:border-emerald-400/20 dark:bg-emerald-400/10
+              dark:text-emerald-300 sm:text-sm
+            "
+          >
+            <CheckCircle className="h-4 w-4" />
+            <span>{yearGraduated}</span>
+          </div>
+        </div>
+      </div>
+
+      <p
+        className="
+          relative z-10 mt-5 text-sm leading-relaxed
+          text-slate-600 dark:text-slate-400
+        "
+      >
+        {typeGraduated}
+      </p>
+
+      <div className="relative z-10 mt-5 flex flex-wrap justify-end gap-2">
+        <a
+          href={hasDegree ? linkMyDegree : "#"}
+          target={hasDegree ? "_blank" : "_self"}
+          rel="noopener noreferrer"
+          aria-disabled={!hasDegree}
+          className={`
+            inline-flex items-center gap-1.5 rounded-full px-3 py-2
+            text-xs font-semibold transition-all duration-300 sm:text-sm
+            ${
+              hasDegree
+                ? "border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 hover:border-cyan-500/35 hover:bg-cyan-500/15 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-200 dark:hover:bg-cyan-300/15"
+                : "pointer-events-none border border-slate-300/60 bg-slate-100/60 text-slate-400 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-600"
+            }
+          `}
+        >
+          My Degree
+          <ExternalLink className="h-4 w-4" />
         </a>
 
-        {/* Translated to German */}
         <a
-          href={
-            linkMyDegree_inDEU && linkMyDegree_inDEU.trim() !== ""
-              ? linkMyDegree_inDEU
-              : "#"
-          }
-          target={linkMyDegree_inDEU ? "_blank" : "_self"}
+          href={hasDegreeDEU ? linkMyDegree_inDEU : "#"}
+          target={hasDegreeDEU ? "_blank" : "_self"}
           rel="noopener noreferrer"
-          className={`flex items-center text-sm font-medium ${
-            linkMyDegree_inDEU
-              ? "text-blue-900 dark:text-blue-300 hover:underline"
-              : "text-gray-500 cursor-not-allowed"
-          }`}
+          aria-disabled={!hasDegreeDEU}
+          className={`
+            inline-flex items-center gap-1.5 rounded-full px-3 py-2
+            text-xs font-semibold transition-all duration-300 sm:text-sm
+            ${
+              hasDegreeDEU
+                ? "border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 hover:border-cyan-500/35 hover:bg-cyan-500/15 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-200 dark:hover:bg-cyan-300/15"
+                : "pointer-events-none border border-slate-300/60 bg-slate-100/60 text-slate-400 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-600"
+            }
+          `}
         >
-          Translated to German <ExternalLink className="ml-1 h-4 w-4" />
+          German Translation
+          <ExternalLink className="h-4 w-4" />
         </a>
-      </div>
-      <div className="w-full h-auto flex items-end justify-end">
+
         {more && (
           <a
             href={more}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-sm text-blue-500 hover:underline font-medium"
+            className="
+              inline-flex items-center gap-1.5 rounded-full
+              border border-slate-300/70 bg-slate-100/70
+              px-3 py-2 text-xs font-semibold text-slate-700
+              transition-all duration-300
+              hover:border-cyan-500/30 hover:bg-cyan-500/10 hover:text-cyan-700
+              dark:border-white/10 dark:bg-white/[0.07]
+              dark:text-slate-300 dark:hover:bg-cyan-300/10
+              dark:hover:text-cyan-200 sm:text-sm
+            "
           >
-            More <ExternalLink className="ml-1 h-4 w-4" />
+            More
+            <ExternalLink className="h-4 w-4" />
           </a>
         )}
       </div>

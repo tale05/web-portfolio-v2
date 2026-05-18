@@ -25,221 +25,287 @@ export default function NavbarMobile() {
   const displayText = useTypewriter("Le Tuan Anh Pham", 30);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
+
     if (section) {
       const yOffset = -80;
       const y =
         section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
       window.scrollTo({ top: y, behavior: "smooth" });
+      setIsMenuOpen(false);
     }
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShowNav(true), 200); // delay 0.2s
+    const timeout = setTimeout(() => setShowNav(true), 200);
     return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const infoItems = [
+    { icon: FaUser, label: t("nameMenuNavbar") },
+    { icon: FaBirthdayCake, label: t("dateOfBirthMenuNavbar") },
+    { icon: FaVenusMars, label: t("genderMenuNavbar") },
+  ];
+
+  const contactItems = [
+    {
+      icon: FaEnvelope,
+      label: "Email: tuananhphamle051202@gmail.com",
+      href: "mailto:tuananhphamle051202@gmail.com",
+    },
+    {
+      icon: FaPhoneAlt,
+      label: t("phoneNumberMenuNavbar"),
+      href: "tel:+4917644768052",
+    },
+    {
+      icon: FaMapMarkerAlt,
+      label: "Sandhofen, Mannheim, Deutschland",
+      href: "https://maps.app.goo.gl/c4Bq5e7bfvmssj3t7",
+    },
+  ];
+
+  const menuItems = [
+    { icon: FaLaptopCode, label: t("item1MenuNavbar"), section: "skills" },
+    {
+      icon: FaProjectDiagram,
+      label: t("item2MenuNavbar"),
+      section: "projects",
+    },
+    {
+      icon: FaGraduationCap,
+      label: t("item3MenuNavbar"),
+      section: "education",
+    },
+    { icon: FaGlobe, label: t("item4MenuNavbar"), section: "language" },
+    {
+      icon: FaCertificate,
+      label: t("item5MenuNavbar"),
+      section: "certificate",
+    },
+  ];
 
   return (
     <>
       <nav
-        className={`w-full fixed top-0 left-0 z-20 text-black transition-all duration-200 transform
-        ${showNav ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}
-        ${
-          isMenuOpen
-            ? "bg-white dark:bg-gray-900"
-            : isScrolled
-            ? "bg-white dark:bg-gray-900"
-            : "bg-transparent dark:bg-transparent"
-        }
-      `}
+        className={`
+          fixed inset-x-0 top-0 z-30 px-3 pt-3
+          transition-all duration-500 ease-out
+          ${showNav ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}
+        `}
       >
-        <div className="min-w-full mx-auto flex justify-between items-center px-4 py-2 z-30 relative">
-          {/* Text chạy typewriter */}
-          <div>
-            <p
-              className="text-lg font-playwrite font-semibold italic 
-              bg-gradient-to-tr from-emerald-600 via-emerald-600 to-green-700 bg-clip-text text-transparent 
-              px-3 py-2 
-              drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]"
-            >
-              {displayText}
-            </p>
-          </div>
-          {/* Hamburger + thông tin ẩn */}
+        <div
+          className={`
+            relative mx-auto flex w-full max-w-full items-center justify-between gap-3
+            overflow-hidden rounded-2xl border px-3 py-2.5
+            shadow-[0_10px_35px_rgba(15,23,42,0.08)]
+            backdrop-blur-xl transition-all duration-300
+            ${
+              isScrolled || isMenuOpen
+                ? "border-slate-200/70 bg-white/80 dark:border-white/10 dark:bg-slate-950/80"
+                : "border-white/40 bg-white/45 dark:border-white/10 dark:bg-white/[0.055]"
+            }
+          `}
+        >
+          <p
+            className="
+              min-w-0 flex-1 truncate px-1 text-base font-semibold italic
+              text-slate-900 dark:text-white
+            "
+          >
+            {displayText}
+          </p>
+
           <button
-            className="text-2xl p-2 rounded-tl-lg rounded-tr-lg transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            type="button"
+            aria-label="Toggle navigation menu"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="
+              inline-flex h-10 w-10 flex-shrink-0 items-center justify-center
+              rounded-xl border border-slate-200/70 bg-white/75
+              text-slate-800 shadow-[0_8px_22px_rgba(15,23,42,0.08)]
+              backdrop-blur-xl transition-all duration-300
+              active:scale-95
+              dark:border-white/10 dark:bg-white/[0.08] dark:text-white
+            "
           >
             {isMenuOpen ? (
-              <FaTimes className="text-black dark:text-white" />
+              <FaTimes className="h-4 w-4" />
             ) : (
-              <FaBars className="text-black dark:text-white" />
+              <FaBars className="h-4 w-4" />
             )}
           </button>
-          <div
-            className={`z-21 absolute left-0 top-full w-full flex flex-col gap-2 bg-white
-            rounded-bl-lg rounded-br-lg 
-            p-4 text-sm 
-            transform transition-all duration-300
-            dark:bg-gray-900
+        </div>
+
+        <div
+          className={`
+            fixed left-3 right-3 top-[85px] z-40
+            max-h-[calc(100vh-92px)] overflow-y-auto overflow-x-hidden
+            rounded-2xl bg-white/90 p-4
+            text-sm text-slate-800
+            backdrop-blur-2xl transition-all duration-300
+           dark:bg-slate-950/90 dark:text-white
             ${
               isMenuOpen
-                ? "opacity-100 translate-y-0 visible -mt-1"
-                : "opacity-0 -translate-y-2 invisible"
-            }`}
-          >
-            {/* Contact Information */}
-            <div className="space-y-4 pt-4 pb-4 pl-3 pr-3">
-              <p className="font-bold text-gray-700 dark:text-white border-b pb-1">
+                ? "visible translate-y-0 opacity-100"
+                : "invisible -translate-y-3 opacity-0"
+            }
+          `}
+        >
+          <div
+            className="
+              pointer-events-none absolute inset-0
+              bg-[linear-gradient(135deg,rgba(255,255,255,0.55),transparent_42%,rgba(14,165,233,0.08))]
+              dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_42%,rgba(14,165,233,0.10))]
+            "
+          />
+
+          <div
+            className="
+              pointer-events-none absolute -right-10 -top-12 h-36 w-36
+              rounded-full bg-cyan-400/10 blur-3xl
+              dark:bg-cyan-300/10
+            "
+          />
+
+          <div className="relative z-10 space-y-5">
+            <div>
+              <p
+                className="
+                  mb-3 border-b border-slate-200/70 pb-2
+                  text-xs font-bold uppercase tracking-[0.12em]
+                  text-slate-500 dark:border-white/10 dark:text-slate-400
+                "
+              >
                 {t("titleInformationMenuNavbar")}
               </p>
-              <a
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-              dark:text-white dark:hover:text-green-400"
-              >
-                <FaUser className="text-green-600" />
-                <span>{t("nameMenuNavbar")}</span>
-              </a>
-              <a
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-              dark:text-white dark:hover:text-green-400"
-              >
-                <FaBirthdayCake className="text-green-600" />
-                <span>{t("dateOfBirthMenuNavbar")}</span>
-              </a>
-              <a
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-              dark:text-white dark:hover:text-green-400"
-              >
-                <FaVenusMars className="text-green-600" />
-                <span>{t("genderMenuNavbar")}</span>
-              </a>
-              <p className="font-bold text-gray-700 dark:text-white border-b pb-1">
-                {t("titleContactMenuNavbar")}
-              </p>
-              <a
-                href="mailto:tuananhphamle051202@gmail.com"
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-              dark:text-white dark:hover:text-green-400"
-              >
-                <FaEnvelope className="text-green-600" />
-                <span>Email: tuananhphamle051202@gmail.com</span>
-              </a>
-              <a
-                href="tel:+4917644768052"
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                dark:text-white dark:hover:text-green-400"
-              >
-                <FaPhoneAlt className="text-green-600" />
-                <span>{t("phoneNumberMenuNavbar")}</span>
-              </a>
-              <a
-                href="https://maps.app.goo.gl/c4Bq5e7bfvmssj3t7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-green-500 transition-colors cursor-pointer
-                      text-black dark:text-white dark:hover:text-green-400"
-              >
-                <FaMapMarkerAlt className="text-green-600" />
-                {/* <span>{t("locationMenuNavbar")}</span> */}
-                <span>Sandhofen, Mannheim, Deutschland</span>
-              </a>
+
+              <div className="space-y-2">
+                {infoItems.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={item.label}
+                      className="
+                        flex w-full min-w-0 items-center gap-3 rounded-xl px-3 py-2.5
+                        text-slate-700 transition-colors duration-300
+                        active:bg-cyan-500/10 dark:text-slate-300
+                      "
+                    >
+                      <Icon className="h-4 w-4 flex-shrink-0 text-cyan-600 dark:text-cyan-300" />
+                      <span className="min-w-0 flex-1 truncate">
+                        {item.label}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Menu List */}
-            <ul className="flex flex-col gap-2 border-t pt-3 w-full">
-              <li>
-                <button
-                  onClick={() => {
-                    scrollToSection("skills");
-                    setIsMenuOpen(false);
-                  }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
-                  dark:text-white dark:hover:text-black"
-                >
-                  <FaLaptopCode className="text-green-600" />{" "}
-                  {t("item1MenuNavbar")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    scrollToSection("projects");
-                    setIsMenuOpen(false);
-                  }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
-                  dark:text-white dark:hover:text-black"
-                >
-                  <FaProjectDiagram className="text-green-600" />{" "}
-                  {t("item2MenuNavbar")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    scrollToSection("education");
-                    setIsMenuOpen(false);
-                  }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
-                  dark:text-white dark:hover:text-black"
-                >
-                  <FaGraduationCap className="text-green-600" />{" "}
-                  {t("item3MenuNavbar")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    scrollToSection("language");
-                    setIsMenuOpen(false);
-                  }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
-                  dark:text-white dark:hover:text-black"
-                >
-                  <FaGlobe className="text-green-600" /> {t("item4MenuNavbar")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    scrollToSection("certificate");
-                    setIsMenuOpen(false);
-                  }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-green-100 transition-colors duration-200
-                  dark:text-white dark:hover:text-black"
-                >
-                  <FaCertificate className="text-green-600" />{" "}
-                  {t("item5MenuNavbar")}
-                </button>
-              </li>
+            <div>
+              <p
+                className="
+                  mb-3 border-b border-slate-200/70 pb-2
+                  text-xs font-bold uppercase tracking-[0.12em]
+                  text-slate-500 dark:border-white/10 dark:text-slate-400
+                "
+              >
+                {t("titleContactMenuNavbar")}
+              </p>
+
+              <div className="space-y-2">
+                {contactItems.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target={
+                        item.href.startsWith("http") ? "_blank" : undefined
+                      }
+                      rel={
+                        item.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      className="
+                        flex w-full min-w-0 items-center gap-3 rounded-xl px-3 py-2.5
+                        text-slate-700 transition-colors duration-300
+                        active:bg-cyan-500/10 dark:text-slate-300
+                      "
+                    >
+                      <Icon className="h-4 w-4 flex-shrink-0 text-cyan-600 dark:text-cyan-300" />
+                      <span className="min-w-0 flex-1 truncate">
+                        {item.label}
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            <ul className="border-t border-slate-200/70 pt-3 dark:border-white/10">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <li key={item.section}>
+                    <button
+                      type="button"
+                      onClick={() => scrollToSection(item.section)}
+                      className="
+                        flex w-full min-w-0 items-center gap-3 rounded-xl px-3 py-3
+                        text-left font-medium text-slate-800
+                        transition-colors duration-300
+                        active:bg-cyan-500/10 active:text-cyan-700
+                        dark:text-slate-200 dark:active:text-cyan-200
+                      "
+                    >
+                      <Icon className="h-4 w-4 flex-shrink-0 text-cyan-600 dark:text-cyan-300" />
+                      <span className="min-w-0 flex-1 truncate">
+                        {item.label}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
-            <div className="w-full flex justify-end items-center gap-2">
+
+            <div
+              className="
+                flex w-full min-w-0 items-center justify-end gap-2
+              "
+            >
               <LanguageSelector />
               <ThemeToggle />
             </div>
           </div>
         </div>
       </nav>
+
       {isMenuOpen && (
-        <div
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="fixed inset-0 z-19 w-full h-screen bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg"
-        ></div>
+        <button
+          type="button"
+          aria-label="Close navigation menu"
+          onClick={() => setIsMenuOpen(false)}
+          className="
+            fixed inset-0 z-20 h-screen w-full
+            bg-white/25 backdrop-blur-md
+            dark:bg-slate-950/35
+          "
+        />
       )}
     </>
   );

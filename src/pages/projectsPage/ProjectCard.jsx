@@ -11,77 +11,145 @@ export default function ProjectCard({
 }) {
   return (
     <div
-      className="relative flex flex-col space-y-4 
-      w-full h-auto 
-      rounded-2xl 
-      px-6 pb-16 pt-5
-    bg-white/10 backdrop-blur-lg border border-white/20 
-      shadow-lg transition-transform duration-300 ease-linear
-      hover:scale-105 hover:shadow-2xl hover:bg-white/20
-      cursor-pointer"
+      className="
+        group relative flex h-full w-full cursor-pointer flex-col overflow-hidden
+        rounded-2xl border border-slate-200/70
+        bg-white/75 p-5
+        shadow-[0_10px_35px_rgba(15,23,42,0.08)]
+        backdrop-blur-xl
+        transition-all duration-300 ease-out
+        hover:-translate-y-1 hover:border-cyan-400/40
+        hover:bg-white hover:shadow-[0_18px_55px_rgba(15,23,42,0.14)]
+        dark:border-white/10 dark:bg-white/[0.065]
+        dark:shadow-[0_14px_45px_rgba(0,0,0,0.28)]
+        dark:hover:border-cyan-300/30 dark:hover:bg-white/[0.095]
+        dark:hover:shadow-[0_22px_70px_rgba(8,145,178,0.18)]
+      "
     >
-      {/* Header: Title */}
-      <div className="flex flex-row items-center justify-between">
-        <div className="flex flex-row items-center space-x-3">
-          <GanttChart className="h-6 w-6 text-black dark:text-green-500" />
-          <h1 className="text-xl font-semibold text-black dark:text-white">
+      <div
+        className="
+          pointer-events-none absolute inset-0
+          bg-[linear-gradient(135deg,rgba(255,255,255,0.55),transparent_42%,rgba(14,165,233,0.08))]
+          opacity-70 transition-opacity duration-300
+          group-hover:opacity-100
+          dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.12),transparent_42%,rgba(14,165,233,0.12))]
+        "
+      />
+
+      <div
+        className="
+          pointer-events-none absolute -right-10 -top-12 h-36 w-36 rounded-full
+          bg-cyan-400/10 blur-2xl transition-all duration-300
+          group-hover:bg-cyan-400/20
+          dark:bg-cyan-300/10 dark:group-hover:bg-cyan-300/16
+        "
+      />
+
+      <div className="relative z-10 flex items-start justify-between gap-4">
+        <div className="flex min-w-0 items-center gap-3">
+          <div
+            className="
+              flex h-11 w-11 flex-shrink-0 items-center justify-center
+              rounded-xl border border-slate-200/80
+              bg-slate-50/80
+              shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_22px_rgba(15,23,42,0.08)]
+              dark:border-white/10 dark:bg-white/[0.08]
+            "
+          >
+            <GanttChart className="h-5 w-5 text-cyan-600 dark:text-cyan-300" />
+          </div>
+
+          <h1
+            className="
+              truncate text-lg font-semibold text-slate-900
+              dark:text-white sm:text-xl
+            "
+          >
             {titleProject}
           </h1>
         </div>
       </div>
 
-      <div className="grid grid-cols-12">
-        <div className="col-span-3">
-          <div className="flex flex-row items-center space-x-2 justify-start">
-            {/* Status */}
-            <CheckCircle className="h-5 w-5 text-green-800 dark:text-green-400" />
-            <h2 className="text-base text-green-800 dark:text-green-400">
-              {status}
-            </h2>
-          </div>
-        </div>
-        <div className="col-span-9">
-          <div className="flex flex-row items-center space-x-2 justify-end">
-            {/* Date */}
-            <Timer className="h-5 w-5 text-green-800 dark:text-green-400" />
-            <h2 className="text-base text-green-800 dark:text-green-400">
-              {date}
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      {/* Link or Name */}
-      {link !== "" ? (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-sm text-blue-600 hover:underline"
+      <div className="relative z-10 mt-5 flex flex-wrap items-center gap-2">
+        <div
+          className="
+            inline-flex items-center gap-1.5 rounded-full
+            border border-emerald-500/20 bg-emerald-500/10
+            px-3 py-1 text-xs font-semibold text-emerald-700
+            dark:border-emerald-400/20 dark:bg-emerald-400/10
+            dark:text-emerald-300 sm:text-sm
+          "
         >
-          {link}
-        </a>
-      ) : (
-        <p className="flex items-center text-sm text-blue-600">{name}</p>
-      )}
+          <CheckCircle className="h-4 w-4" />
+          <span>{status}</span>
+        </div>
 
-      {/* Full Description */}
-      <div className="text-black dark:text-gray-400 text-sm">
-        <p>{fullDesc}</p>
+        <div
+          className="
+            inline-flex items-center gap-1.5 rounded-full
+            border border-slate-300/70 bg-slate-100/70
+            px-3 py-1 text-xs font-medium text-slate-600
+            dark:border-white/10 dark:bg-white/[0.07]
+            dark:text-slate-300 sm:text-sm
+          "
+        >
+          <Timer className="h-4 w-4 text-cyan-600 dark:text-cyan-300" />
+          <span>{date}</span>
+        </div>
       </div>
 
-      {/* Button View Project ở góc dưới bên phải */}
+      <div className="relative z-10 mt-4 min-w-0">
+        {link !== "" ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex max-w-full items-center gap-1.5
+              truncate text-sm font-medium text-cyan-700
+              transition-colors hover:text-cyan-600
+              dark:text-cyan-300 dark:hover:text-cyan-200
+            "
+          >
+            <span className="truncate">{link}</span>
+            <ExternalLink className="h-4 w-4 flex-shrink-0" />
+          </a>
+        ) : (
+          <p className="truncate text-sm font-medium text-cyan-700 dark:text-cyan-300">
+            {name}
+          </p>
+        )}
+      </div>
+
+      <p
+        className="
+          relative z-10 mt-4 line-clamp-3 text-sm leading-relaxed
+          text-slate-600 dark:text-slate-400
+        "
+      >
+        {fullDesc}
+      </p>
+
       {viewProject && (
-        <a
-          href={viewProject}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute bottom-4 right-4
-               flex items-center 
-               text-sm text-blue-900 dark:text-blue-500 hover:underline"
-        >
-          View Project <ExternalLink className="ml-1 h-4 w-4" />
-        </a>
+        <div className="relative z-10 mt-5 flex justify-end">
+          <a
+            href={viewProject}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex items-center gap-2 rounded-full
+              border border-cyan-500/20 bg-cyan-500/10
+              px-4 py-2 text-sm font-semibold text-cyan-700
+              transition-all duration-300
+              hover:border-cyan-500/35 hover:bg-cyan-500/15
+              dark:border-cyan-300/20 dark:bg-cyan-300/10
+              dark:text-cyan-200 dark:hover:bg-cyan-300/15
+            "
+          >
+            View Project
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        </div>
       )}
     </div>
   );
