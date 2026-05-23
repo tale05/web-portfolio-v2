@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 export default function SkillsMobile() {
   const { t } = useTranslation();
   const scrollRef = useRef(null);
+  const getSkillLevel = (level) => t(`skillLevels.${level.toLowerCase()}`, level);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -125,7 +126,7 @@ export default function SkillsMobile() {
             imgSrc={skill.src}
             imgAlt={skill.alt}
             skillName={skill.name}
-            skillLevel={skill.level}
+            skillLevel={getSkillLevel(skill.level)}
           />
         ))}
       </div>
@@ -142,7 +143,7 @@ export default function SkillsMobile() {
             imgSrc={db.src}
             imgAlt={db.alt}
             skillName={db.name}
-            skillLevel={db.level}
+            skillLevel={getSkillLevel(db.level)}
           />
         ))}
       </div>
@@ -159,7 +160,7 @@ export default function SkillsMobile() {
             imgSrc={tool.src}
             imgAlt={tool.alt}
             skillName={tool.name}
-            skillLevel={tool.level}
+            skillLevel={getSkillLevel(tool.level)}
           />
         ))}
       </div>

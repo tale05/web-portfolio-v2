@@ -3,9 +3,14 @@ import CertificateCard from "./CertificateCard";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { listCertificate } from "../../data/listCertificate";
 import { Award } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-export default function Language() {
+export default function Certificate() {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
+  const getCertificateText = (certificate, field) =>
+    t(`certificates.${certificate.translationKey}.${field}`, certificate[field]);
+
   return (
     <>
       {isMobile ? (
@@ -29,7 +34,7 @@ export default function Language() {
               "
             >
               <Award className="w-8 h-8 text-cyan-700" />
-              Certificates
+              {t("titleCertificates")}
             </h1>
 
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-400/50" />
@@ -38,9 +43,9 @@ export default function Language() {
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-4 justify-items-center">
             {listCertificate.map((certificate) => (
               <CertificateCard
-                key={certificate.name}
-                name={certificate.name}
-                desc={certificate.desc}
+                key={certificate.translationKey}
+                name={getCertificateText(certificate, "name")}
+                desc={getCertificateText(certificate, "desc")}
                 view={certificate.view}
                 link={certificate.link}
               />

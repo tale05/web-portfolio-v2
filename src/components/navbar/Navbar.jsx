@@ -71,11 +71,11 @@ export default function Navbar() {
     {
       icon: FaPhoneAlt,
       label: t("phoneNumberMenuNavbar"),
-      href: "tel:+84901135877",
+      href: "tel:+4917644768052",
     },
     {
       icon: FaMapMarkerAlt,
-      label: "Sandhofen, Mannheim, Deutschland",
+      label: t("locationMenuNavbar"),
       href: "https://maps.app.goo.gl/c4Bq5e7bfvmssj3t7",
     },
   ];
@@ -99,11 +99,16 @@ export default function Navbar() {
     {
       icon: FaGlobe,
       label: t("item4MenuNavbar"),
+      section: "activity",
+    },
+    {
+      icon: FaGlobe,
+      label: t("item5MenuNavbar"),
       section: "language",
     },
     {
       icon: FaCertificate,
-      label: t("item5MenuNavbar"),
+      label: t("item6MenuNavbar"),
       section: "certificate",
     },
   ];

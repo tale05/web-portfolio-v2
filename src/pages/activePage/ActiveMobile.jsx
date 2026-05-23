@@ -1,12 +1,12 @@
-import { Languages } from "lucide-react";
-import LanguageCard from "./LanguageCard";
-import { listLanguage } from "../../data/listLanguage";
+import { HandHeart } from "lucide-react";
+import ActiveCard from "./ActiveCard";
+import { listActive } from "../../data/listActive";
 import { useTranslation } from "react-i18next";
 
-export default function LanguageMobile() {
+export default function ActiveMobile() {
   const { t } = useTranslation();
-  const getLanguageText = (language, field) =>
-    t(`languages.${language.translationKey}.${field}`, language[field]);
+  const getActiveItems = (active) =>
+    active.itemKeys.map((itemKey) => t(itemKey));
 
   return (
     <div className="p-4">
@@ -24,21 +24,19 @@ export default function LanguageMobile() {
                 sm:text-xl
               "
         >
-          <Languages className="w-8 h-8 text-cyan-700" />
-          {t("titleLanguage")}
+          <HandHeart className="w-8 h-8 text-cyan-700 dark:text-cyan-200" />
+          {t("titleActivities")}
         </h1>
 
         <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-400/50" />
       </div>
 
-      <div className="grid grid-cols-2 gap-4 py-3">
-        {listLanguage.map((language) => (
-          <LanguageCard
-            key={language.translationKey}
-            icon={language.icon}
-            imgAlt={language.alt}
-            name={getLanguageText(language, "name")}
-            desc={getLanguageText(language, "desc")}
+      <div className="grid grid-cols-1 gap-4 py-3">
+        {listActive.map((active) => (
+          <ActiveCard
+            key={active.translationKey}
+            title={t(active.titleKey, active.title)}
+            items={getActiveItems(active)}
           />
         ))}
       </div>

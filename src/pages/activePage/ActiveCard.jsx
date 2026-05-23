@@ -1,11 +1,6 @@
-import { BadgeCheck, ExternalLink } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { HeartHandshake } from "lucide-react";
 
-export default function CertificateCard({ name, desc, view, link }) {
-  const { t } = useTranslation();
-  const hasLink = link && link.trim() !== "";
-  const hasView = view && view.trim() !== "";
-
+export default function ActiveCard({ title, items }) {
   return (
     <div
       className="
@@ -55,7 +50,7 @@ export default function CertificateCard({ name, desc, view, link }) {
           sm:h-14 sm:w-14 sm:rounded-2xl
         "
       >
-        <BadgeCheck className="h-6 w-6 text-emerald-600 dark:text-emerald-300 sm:h-7 sm:w-7" />
+        <HeartHandshake className="h-6 w-6 text-emerald-600 dark:text-emerald-300 sm:h-7 sm:w-7" />
       </div>
 
       <div className="relative z-10 ml-4 min-w-0 flex flex-1 flex-col">
@@ -65,57 +60,23 @@ export default function CertificateCard({ name, desc, view, link }) {
             dark:text-white sm:text-lg
           "
         >
-          {name}
+          {title}
         </span>
 
-        <span
-          className="
-            mt-1 text-xs leading-relaxed text-slate-500
-            dark:text-slate-400 sm:text-sm
-          "
-        >
-          {desc}
-        </span>
-
-        {hasLink && (
-          <a
-            href={link}
-            className="
-              mt-2 inline-flex max-w-full items-center gap-1.5
-              text-xs font-medium text-cyan-700 transition-colors
-              hover:text-cyan-600
-              dark:text-cyan-300 dark:hover:text-cyan-200 sm:text-sm
-            "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="truncate">{link}</span>
-            <ExternalLink className="h-3.5 w-3.5 flex-shrink-0" />
-          </a>
-        )}
-
-        {hasView && (
-          <div className="mt-4 flex justify-end">
-            <a
-              href={view}
-              target="_blank"
-              rel="noopener noreferrer"
+        <ul className="mt-3 space-y-2">
+          {items.map((item) => (
+            <li
+              key={item}
               className="
-                inline-flex items-center gap-2 rounded-full
-                border border-cyan-500/20 bg-cyan-500/10
-                px-4 py-2 text-xs font-semibold text-cyan-700
-                transition-all duration-300
-                hover:border-cyan-500/35 hover:bg-cyan-500/15
-                dark:border-cyan-300/20 dark:bg-cyan-300/10
-                dark:text-cyan-200 dark:hover:bg-cyan-300/15
-                sm:text-sm
+                flex gap-2 text-xs leading-relaxed text-slate-500
+                dark:text-slate-400 sm:text-sm
               "
             >
-              {t("myCertificateButton")}
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </div>
-        )}
+              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-cyan-500/70 dark:bg-cyan-300/70" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

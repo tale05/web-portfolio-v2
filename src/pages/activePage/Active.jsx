@@ -1,21 +1,21 @@
-import LanguageMobile from "./LanguageMobile";
-import LanguageCard from "./LanguageCard";
+import { HandHeart } from "lucide-react";
 import { useIsMobile } from "../../hooks/useIsMobile";
-import { listLanguage } from "../../data/listLanguage";
-import { Languages } from "lucide-react";
+import { listActive } from "../../data/listActive";
+import ActiveCard from "./ActiveCard";
+import ActiveMobile from "./ActiveMobile";
 import { useTranslation } from "react-i18next";
 
-export default function Language() {
+export default function Active() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
-  const getLanguageText = (language, field) =>
-    t(`languages.${language.translationKey}.${field}`, language[field]);
+  const getActiveItems = (active) =>
+    active.itemKeys.map((itemKey) => t(itemKey));
 
   return (
     <>
       {isMobile ? (
         <div>
-          <LanguageMobile />
+          <ActiveMobile />
         </div>
       ) : (
         <div className="max-w-[1300px] h-auto mx-auto py-4 relative">
@@ -33,21 +33,19 @@ export default function Language() {
                 sm:text-xl
               "
             >
-              <Languages className="w-8 h-8 text-cyan-700" />
-              {t("titleLanguage")}
+              <HandHeart className="w-8 h-8 text-cyan-700 dark:text-cyan-200" />
+              {t("titleActivities")}
             </h1>
 
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-400/50" />
           </div>
 
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-4 justify-items-center">
-            {listLanguage.map((language) => (
-              <LanguageCard
-                key={language.translationKey}
-                icon={language.icon}
-                imgAlt={language.alt}
-                name={getLanguageText(language, "name")}
-                desc={getLanguageText(language, "desc")}
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 my-4 justify-items-center">
+            {listActive.map((active) => (
+              <ActiveCard
+                key={active.translationKey}
+                title={t(active.titleKey, active.title)}
+                items={getActiveItems(active)}
               />
             ))}
           </div>

@@ -6,6 +6,9 @@ import { useTranslation } from "react-i18next";
 
 export default function ProjectMobile() {
   const { t } = useTranslation();
+  const getProjectText = (item, field) =>
+    t(`projects.${item.translationKey}.${field}`, item[field]);
+
   return (
     <div className="w-full h-auto mx-auto p-5 flex flex-col items-center relative">
       <div className="mx-auto my-6 flex w-full max-w-[800px] items-center gap-4">
@@ -37,14 +40,14 @@ export default function ProjectMobile() {
       >
         {listProject.map((item) => (
           <ProjectCard
-            key={item.titleProject}
-            titleProject={item.titleProject}
-            name={item.name}
-            status={item.status}
+            key={item.translationKey}
+            titleProject={getProjectText(item, "titleProject")}
+            name={getProjectText(item, "name")}
+            status={getProjectText(item, "status")}
             link={item.link}
             viewProject={item.viewProject}
-            date={item.date}
-            fullDesc={item.fullDesc}
+            date={getProjectText(item, "date")}
+            fullDesc={getProjectText(item, "fullDesc")}
           />
         ))}
       </div>

@@ -70,7 +70,7 @@ export default function NavbarMobile() {
     },
     {
       icon: FaMapMarkerAlt,
-      label: "Sandhofen, Mannheim, Deutschland",
+      label: t("locationMenuNavbar"),
       href: "https://maps.app.goo.gl/c4Bq5e7bfvmssj3t7",
     },
   ];
@@ -87,10 +87,15 @@ export default function NavbarMobile() {
       label: t("item3MenuNavbar"),
       section: "education",
     },
-    { icon: FaGlobe, label: t("item4MenuNavbar"), section: "language" },
+    { icon: FaGlobe, label: t("item4MenuNavbar"), section: "activity" },
+    {
+      icon: FaGlobe,
+      label: t("item5MenuNavbar"),
+      section: "language",
+    },
     {
       icon: FaCertificate,
-      label: t("item5MenuNavbar"),
+      label: t("item6MenuNavbar"),
       section: "certificate",
     },
   ];
@@ -153,7 +158,7 @@ export default function NavbarMobile() {
             max-h-[calc(100vh-92px)] overflow-y-auto overflow-x-hidden
             rounded-2xl bg-white/90 p-4
             text-sm text-slate-800
-            backdrop-blur-2xl transition-all duration-300
+            transition-all duration-300
            dark:bg-slate-950/90 dark:text-white
             ${
               isMenuOpen

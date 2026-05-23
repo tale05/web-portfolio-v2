@@ -5,6 +5,7 @@ import Projects from "./pages/projectsPage/Projects";
 import Education from "./pages/educationPage/Education";
 import Language from "./pages/languagePage/Language";
 import Certificate from "./pages/certificatePage/Certificate";
+import Activity from "./pages/activePage/Active";
 
 export default function App() {
   return (
@@ -33,6 +34,9 @@ export default function App() {
         </div>
         <div id="education">
           <Education />
+        </div>
+        <div id="activity">
+          <Activity />
         </div>
         <div id="language">
           <Language />

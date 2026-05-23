@@ -9,6 +9,9 @@ import { useTranslation } from "react-i18next";
 export default function Projects() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
+  const getProjectText = (item, field) =>
+    t(`projects.${item.translationKey}.${field}`, item[field]);
+
   return (
     <>
       {isMobile ? (
@@ -46,14 +49,14 @@ export default function Projects() {
           >
             {listProject.map((item) => (
               <ProjectCard
-                key={item.titleProject}
-                titleProject={item.titleProject}
-                name={item.name}
-                status={item.status}
+                key={item.translationKey}
+                titleProject={getProjectText(item, "titleProject")}
+                name={getProjectText(item, "name")}
+                status={getProjectText(item, "status")}
                 link={item.link}
                 viewProject={item.viewProject}
-                date={item.date}
-                fullDesc={item.fullDesc}
+                date={getProjectText(item, "date")}
+                fullDesc={getProjectText(item, "fullDesc")}
               />
             ))}
           </div>

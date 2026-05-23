@@ -1,4 +1,5 @@
-import myAva from "../../assets/CV_Avatar_mobile.jpg";
+import myFoto_light from "../../assets/LeTuanAnhPham_Bewerbungsfoto_light.jpg";
+import myFoto_dark from "../../assets/LeTuanAnhPham_Bewerbungsfoto_dark.jpg";
 import cvEng from "../../assets/CV_LeTuanAnhPham_ENG.pdf";
 import cvDeu from "../../assets/CV_LeTuanAnhPham_IT.pdf";
 import cvDeuPflege from "../../assets/CV_LeTuanAnhPham_Pflege.pdf";
@@ -9,6 +10,7 @@ import WhatsappButton from "../../components/social-button/WhatsappButton";
 import GmailButton from "../../components/social-button/GmailButton";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 import { Download, ExternalLink } from "lucide-react";
 
 export default function HomeMobile() {
@@ -32,11 +34,32 @@ export default function HomeMobile() {
       label: "Lebenslauf IT (DEU)",
       href: cvDeu,
     },
-    {
-      label: "Lebenslauf Pflege (DEU)",
-      href: cvDeuPflege,
-    },
+    // {
+    //   label: "Lebenslauf Pflege (DEU)",
+    //   href: cvDeuPflege,
+    // },
   ];
+
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    // đọc theme ban đầu
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+
+    // theo dõi khi theme thay đổi
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setTheme(isDark ? "dark" : "light");
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="mx-auto flex min-h-screen w-full flex-col items-center px-4 pt-24">
@@ -60,11 +83,14 @@ export default function HomeMobile() {
           />
 
           <img
-            src={myAva}
-            alt="Avatar"
+            src={theme === "dark" ? myFoto_dark : myFoto_light}
+            alt="myphoto"
             className="
-              relative z-10 h-[285px] w-full rounded-[22px]
-              object-cover object-center
+              relative z-10
+              h-[340px] w-full
+              rounded-[22px]
+              object-cover object-[center_25%]
+              scale-[0.98] 
               shadow-[0_16px_45px_rgba(15,23,42,0.16)]
             "
           />

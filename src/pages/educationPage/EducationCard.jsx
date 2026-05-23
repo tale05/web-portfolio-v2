@@ -1,4 +1,5 @@
 import { GanttChart, CheckCircle, ExternalLink } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function EducationCard({
   name,
@@ -8,6 +9,7 @@ export default function EducationCard({
   linkMyDegree_inDEU,
   more,
 }) {
+  const { t } = useTranslation();
   const hasDegree = linkMyDegree && linkMyDegree.trim() !== "";
   const hasDegreeDEU = linkMyDegree_inDEU && linkMyDegree_inDEU.trim() !== "";
 
@@ -110,7 +112,7 @@ export default function EducationCard({
             }
           `}
         >
-          My Degree
+          {t("myDegreeButton")}
           <ExternalLink className="h-4 w-4" />
         </a>
 
@@ -129,7 +131,7 @@ export default function EducationCard({
             }
           `}
         >
-          German Translation
+          {t("germanTranslationButton")}
           <ExternalLink className="h-4 w-4" />
         </a>
 
@@ -149,7 +151,7 @@ export default function EducationCard({
               dark:hover:text-cyan-200 sm:text-sm
             "
           >
-            More
+            {t("moreButton")}
             <ExternalLink className="h-4 w-4" />
           </a>
         )}

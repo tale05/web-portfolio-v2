@@ -29,7 +29,10 @@ export const logoIconSkill = [
     src: "https://www.docker.com/app/uploads/2024/01/icon-docker-square.svg",
     alt: "Docker",
   },
-  { src: "https://vite.dev/logo.svg", alt: "Vite" },
+  {
+    src: "https://velog.velcdn.com/images/ehdghks12/post/d485a90c-24bc-4e39-8a83-32100f022021/image.svg",
+    alt: "Vite",
+  },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     alt: "Tailwind CSS",
@@ -124,7 +127,7 @@ export const listSkillLevel = [
     level: "Basic",
   },
   {
-    src: "https://vite.dev/logo.svg",
+    src: "https://velog.velcdn.com/images/ehdghks12/post/d485a90c-24bc-4e39-8a83-32100f022021/image.svg",
     alt: "Vite",
     name: "Vite",
     level: "Basic",

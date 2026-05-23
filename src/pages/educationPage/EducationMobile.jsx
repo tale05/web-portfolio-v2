@@ -2,8 +2,13 @@ import { GraduationCap } from "lucide-react";
 import GraduationHatAnimation from "../../components/lotties/GraduationHatAnimation";
 import { listEducation } from "../../data/listEducation";
 import EducationCard from "./EducationCard";
+import { useTranslation } from "react-i18next";
 
 export default function EducationMobile() {
+  const { t } = useTranslation();
+  const getEducationText = (item, field) =>
+    t(`education.${item.translationKey}.${field}`, item[field]);
+
   return (
     <div className="w-full h-auto mx-auto p-5 flex flex-col items-center relative">
       <div className="mx-auto flex w-full max-w-[800px] items-center gap-4">
@@ -21,7 +26,7 @@ export default function EducationMobile() {
               "
         >
           <GraduationCap className="w-8 h-8 text-cyan-700" />
-          Education
+          {t("titleEducation")}
         </h1>
 
         <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-400/50" />
@@ -36,10 +41,10 @@ export default function EducationMobile() {
       >
         {listEducation.map((item) => (
           <EducationCard
-            key={item.name}
-            name={item.name}
-            yearGraduated={item.yearGraduated}
-            typeGraduated={item.typeGraduated}
+            key={item.translationKey}
+            name={getEducationText(item, "name")}
+            yearGraduated={getEducationText(item, "yearGraduated")}
+            typeGraduated={getEducationText(item, "typeGraduated")}
             linkMyDegree={item.linkMyDegree}
             linkMyDegree_inDEU={item.linkMyDegree_inDEU}
             more={item.more}

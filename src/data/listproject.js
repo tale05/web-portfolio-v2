@@ -1,5 +1,6 @@
 export const listProject = [
   {
+    translationKey: "webTourHat",
     titleProject: "web-tour-hat",
     name: "Website H.A.T",
     status: "In Use",
@@ -10,6 +11,7 @@ export const listProject = [
     date: "01/2025 – 04/2025",
   },
   {
+    translationKey: "ccahAppStrain",
     titleProject: "ccah-app-strain",
     name: "CCAH App",
     status: "In Use",
@@ -20,6 +22,7 @@ export const listProject = [
     date: "03/2024 – 06/2024",
   },
   {
+    translationKey: "ccahWebStrain",
     titleProject: "ccah-web-strain",
     name: "Website CCAH",
     status: "In Use",
@@ -30,6 +33,7 @@ export const listProject = [
     date: "03/2024 – 06/2024",
   },
   {
+    translationKey: "hotelManagement",
     titleProject: "app-hotel-management",
     name: "Hotel Management app",
     status: "Demo",
@@ -40,6 +44,7 @@ export const listProject = [
     date: "09/2022 – 12/2022",
   },
   {
+    translationKey: "toyStoreManagement",
     titleProject: "app-toy-store-management",
     name: "Toy Store Management app",
     status: "Demo",
@@ -50,6 +55,7 @@ export const listProject = [
     date: "09/2022 – 01/2023",
   },
   {
+    translationKey: "more",
     titleProject: "More",
     name: "More Projects",
     status: "Demo",

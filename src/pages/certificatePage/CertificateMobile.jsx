@@ -2,8 +2,13 @@ import { Award } from "lucide-react";
 import Cat from "../../components/lotties/CatAnimation";
 import CertificateCard from "./CertificateCard";
 import { listCertificate } from "../../data/listCertificate";
+import { useTranslation } from "react-i18next";
 
 export default function CertificateMobile() {
+  const { t } = useTranslation();
+  const getCertificateText = (certificate, field) =>
+    t(`certificates.${certificate.translationKey}.${field}`, certificate[field]);
+
   return (
     <div className="p-4">
       <div className="mx-auto my-6 flex w-full max-w-[800px] items-center gap-4">
@@ -21,7 +26,7 @@ export default function CertificateMobile() {
               "
         >
           <Award className="w-8 h-8 text-cyan-700" />
-          Certificates
+          {t("titleCertificates")}
         </h1>
 
         <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-400/50" />
@@ -30,9 +35,9 @@ export default function CertificateMobile() {
       <div className="grid grid-cols-1 gap-4 py-3">
         {listCertificate.map((certificate) => (
           <CertificateCard
-            key={certificate.name}
-            name={certificate.name}
-            desc={certificate.desc}
+            key={certificate.translationKey}
+            name={getCertificateText(certificate, "name")}
+            desc={getCertificateText(certificate, "desc")}
             view={certificate.view}
             link={certificate.link}
           />

@@ -1,4 +1,5 @@
 import { GanttChart, CheckCircle, ExternalLink, Timer } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectCard({
   titleProject,
@@ -9,6 +10,8 @@ export default function ProjectCard({
   fullDesc,
   date,
 }) {
+  const { t } = useTranslation();
+
   return (
     <div
       className="
@@ -146,7 +149,7 @@ export default function ProjectCard({
               dark:text-cyan-200 dark:hover:bg-cyan-300/15
             "
           >
-            View Project
+            {t("viewProjectButton")}
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>

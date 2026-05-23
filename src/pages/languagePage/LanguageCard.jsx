@@ -1,4 +1,6 @@
-export default function LanguageCard({ icon, imgAlt, name, desc }) {
+export default function LanguageCard({ icon, imgAlt, alt, name, desc }) {
+  const imageAlt = imgAlt || alt || name;
+
   return (
     <div
       className="
@@ -48,7 +50,7 @@ export default function LanguageCard({ icon, imgAlt, name, desc }) {
           sm:h-16 sm:w-16 sm:rounded-2xl sm:p-3
         "
       >
-        <img src={icon} alt={imgAlt} className="h-full w-full object-contain" />
+        <img src={icon} alt={imageAlt} className="h-full w-full object-contain" />
       </div>
 
       <div className="relative z-10 ml-4 min-w-0 flex flex-1 flex-col justify-center">

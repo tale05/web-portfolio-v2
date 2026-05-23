@@ -4,9 +4,14 @@ import GraduationHatAnimation from "../../components/lotties/GraduationHatAnimat
 import EducationCard from "./EducationCard";
 import EducationMobile from "./EducationMobile";
 import { listEducation } from "../../data/listEducation";
+import { useTranslation } from "react-i18next";
 
 export default function Education() {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
+  const getEducationText = (item, field) =>
+    t(`education.${item.translationKey}.${field}`, item[field]);
+
   return (
     <>
       {isMobile ? (
@@ -28,7 +33,7 @@ export default function Education() {
               "
             >
               <GraduationCap className="w-8 h-8 text-cyan-700" />
-              Education
+              {t("titleEducation")}
             </h1>
 
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-400/50" />
@@ -44,10 +49,10 @@ export default function Education() {
           >
             {listEducation.map((item) => (
               <EducationCard
-                key={item.name}
-                name={item.name}
-                yearGraduated={item.yearGraduated}
-                typeGraduated={item.typeGraduated}
+                key={item.translationKey}
+                name={getEducationText(item, "name")}
+                yearGraduated={getEducationText(item, "yearGraduated")}
+                typeGraduated={getEducationText(item, "typeGraduated")}
                 linkMyDegree={item.linkMyDegree}
                 linkMyDegree_inDEU={item.linkMyDegree_inDEU}
                 more={item.more}

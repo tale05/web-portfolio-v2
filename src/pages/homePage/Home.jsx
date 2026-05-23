@@ -1,4 +1,5 @@
-import myAva from "../../assets/CV_Avatar.png";
+import myFoto_light from "../../assets/LeTuanAnhPham_Bewerbungsfoto_light.jpg";
+import myFoto_dark from "../../assets/LeTuanAnhPham_Bewerbungsfoto_dark.jpg";
 import cvEng from "../../assets/CV_LeTuanAnhPham_ENG.pdf";
 import cvDeu from "../../assets/CV_LeTuanAnhPham_IT.pdf";
 import cvDeuPflege from "../../assets/CV_LeTuanAnhPham_Pflege.pdf";
@@ -13,11 +14,11 @@ import HomeMobile from "./HomeMobile";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 import { Download, ExternalLink } from "lucide-react";
 
 export default function Home() {
   const { t } = useTranslation();
-
   const playlistId = "4KnqE3eR03vCvhZ2ByfxzQ";
   const isMobile = useIsMobile();
   const title = useTypewriter(t("titleHome"), 200);
@@ -25,6 +26,27 @@ export default function Home() {
   const description2 = useTypewriter(t("des2"), 15);
   const description3 = useTypewriter(t("des3"), 15);
   const description4 = useTypewriter(t("des4"), 15);
+
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    // đọc theme ban đầu
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+
+    // theo dõi khi theme thay đổi
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setTheme(isDark ? "dark" : "light");
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -161,7 +183,7 @@ export default function Home() {
                   <ExternalLink className="h-4 w-4 opacity-70" />
                 </a>
 
-                <a
+                {/* <a
                   role="button"
                   href={cvDeuPflege}
                   target="_blank"
@@ -183,7 +205,7 @@ export default function Home() {
                   <Download className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
                   Lebenslauf Pflege (DEU)
                   <ExternalLink className="h-4 w-4 opacity-70" />
-                </a>
+                </a> */}
               </div>
               {/* <iframe
                 title="Spotify Embed: Recommendation Playlist"
@@ -211,7 +233,7 @@ export default function Home() {
 
               {/* Ảnh avatar */}
               <img
-                src={myAva}
+                src={theme === "dark" ? myFoto_dark : myFoto_light}
                 alt="Avatar"
                 className="z-2
                 w-full h-[475px] object-cover 

@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 export default function Skills() {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
+  const getSkillLevel = (level) => t(`skillLevels.${level.toLowerCase()}`, level);
 
   return (
     <>
@@ -105,7 +106,7 @@ export default function Skills() {
                   flex items-center gap-2"
               >
                 <FaGithub className="w-5 h-5" />
-                View My Github
+                {t("viewMyGithub")}
               </a>
             </div>
           </div>
@@ -122,7 +123,7 @@ export default function Skills() {
                 imgSrc={skill.src}
                 imgAlt={skill.alt}
                 skillName={skill.name}
-                skillLevel={skill.level}
+                skillLevel={getSkillLevel(skill.level)}
               />
             ))}
           </div>
@@ -139,7 +140,7 @@ export default function Skills() {
                 imgSrc={db.src}
                 imgAlt={db.alt}
                 skillName={db.name}
-                skillLevel={db.level}
+                skillLevel={getSkillLevel(db.level)}
               />
             ))}
           </div>
@@ -156,7 +157,7 @@ export default function Skills() {
                 imgSrc={tool.src}
                 imgAlt={tool.alt}
                 skillName={tool.name}
-                skillLevel={tool.level}
+                skillLevel={getSkillLevel(tool.level)}
               />
             ))}
           </div>
