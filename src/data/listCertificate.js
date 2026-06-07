@@ -15,7 +15,7 @@ export const listCertificate = [
     translationKey: "telcB1",
     name: "TELC ZERTIFIKAT B1",
     desc: "telc",
-    link: "https://results.telc.net/vb?credential=telc-4fA0HbT",
+    link: "https://results.telc.net/vb?credential=telc-7coqRm4",
     view: certificate4,
   },
   {

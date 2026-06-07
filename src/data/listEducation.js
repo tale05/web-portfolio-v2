@@ -1,6 +1,7 @@
 import doc1 from "../assets/doc1.pdf";
 import doc2 from "../assets/doc2.pdf";
 import doc1_inDEU from "../assets/doc1_inDEU.pdf";
+import doc2_inDEU from "../assets/doc2_inDEU.pdf";
 
 export const listEducation = [
   {
@@ -19,7 +20,7 @@ export const listEducation = [
     yearGraduated: "Year: 2017 - 2020",
     typeGraduated: "Graduated - High School Diploma",
     linkMyDegree: doc2,
-    linkMyDegree_inDEU: null,
+    linkMyDegree_inDEU: doc2_inDEU,
     more: "https://thptmariecurie.hcm.edu.vn/",
   },
 ];
