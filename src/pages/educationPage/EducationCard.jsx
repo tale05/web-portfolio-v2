@@ -7,12 +7,13 @@ export default function EducationCard({
   typeGraduated,
   linkMyDegree,
   linkMyDegree_inDEU,
+  linkCertify,
   more,
 }) {
   const { t } = useTranslation();
-  const hasDegree = linkMyDegree && linkMyDegree.trim() !== "";
-  const hasDegreeDEU = linkMyDegree_inDEU && linkMyDegree_inDEU.trim() !== "";
-
+  const hasDegree = !!linkMyDegree;
+  const hasDegreeDEU = !!linkMyDegree_inDEU;
+  const hasCertification = !!linkCertify;
   return (
     <div
       className="
@@ -115,7 +116,6 @@ export default function EducationCard({
           {t("myDegreeButton")}
           <ExternalLink className="h-4 w-4" />
         </a>
-
         <a
           href={hasDegreeDEU ? linkMyDegree_inDEU : "#"}
           target={hasDegreeDEU ? "_blank" : "_self"}
@@ -132,6 +132,24 @@ export default function EducationCard({
           `}
         >
           {t("germanTranslationButton")}
+          <ExternalLink className="h-4 w-4" />
+        </a>
+        <a
+          href={hasCertification ? linkCertify : "#"}
+          target={hasCertification ? "_blank" : "_self"}
+          rel="noopener noreferrer"
+          aria-disabled={!hasCertification}
+          className={`
+            inline-flex items-center gap-1.5 rounded-full px-3 py-2
+            text-xs font-semibold transition-all duration-300 sm:text-sm
+            ${
+              hasCertification
+                ? "border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 hover:border-cyan-500/35 hover:bg-cyan-500/15 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-200 dark:hover:bg-cyan-300/15"
+                : "pointer-events-none border border-slate-300/60 bg-slate-100/60 text-slate-400 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-600"
+            }
+          `}
+        >
+          {t("certificationButton")}
           <ExternalLink className="h-4 w-4" />
         </a>
 

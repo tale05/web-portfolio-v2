@@ -33,6 +33,7 @@ const resources = {
       viewMyGithub: "View My GitHub",
       myDegreeButton: "My Degree",
       germanTranslationButton: "German Translation",
+      certificationButton: "Certification",
       moreButton: "More",
       myCertificateButton: "My Certificate",
 
@@ -214,6 +215,7 @@ const resources = {
       viewMyGithub: "Mein GitHub ansehen",
       myDegreeButton: "Mein Abschluss",
       germanTranslationButton: "Deutsche Übersetzung",
+      certificationButton: "Anerkennung",
       moreButton: "Mehr",
       myCertificateButton: "Mein Zertifikat",
 

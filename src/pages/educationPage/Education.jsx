@@ -55,6 +55,7 @@ export default function Education() {
                 typeGraduated={getEducationText(item, "typeGraduated")}
                 linkMyDegree={item.linkMyDegree}
                 linkMyDegree_inDEU={item.linkMyDegree_inDEU}
+                linkCertify={item.linkCertify}
                 more={item.more}
               />
             ))}
