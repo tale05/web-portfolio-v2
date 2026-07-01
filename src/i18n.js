@@ -33,7 +33,7 @@ const resources = {
       viewMyGithub: "View My GitHub",
       myDegreeButton: "My Degree",
       germanTranslationButton: "German Translation",
-      certificationButton: "Certification",
+      certificationButton: "Recognition in Germany",
       moreButton: "More",
       myCertificateButton: "My Certificate",
 

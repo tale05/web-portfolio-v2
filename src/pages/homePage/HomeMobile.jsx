@@ -8,6 +8,7 @@ import GithubButton from "../../components/social-button/GithubButton";
 import FacebookButton from "../../components/social-button/FacebookButton";
 import WhatsappButton from "../../components/social-button/WhatsappButton";
 import GmailButton from "../../components/social-button/GmailButton";
+import LinkedInButton from "../../components/social-button/LinkedInButton";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
@@ -192,8 +193,9 @@ export default function HomeMobile() {
             <GithubButton />
             <WhatsappButton />
             <GmailButton />
+            <LinkedInButton />
             <FacebookButton />
-            <InstagramButton />
+            {/* <InstagramButton /> */}
           </div>
         </div>
       </div>

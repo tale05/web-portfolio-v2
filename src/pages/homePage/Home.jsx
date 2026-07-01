@@ -8,6 +8,7 @@ import GithubButton from "../../components/social-button/GithubButton";
 import FacebookButton from "../../components/social-button/FacebookButton";
 import WhatsappButton from "../../components/social-button/WhatsappButton";
 import GmailButton from "../../components/social-button/GmailButton";
+import LinkedInButton from "../../components/social-button/LinkedInButton";
 import CatSpinAnimation from "../../components/lotties/CatSpinAnimation";
 import FireWork from "../../components/lotties/FireworkAnimation";
 import HomeMobile from "./HomeMobile";
@@ -245,8 +246,9 @@ export default function Home() {
                 <GithubButton />
                 <WhatsappButton />
                 <GmailButton />
+                <LinkedInButton />
                 <FacebookButton />
-                <InstagramButton />
+                {/* <InstagramButton /> */}
               </div>
             </div>
           </div>
