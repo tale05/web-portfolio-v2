@@ -247,7 +247,7 @@ export default function Home() {
                 <WhatsappButton />
                 <GmailButton />
                 <LinkedInButton />
-                <FacebookButton />
+                {/* <FacebookButton /> */}
                 {/* <InstagramButton /> */}
               </div>
             </div>

@@ -194,7 +194,7 @@ export default function HomeMobile() {
             <WhatsappButton />
             <GmailButton />
             <LinkedInButton />
-            <FacebookButton />
+            {/* <FacebookButton /> */}
             {/* <InstagramButton /> */}
           </div>
         </div>
